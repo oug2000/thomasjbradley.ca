@@ -1,0 +1,179 @@
+[role="banner"]
+  margin 0
+  padding 0 2.4em 0
+
+  background site-bg-dark url("../img/pattern-slant-dark-rt.png") repeat left top
+
+  color button-muted
+
+.site-title
+  float right
+  margin 0
+  padding 0
+
+  font-weight 600
+  line-height 1.5
+  text-align right
+
+  & .logo
+
+  & .logo
+  & .logo i:first-child
+  & .logo i + i
+    height 47px
+    position absolute
+    right 0
+    width 25px
+
+  & .logo i:first-child
+  & .logo i + i
+    left 0
+
+    background transparent url("../img/rocket.png") no-repeat left top
+    transition all 150ms linear 10ms
+
+  & .logo i + i
+    left auto
+    right 0
+    width 0
+
+    background-position right top
+    transition all 150ms linear
+
+  & a
+  & a:link
+  & a:visited
+    display block
+    padding-right 55px
+    position relative
+
+    border 0
+
+    color button-muted
+
+  & a:hover .logo i:first-child
+  & a:focus .logo i:first-child
+  & a:active .logo i:first-child
+    width 0
+
+  & a:hover .logo i + i
+  & a:focus .logo i + i
+  & a:active .logo i + i
+    width 25px
+
+.nav-prime
+  clear right
+  float right
+  margin 2.3em -2.4em 0 0
+  padding 0 2.4em 0 0
+  position relative
+
+  background-color link-muted
+  background-image linear-gradient(right, rgba(link-muted-dark, 0.9), link-muted 30%)
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.3)
+
+  text-align right
+  vertical-align top
+
+  & ul
+    margin 0
+    padding-right 55px
+
+  & li
+    display inline-block
+    margin 0
+    padding 0.1em 0.75em 0
+    position relative
+    z-index 100
+
+    border-right 1px solid link-muted-dark
+
+    font-size 1.125em
+    text-align center
+    vertical-align top
+
+  & li:first-child
+    margin-left 0
+
+  & li:last-child
+    padding-right 0
+
+    border-right 0
+
+  & li:before
+    content ""
+
+  & a
+  & a:link
+  & a:visited
+    display inline-block
+
+    border 0
+
+    color site-bg
+    font-weight 600
+
+  & a:hover
+  & a:focus
+  & a:active
+    color #fff
+
+  & li ul
+    padding 0
+
+    & li
+      margin 0 0 0 0.4em
+      padding 0 0 0 0.1em
+
+      border 0
+
+      font-size 0.75em
+
+      & a
+      & a:link
+      & a:visited
+        font-weight 300
+
+      & a.current:link
+        border-bottom 1px solid site-bg
+
+    & li:before
+      content "·"
+
+      color site-bg
+
+    & li:first-child
+      margin 0
+      padding 0
+
+    & li:first-child:before
+      content ""
+
+.nav-prime:before
+.nav-prime > ul:before
+  content ""
+  left -1.8em
+  position absolute
+  top 0
+  z-index 1
+
+  border 1.8em solid transparent
+  border-top-color link-muted
+
+.nav-prime > ul:before
+  bottom 0
+  top auto
+
+  border-top-color transparent
+  border-bottom-color link-muted
+
+.intro
+  padding-bottom 0
+  padding-top 2.3em
+
+  line-height 1.6
+
+.my-why
+  max-width 25em
+
+  font-size 1.875em

@@ -1,0 +1,112 @@
+open-quote()
+  content "“"
+  left -0.2em
+  position absolute
+  top -0.2em
+  z-index 1
+
+  color text-light
+  font-size 3em
+  line-height 1
+
+html
+  height 100%
+  margin 0
+  padding 0
+
+  //background-color site-bg
+  //background-image url("img/baseline.png")
+  background site-bg url("img/pattern-slant-rt.png") repeat left top
+
+  color text-dark
+  font normal 100%/1.5 "Open Sans",sans-serif
+
+body
+  margin 0
+  min-height 100%
+  padding 0
+
+  font 300 100%/1.5 "Open Sans",sans-serif
+
+p
+  margin 0 0 1.5em
+  padding 0
+
+a
+a:link
+a:visited
+  border-bottom 0.1em solid rgba(link-normal,0.2)
+  transition all 150ms linear
+
+  color link-normal
+  text-decoration none
+
+a:hover
+a:focus
+a:active
+  border-color link-bright
+
+  color link-bright
+
+ul
+.alt-list
+  margin 0 0 1.5em
+  padding 0
+
+  list-style-type none
+
+  & li
+    position relative
+
+  & li:before
+  .alt-list li:before
+    content "•"
+    left -0.6em
+    position absolute
+    width 0.5em
+
+    color text-medium
+    font-size 1.5em
+    line-height 1.1
+    text-align right
+
+strong
+b
+  font-weight 400
+
+del
+  color text-medium
+
+.btn-group
+  text-align center
+
+.btn
+.btn:link
+.btn:visited
+  display inline-block
+  padding 0.5em 1em 0.7em
+  position relative
+
+  background-color button-muted-light
+  border 0
+  border-radius 4px
+  transition all 150ms linear
+
+  color #fff
+  font-size 1.125em
+  font-weight 400
+
+.btn:hover,
+.btn:focus,
+.btn:active
+  background-color link-normal
+
+.btn:active
+  top 1px
+
+  box-shadow inset 0 0 5px rgba(0,0,0,0.4)
+
+[title="and"]
+  font-family: Baskerville,Palatino,"Book Antiqua",serif;
+  font-style italic
+  font-weight normal

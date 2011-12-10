@@ -1,0 +1,116 @@
+[role="contentinfo"]
+  padding 1.8em 2.4em 1.8em
+
+  background site-bg-dark url("../img/pattern-slant-dark-rt.png") repeat left top
+
+  color button-muted-light
+  font-size 0.75em
+
+.copyright
+  float right
+  margin 0
+  padding 0 38px 0 0
+  position relative
+
+.contact
+  float left
+  margin 0
+  padding 0
+
+  & li
+    display inline-block
+    margin-right 1em
+
+  & li:before
+    left -0.75em
+
+  & li:first-child:before
+    content ""
+
+.top
+.top:link
+.top:visited
+  height 32px
+  overflow hidden
+  position absolute
+  right 0
+  top -7px
+  width 17px
+
+  background transparent url("../img/rocket.png") no-repeat left -48px
+  border 0
+  transition none
+
+  text-indent -999em
+
+.top:hover
+.top:focus
+.top:active
+  background-position -17px -48px
+
+@keyframes smoke
+  0%
+    background-position 0 -80px
+  24.9%
+    background-position 0 -80px
+  25%
+    background-position -17px -80px
+  49.9%
+    background-position -17px -80px
+  50%
+    background-position -34px -80px
+  74.9%
+    background-position -34px -80px
+  75%
+    background-position -51px -80px
+  99.9%
+    background-position -51px -80px
+
+@keyframes rocket
+  0%
+    bottom 10px
+    opacity 0
+  5%
+    opacity 1
+  25%
+    bottom 30px
+  50%
+    bottom 100px
+  75%
+    bottom 200px
+    opacity 1
+  100%
+    bottom 350px
+    opacity 0
+
+.rocketeer
+  bottom 10px
+  height 64px
+  display none
+  opacity 0
+  overflow hidden
+  position fixed
+  right 1.8em
+  width 17px
+  z-index 1000
+
+  & b
+  & i
+    height 32px
+    left 0
+    position absolute
+    top 0
+    width 17px
+
+    background transparent url("../img/rocket.png") no-repeat -17px -48px
+
+  & i
+    top 32px
+
+    background-position 0 -80px
+    animation smoke 350ms linear infinite
+
+.rocketeer-go
+  display block
+
+  animation rocket 650ms linear

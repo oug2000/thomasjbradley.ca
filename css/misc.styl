@@ -1,0 +1,179 @@
+.col
+  float right
+  width 43%
+
+.col:first-child
+  float left
+  padding-left 0
+
+.main
+  position relative
+  z-index 25
+  box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
+
+.mod-title
+  margin -1.7em 0 0
+  padding 0
+  position absolute
+
+  font-size 3em
+  font-weight 600
+
+.mod-why
+  margin-top -0.2em
+
+  font-size 1.25em
+  line-height 1.6
+
+.mod-nohead
+  margin 0
+  padding 0
+
+  font-size 1.125em
+  line-height 1.37
+
+  & em
+    display block
+
+    font-style normal
+
+#professor
+  z-index 20
+
+  background transparent url("../img/pattern-90-lt.png") repeat left top
+
+#developer
+  z-index 15
+
+  background transparent url("../img/pattern-90-rt.png") repeat left top
+
+#writer
+  z-index 10
+
+  background transparent url("../img/pattern-slant-lt.png") repeat left top
+
+.testimonial
+  margin 0 0 1.5em
+  padding 0
+  position relative
+
+.testimonial:before
+  open-quote()
+
+.testimonial p
+    margin 0
+    padding 0
+    position relative
+    z-index 5
+
+    font-style italic
+
+.testimonial p:after
+  open-quote()
+  bottom -0.4em
+  content "”"
+  left auto
+  right 0.1em
+  top auto
+
+.testimonial-author
+  display block
+  margin 0
+
+  font-style normal
+  text-align right
+
+.testimonial-controls
+  margin 0
+  padding 0
+
+  font-size 0.875em
+  line-height 1.9
+  list-style-type none
+  text-align center
+  text-transform uppercase
+
+.testimonial-controls li
+  display inline-block
+  padding 0
+
+.testimonial-controls li:before
+  content ""
+
+.testimonial-controls li:first-child:after
+  content "•"
+  display inline-block
+  padding 0 0.5em 0 0.7em
+
+  color text-medium
+
+.testimonial-controls a
+.testimonial-controls a:link
+.testimonial-controls a:visited
+    border 0
+
+.hatom
+  margin 0 0 1.5em
+  padding 0
+
+  & dt
+    font-weight 400
+
+  & dd
+    margin 0 0 1.5em
+    padding 0
+
+.book-info
+  text-align center
+
+.book-feature
+  margin-top -2.9em
+
+.book
+.book:link,
+.book:visited
+  display block
+  margin-bottom 1.5em
+  width 100%
+
+  border 0
+
+.book-title
+  margin 0 0 1.4em
+  padding 0
+
+  font-size 1.125em
+  line-height 1.37
+
+.book-cover
+  display block
+  margin 0 auto
+  width 70%
+
+  border 1px solid text-light
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+.book-desc
+  display block
+  margin-top 1.5em
+
+  color text-dark
+
+.project
+  display block
+  margin 1.5em 0
+
+  border 0
+
+  text-align center
+
+.project:before
+  content ""
+
+.project-img
+  display block
+  margin 0 0 0.75em
+  width 100%
+
+  border 1px solid text-light
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)

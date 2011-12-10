@@ -4,15 +4,13 @@
   <meta charset="utf-8">
   <title>Thomas J Bradley · Open Web Professor, Developer &amp; Writer—Ottawa, Canada</title>
   <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700,600" rel="stylesheet">
-  <link href="thomasjbradley.css" rel="stylesheet">
+  <link href="css/theme.css" rel="stylesheet">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
 </head>
 <body>
 
-<header role="banner" class="module" id="top">
-  <div class="mod mod-4 intro">
-    <p class="my-why">I believe that everybody should perpetually <strong>learn</strong>, <strong>try</strong>, <strong>build</strong>, <strong>break</strong>, <span title="and">&amp;</span> <strong>fix</strong> things—the open web is the perfect platform for exactly that.</p>
-  </div>
-  <div class="mod mod-4 intro">
+<header role="banner" class="module module-wide clearfix" id="top">
+  <div class="box intro">
     <h1 class="site-title"><a href="/">Thomas J Bradley<i class="logo"><i></i><i></i></i></a></h1>
     <nav class="nav-prime">
       <ul>
@@ -34,12 +32,20 @@
       </ul>
     </nav>
   </div>
+  <div class="box intro">
+    <p class="my-why">I believe that everybody should perpetually <strong>learn</strong>, <strong>try</strong>, <strong>build</strong>, <strong>break</strong>, <span title="and">&amp;</span> <strong>fix</strong> things—the open web is the perfect platform for exactly that.</p>
+  </div>
 </header>
 
-<div class="mod-wrapper" role="main">
+<div class="main" role="main">
 
-  <article class="module" id="professor">
-    <div class="mod mod-2">
+  <article class="module module-feature clearfix" id="professor">
+    <header class="unit primary">
+      <h2 class="mod-title">Professor</h2>
+      <p class="mod-why"><strong>Learning new stuff kicks ass.</strong> Reading design books, following development tutorials, watching professional presentations, or completing challenging tasks—anything to fill my brain. <strong>I want to inspire the passion for learning and creating in others</strong>; the best way to do that is to teach.</p>
+      <div class="btn-group"><a href="http://students.thomasjbradley.ca" class="btn">Student Resources ⇢</a></div>
+    </header>
+    <div class="unit feature">
       <div class="book-info book-feature">
         <h3 class="book-title">Blast Off with Web Development</h3>
         <span class="book">
@@ -49,12 +55,7 @@
         <strong>Coming Soon</strong>
       </div>
     </div>
-    <header class="mod mod-3">
-      <h2 class="mod-title">Professor</h2>
-      <p class="mod-why"><strong>Learning new stuff kicks ass.</strong> Reading design books, following development tutorials, watching professional presentations, or completing challenging tasks—anything to fill my brain. <strong>I want to inspire the passion for learning and creating in others</strong>; the best way to do that is to teach.</p>
-      <div class="btn-group"><a href="http://students.thomasjbradley.ca" class="btn">Student Resources ⇢</a></div>
-    </header>
-    <div class="mod mod-3">
+    <div class="unit secondary">
       <h3 class="mod-nohead"><em>Professor of The Open Web</em> Media <span title="and">&amp;</span> Design School, <a href="http://www.algonquincollege.com" rel="external">Algonquin College</a></h3>
       <p>HTML, CSS, Javascript, PHP &amp; WordPress</p>
 
@@ -69,13 +70,13 @@
     </div>
   </article>
 
-  <article class="module" id="developer">
-    <header class="mod mod-3">
+  <article class="module clearfix" id="developer">
+    <header class="unit primary">
       <h2 class="mod-title">Developer</h2>
       <p class="mod-why">Lego rocks my socks! The <b>Open Web Platform</b> is just like Lego blocks: <strong>connecting random pieces together in varying imaginative ways</strong> to make awesome <del>spaceships</del> web projects. The Web empowers humans in every nook and cranny of the world, and I endeavour to make elegant and accessible web projects—for every human.</p>
       <div class="btn-group"><a href="http://thomasjbradley.ca/lab" class="btn">Lab Projects ⇢</a></div>
     </header>
-    <div class="mod mod-2">
+    <div class="unit secondary">
       <blockquote class="testimonial">
         <p>Thomas went above and beyond my expectations. Not only was I blown away when he launched my website, but he was also a pleasure to work with. He was readily available at any time; came up with creative, unique solutions to any technical challenges we met; and walked me through the process in a clear, straightforward manner. He is now my go-to person for web development, and I wholeheartedly recommend him to anyone looking to launch a first-rate website.</p>
         <cite class="testimonial-author">— <a href="http://amandasage.ca" rel="external">Amanda Sage, Sage Words</a></cite>
@@ -85,7 +86,7 @@
         <li><a href="#">Next ⇢</a></li>
       </ul>
     </div>
-    <div class="mod mod-3 clearfix">
+    <div class="unit tertiary clearfix">
       <div class="col">
         <h3 class="mod-nohead">Notable Clients</h3>
         <ol class="alt-list">
@@ -125,8 +126,13 @@
     </div>
   </article>
 
-  <article class="module" id="writer">
-    <div class="mod mod-2">
+  <article class="module module-feature clearfix" id="writer">
+    <header class="unit primary">
+      <h2 class="mod-title">Writer</h2>
+      <p class="mod-why">Words are like ninjas: full of subtlety and surprise. I love reading words, whether they’re in a <strong>swashbuckling space opera</strong>, in a challenging essay, or in thorough documentation. <strong>I create punctuated phrases</strong>, either in the English language or in a programming language—the keyboard is my bestie.</p>
+      <div class="btn-group"><a href="/articles" class="btn">Articles <span title="and">&amp;</span> Essays ⇢</a></div>
+    </header>
+    <div class="unit feature">
       <div class="book-info book-feature">
         <h3 class="book-title">High, Low, Over <span title="and">&amp;</span> Under</h3>
         <span class="book">
@@ -136,12 +142,7 @@
         <strong>Purchase Soon</strong>
       </div>
     </div>
-    <header class="mod mod-3">
-      <h2 class="mod-title">Writer</h2>
-      <p class="mod-why">Words are like ninjas: full of subtlety and surprise. I love reading words, whether they’re in a <strong>swashbuckling space opera</strong>, in a challenging essay, or in thorough documentation. <strong>I create punctuated phrases</strong>, either in the English language or in a programming language—the keyboard is my bestie.</p>
-      <div class="btn-group"><a href="/articles" class="btn">Articles <span title="and">&amp;</span> Essays ⇢</a></div>
-    </header>
-    <div class="mod mod-3">
+    <div class="unit secondary">
       <h3 class="mod-nohead">Recent Articles <span title="and">&amp;</span> Essays</h3>
       <dl class="hatom">
         <dt><a href="#">Marking Up Code for the Ambitious</a></dt>
@@ -169,7 +170,7 @@
 
 <span class="rocketeer"><b></b><i></i></span>
 
-<script src="thomasjbradley.js"></script>
+<script src="js/scripts.js"></script>
 
 </body>
 </html>
