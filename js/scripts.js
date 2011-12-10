@@ -1,3 +1,15 @@
+function getOffsetLeft (elem) {
+  var offset = elem.offsetLeft
+    , parent = elem.offsetParent
+
+  while (parent.tagName != 'BODY') {
+    offset += parent.offsetLeft
+    parent = parent.offsetParent
+  }
+
+  return offset
+}
+
 var animatedScrollTo = (function () {
   var scrollAnim = null
     , currentScrollTop = -1
@@ -62,6 +74,7 @@ document.getElementsByClassName('top')[0].addEventListener('click', function (e)
 
   e.preventDefault()
 
+  rocket.style.left = getOffsetLeft(this) + 'px'
   rocket.className += rocketClass
   rocket.addEventListener('webkitAnimationEnd', function (e) {
     rocket.className = rocket.className.replace(rocketClass, '')

@@ -1,53 +1,3 @@
-[role="contentinfo"]
-  padding 1.8em 2.4em 1.8em
-
-  background site-bg-dark url("../img/pattern-slant-dark-rt.png") repeat left top
-
-  color button-muted-light
-  font-size 0.75em
-
-.copyright
-  float right
-  margin 0
-  padding 0 38px 0 0
-  position relative
-
-.contact
-  float left
-  margin 0
-  padding 0
-
-  & li
-    display inline-block
-    margin-right 1em
-
-  & li:before
-    left -0.75em
-
-  & li:first-child:before
-    content ""
-
-.top
-.top:link
-.top:visited
-  height 32px
-  overflow hidden
-  position absolute
-  right 0
-  top -7px
-  width 17px
-
-  background transparent url("../img/rocket.png") no-repeat left -48px
-  border 0
-  transition none
-
-  text-indent -999em
-
-.top:hover
-.top:focus
-.top:active
-  background-position -17px -48px
-
 @keyframes smoke
   0%
     background-position 0 -80px
@@ -83,6 +33,54 @@
     bottom 350px
     opacity 0
 
+[role="contentinfo"]
+  padding 1.8em 2.5% 1.8em
+
+  background site-bg-dark url("../img/pattern-slant-dark-rt.png") repeat left top
+
+  color button-muted-light
+  font-size 0.75em
+  text-align center
+
+.copyright
+  margin 1.5em 0 0
+  padding 0
+  position relative
+
+.contact
+  margin 0
+  padding 0
+
+  & li
+    display inline-block
+    margin-right 1em
+
+  & li:before
+    left -0.75em
+
+  & li:first-child:before
+    content ""
+
+.top
+.top:link
+.top:visited
+  display block
+  height 32px
+  margin 1.5em auto 0
+  overflow hidden
+  width 17px
+
+  background transparent url("../img/rocket.png") no-repeat left -48px
+  border 0
+  transition none
+
+  text-indent -999em
+
+.top:hover
+.top:focus
+.top:active
+  background-position -17px -48px
+
 .rocketeer
   bottom 10px
   height 64px
@@ -90,7 +88,6 @@
   opacity 0
   overflow hidden
   position fixed
-  right 1.8em
   width 17px
   z-index 1000
 
@@ -114,3 +111,20 @@
   display block
 
   animation rocket 650ms linear
+
+@media all and (min-width: 800px)
+  .copyright
+    float right
+    margin 0
+    padding 0 38px 0 0
+
+  .contact
+    float left
+
+  .top
+  .top:link
+  .top:visited
+    margin 0
+    position absolute
+    right 0
+    top -7px

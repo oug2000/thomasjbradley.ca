@@ -52,7 +52,7 @@ td{vertical-align:top}
 .clearfix:before,.clearfix:after{content:"";display:table}
 .clearfix:after{clear:both}
 .clearfix{zoom:1}
-html{height:100%;margin:0;padding:0;background:#dbd3cc url("img/pattern-slant-rt.png") repeat left top;color:#41403d;font:normal 100%/1.5 "Open Sans",sans-serif}
+html{height:100%;margin:0;padding:0;background:#dbd3cc url("../img/pattern-slant-rt.png") repeat left top;color:#41403d;font:normal 100%/1.5 "Open Sans",sans-serif}
 body{margin:0;min-height:100%;padding:0;font:300 100%/1.5 "Open Sans",sans-serif}
 p{margin:0 0 1.5em;padding:0}
 a,a:link,a:visited{border-bottom:.1em solid rgba(207,65,15,0.20);-moz-transition:all 150ms linear;-ms-transition:all 150ms linear;-o-transition:all 150ms linear;-webkit-transition:all 150ms linear;transition:all 150ms linear;color:#cf410f;text-decoration:none}
@@ -150,19 +150,22 @@ del{color:#9b9691}
 .project{display:block;margin:1.5em 0;border:0;text-align:center}
 .project:before{content:""}
 .project-img{display:block;margin:0 0 .75em;width:100%;border:1px solid #c1bdb7;-moz-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-ms-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-o-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-webkit-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);box-shadow:0 15px 20px -20px rgba(0,0,0,0.50)}
-[role="contentinfo"]{padding:1.8em 2.4em 1.8em;background:#beb4aa url("../img/pattern-slant-dark-rt.png") repeat left top;color:#948778;font-size:.75em}
-.copyright{float:right;margin:0;padding:0 38px 0 0;position:relative}
-.contact{float:left;margin:0;padding:0;}
+[role="contentinfo"]{padding:1.8em 2.5% 1.8em;background:#beb4aa url("../img/pattern-slant-dark-rt.png") repeat left top;color:#948778;font-size:.75em;text-align:center}
+.copyright{margin:1.5em 0 0;padding:0;position:relative}
+.contact{margin:0;padding:0;}
 .contact li{display:inline-block;margin-right:1em}
 .contact li:before{left:-.75em}
 .contact li:first-child:before{content:""}
-.top,.top:link,.top:visited{height:32px;overflow:hidden;position:absolute;right:0;top:-7px;width:17px;background:transparent url("../img/rocket.png") no-repeat left -48px;border:0;-moz-transition:none;-ms-transition:none;-o-transition:none;-webkit-transition:none;transition:none;text-indent:-999em}
+.top,.top:link,.top:visited{display:block;height:32px;margin:1.5em auto 0;overflow:hidden;width:17px;background:transparent url("../img/rocket.png") no-repeat left -48px;border:0;-moz-transition:none;-ms-transition:none;-o-transition:none;-webkit-transition:none;transition:none;text-indent:-999em}
 .top:hover,.top:focus,.top:active{background-position:-17px -48px}
-.rocketeer{bottom:10px;height:64px;display:none;opacity:0;overflow:hidden;position:fixed;right:1.8em;width:17px;z-index:1000;}
+.rocketeer{bottom:10px;height:64px;display:none;opacity:0;overflow:hidden;position:fixed;width:17px;z-index:1000;}
 .rocketeer b,.rocketeer i{height:32px;left:0;position:absolute;top:0;width:17px;background:transparent url("../img/rocket.png") no-repeat -17px -48px}
 .rocketeer i{top:32px;background-position:0 -80px;-moz-animation:smoke 350ms linear infinite;-ms-animation:smoke 350ms linear infinite;-o-animation:smoke 350ms linear infinite;-webkit-animation:smoke 350ms linear infinite;animation:smoke 350ms linear infinite}
 .rocketeer-go{display:block;-moz-animation:rocket 650ms linear;-ms-animation:rocket 650ms linear;-o-animation:rocket 650ms linear;-webkit-animation:rocket 650ms linear;animation:rocket 650ms linear}
-@-moz-keyframes smoke{0%{background-position:0 -80px}
+@media all and (min-width: 800px){.copyright{float:right;margin:0;padding:0 38px 0 0}
+.contact{float:left}
+.top,.top:link,.top:visited{margin:0;position:absolute;right:0;top:-7px}
+}@-moz-keyframes smoke{0%{background-position:0 -80px}
 24.9%{background-position:0 -80px}
 25%{background-position:-17px -80px}
 49.9%{background-position:-17px -80px}
