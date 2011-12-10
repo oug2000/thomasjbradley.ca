@@ -73,21 +73,23 @@ del{color:#9b9691}
 .unit,.box{display:inline;float:left;position:relative;width:100%}
 .unit{padding-bottom:3.6em;padding-top:7.5em}
 .box{float:right}
-.secondary{float:right}
+.secondary{float:right;padding-top:0}
+.feature{padding-top:3em}
+.tertiary{padding-top:0}
 @media all and (min-width: 700px){.box{margin-right:.4%;width:48.4%}
 .box:last-child{float:left;margin-right:0}
 .module-wide .box{width:100%}
 .primary{width:48.6%}
-.secondary{margin-right:.4%;width:48.6%}
+.secondary{margin-right:.4%;padding-top:7.5em;width:48.6%}
 .tertiary{clear:left}
 .module-feature{padding-left:26.6%}
 .module-feature .primary{width:100%}
 .module-feature .secondary{padding-top:0;width:100%}
-.feature{left:2.5%;position:absolute;width:20%}
+.feature{left:2.5%;padding-top:7.5em;position:absolute;width:20%}
 }@media all and (min-width: 1150px){.box,.module-wide .box{width:48.4%}
 .primary{width:35.7%}
 .secondary{float:left;margin-left:2.5%;width:23.1%}
-.tertiary{clear:none;float:right;margin-right:.6%;width:35.9%}
+.tertiary{clear:none;float:right;margin-right:.6%;padding-top:7.5em;width:35.9%}
 .module-feature{padding-right:39.4%}
 .module-feature .secondary{margin-left:0;margin-right:-100%;padding-top:7.5em;right:-6.8%;width:100%}
 .feature{left:auto;margin-left:-106.8%;position:relative;right:64.5%;width:64.5%}
@@ -104,7 +106,7 @@ del{color:#9b9691}
 .nav-prime ul{margin:0}
 .nav-prime li{margin:0;padding:.5em;position:relative;z-index:100;border-bottom:1px solid #ae6143;font-size:1.125em;text-align:center;vertical-align:top}
 .nav-prime li:first-child{margin-left:0}
-.nav-prime li:last-child{padding-right:0;border-right:0}
+.nav-prime li:last-child{padding-right:0;border-bottom:0}
 .nav-prime li:before{content:""}
 .nav-prime a,.nav-prime a:link,.nav-prime a:visited{display:inline-block;border:0;color:#dbd3cc;font-weight:600}
 .nav-prime a:hover,.nav-prime a:focus,.nav-prime a:active{color:#fff}
@@ -121,11 +123,12 @@ del{color:#9b9691}
 .nav-prime{margin-left:2em;padding:0;position:relative;}
 .nav-prime ul{padding-right:1.8em}
 .nav-prime li{display:inline-block;padding:.1em .75em 0;border-bottom:0;border-right:1px solid #ae6143}
+.nav-prime li:last-child{border-right:0}
 .nav-prime:before,.nav-prime > ul:before{content:"";left:-1.8em;position:absolute;top:0;z-index:1;border:1.8em solid transparent;border-top-color:#c86f4d}
 .nav-prime > ul:before{bottom:0;top:auto;border-top-color:transparent;border-bottom-color:#c86f4d}
 .my-why{font-size:1.875em}
 }@media all and (min-width: 1150px){.site-title{float:right;margin-right:6.4%;text-align:right}
-.nav-prime{clear:right;float:right;margin-left:0;padding-right:11.6%;text-align:right}
+.nav-prime{clear:right;float:right;margin-left:0;padding-left:1em;padding-right:11.6%;text-align:right}
 .my-why{margin-left:6.4%;padding:0;text-align:left}
 }.col{float:right;width:43%}
 .col:first-child{float:left;padding-left:0}
