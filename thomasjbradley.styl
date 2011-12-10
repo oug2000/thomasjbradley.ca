@@ -1,0 +1,644 @@
+@import 'nib'
+@import 'normalize'
+
+vendor-prefixes = moz ms o webkit official
+support-for-ie = false
+
+site-bg = #dbd3cc
+site-bg-dark = #beb4aa
+link-bright = #ed4a11
+link-normal = #cf410f
+link-medium = #b5390d
+link-muted = #c86f4d
+link-muted-dark = #ae6143
+button-muted = #4f3c25
+button-muted-light = #948778
+text-medium = #9b9691
+text-light = #c1bdb7
+text-dark = #41403d
+
+open-quote()
+  content "“"
+  left -0.2em
+  position absolute
+  top -0.2em
+  z-index 1
+
+  color text-light
+  font-size 3em
+  line-height 1
+
+html
+  height 100%
+  margin 0
+  padding 0
+
+  //background-color site-bg
+  //background-image url("img/baseline.png")
+  background site-bg url("img/pattern-slant-rt.png") repeat left top
+
+  color text-dark
+  font normal 100%/1.5 "Open Sans",sans-serif
+
+body
+  margin 0
+  min-height 100%
+  padding 0
+
+  font 300 100%/1.5 "Open Sans",sans-serif
+
+p
+  margin 0 0 1.5em
+  padding 0
+
+a
+a:link
+a:visited
+  border-bottom 0.1em solid rgba(link-normal,0.2)
+  transition all 150ms linear
+
+  color link-normal
+  text-decoration none
+
+a:hover
+a:focus
+a:active
+  border-color link-bright
+
+  color link-bright
+
+ul
+.alt-list
+  margin 0 0 1.5em
+  padding 0
+
+  list-style-type none
+
+  & li
+    position relative
+
+  & li:before
+  .alt-list li:before
+    content "•"
+    left -0.6em
+    position absolute
+    width 0.5em
+
+    color text-medium
+    font-size 1.5em
+    line-height 1.1
+    text-align right
+
+strong
+b
+  font-weight 400
+
+del
+  color text-medium
+
+.btn-group
+  text-align center
+
+.btn
+.btn:link
+.btn:visited
+  display inline-block
+  padding 0.5em 1em 0.7em
+  position relative
+
+  background-color button-muted-light
+  border 0
+  border-radius 4px
+  transition all 150ms linear
+
+  color #fff
+  font-size 1.125em
+  font-weight 400
+
+.btn:hover,
+.btn:focus,
+.btn:active
+  background-color link-normal
+
+.btn:active
+  top 1px
+
+  box-shadow inset 0 0 5px rgba(0,0,0,0.4)
+
+[title="and"]
+  font-family: Baskerville,Palatino,"Book Antiqua",serif;
+  font-style italic
+  font-weight normal
+
+.col
+  float right
+  width 43%
+
+.col:first-child
+  float left
+  padding-left 0
+
+.mod-wrapper
+  position relative
+  z-index 25
+  box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
+
+.module
+  display table
+  position relative
+  table-layout fixed
+  vertical-align top
+  width 100%
+  z-index 30
+
+  border-collapse collapse
+  box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
+
+.mod
+  display table-cell
+  padding 7.5em 2.4em 3.6em 2.4em
+  width 12.5%
+  vertical-align top
+
+.mod-2
+  width 25%
+
+.mod-3
+  width 37.5%
+
+.mod-4
+  width 50%
+
+.mod-5
+  width 62.5%
+
+.mod-6
+  width 75%
+
+.mod-7
+  width 87.5
+
+.mod-title
+  margin -1.7em 0 0
+  padding 0
+  position absolute
+
+  font-size 3em
+  font-weight 600
+
+.mod-why
+  margin-top -0.2em
+
+  font-size 1.25em
+  line-height 1.6
+
+.mod-nohead
+  margin 0
+  //margin 0 0 1.4em
+  padding 0
+
+  font-size 1.125em
+  line-height 1.37
+
+  & em
+    display block
+
+    font-style normal
+
+[role="banner"]
+  margin 0
+  padding 2.2em 2.4em 0
+
+  background site-bg-dark url("img/pattern-slant-dark-rt.png") repeat left top
+
+  color button-muted
+
+.site-title
+  float right
+  margin 0
+  padding 0
+
+  font-weight 600
+  line-height 1.5
+  text-align right
+
+  & .logo
+
+  & .logo
+  & .logo i:first-child
+  & .logo i + i
+    height 47px
+    position absolute
+    right 0
+    width 25px
+
+  & .logo i:first-child
+  & .logo i + i
+    left 0
+
+    background transparent url("img/rocket.png") no-repeat left top
+    transition all 150ms linear 10ms
+
+  & .logo i + i
+    left auto
+    right 0
+    width 0
+
+    background-position right top
+    transition all 150ms linear
+
+  & a
+  & a:link
+  & a:visited
+    display block
+    padding-right 55px
+    position relative
+
+    border 0
+
+    color button-muted
+
+  & a:hover .logo i:first-child
+  & a:focus .logo i:first-child
+  & a:active .logo i:first-child
+    width 0
+
+  & a:hover .logo i + i
+  & a:focus .logo i + i
+  & a:active .logo i + i
+    width 25px
+
+.nav-prime
+  clear right
+  float right
+  margin 2.3em -2.4em 0 0
+  padding 0 2.4em 0 0
+  position relative
+
+  background-color link-muted
+  background-image linear-gradient(right, rgba(link-muted-dark, 0.9), link-muted 30%)
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.3)
+
+  text-align right
+  vertical-align top
+
+  & ul
+    margin 0
+    padding-right 55px
+
+  & li
+    display inline-block
+    margin 0
+    padding 0.1em 0.75em 0
+    position relative
+    z-index 100
+
+    border-right 1px solid link-muted-dark
+
+    font-size 1.125em
+    text-align center
+    vertical-align top
+
+  & li:first-child
+    margin-left 0
+
+  & li:last-child
+    padding-right 0
+
+    border-right 0
+
+  & li:before
+    content ""
+
+  & a
+  & a:link
+  & a:visited
+    display inline-block
+
+    border 0
+
+    color site-bg
+    font-weight 600
+
+  & a:hover
+  & a:focus
+  & a:active
+    color #fff
+
+  & li ul
+    padding 0
+
+    & li
+      margin 0 0 0 0.4em
+      padding 0 0 0 0.1em
+
+      border 0
+
+      font-size 0.75em
+
+      & a
+      & a:link
+      & a:visited
+        font-weight 300
+
+      & a.current:link
+        border-bottom 1px solid site-bg
+
+    & li:before
+      content "·"
+
+      color site-bg
+
+    & li:first-child
+      margin 0
+      padding 0
+
+    & li:first-child:before
+      content ""
+
+.nav-prime:before
+.nav-prime > ul:before
+  content ""
+  left -1.8em
+  position absolute
+  top 0
+  z-index 1
+
+  border 1.8em solid transparent
+  border-top-color link-muted
+
+.nav-prime > ul:before
+  bottom 0
+  top auto
+
+  border-top-color transparent
+  border-bottom-color link-muted
+
+.intro
+  padding-bottom 0
+  padding-top 2.3em
+
+  line-height 1.6
+
+.my-why
+  max-width 25em
+
+  font-size 1.875em
+
+#professor
+  z-index 20
+
+  background transparent url("img/pattern-90-lt.png") repeat left top
+
+#developer
+  z-index 15
+
+  background transparent url("img/pattern-90-rt.png") repeat left top
+
+#writer
+  z-index 10
+
+  background transparent url("img/pattern-slant-lt.png") repeat left top
+
+.testimonial
+  margin 0 0 1.5em
+  padding 0
+  position relative
+
+.testimonial:before
+  open-quote()
+
+.testimonial p
+    margin 0
+    padding 0
+    position relative
+    z-index 5
+
+    font-style italic
+
+.testimonial p:after
+  open-quote()
+  bottom -0.4em
+  content "”"
+  left auto
+  right 0.1em
+  top auto
+
+.testimonial-author
+  display block
+  margin 0
+
+  font-style normal
+  text-align right
+
+.testimonial-controls
+  margin 0
+  padding 0
+
+  font-size 0.875em
+  line-height 1.9
+  list-style-type none
+  text-align center
+  text-transform uppercase
+
+.testimonial-controls li
+  display inline-block
+  padding 0
+
+.testimonial-controls li:before
+  content ""
+
+.testimonial-controls li:first-child:after
+  content "•"
+  display inline-block
+  padding 0 0.5em 0 0.7em
+
+  color text-medium
+
+.testimonial-controls a
+.testimonial-controls a:link
+.testimonial-controls a:visited
+    border 0
+
+.hatom
+  margin 0 0 1.5em
+  padding 0
+
+  & dt
+    font-weight 400
+
+  & dd
+    margin 0 0 1.5em
+    padding 0
+
+.book-info
+  text-align center
+
+.book-feature
+  margin-top -2.9em
+
+.book
+.book:link,
+.book:visited
+  display block
+  margin-bottom 1.5em
+  width 100%
+
+  border 0
+
+.book-title
+  margin 0 0 1.4em
+  padding 0
+
+  font-size 1.125em
+  line-height 1.37
+
+.book-cover
+  display block
+  margin 0 auto
+  width 70%
+
+  border 1px solid text-light
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+.book-desc
+  display block
+  margin-top 1.5em
+
+  color text-dark
+
+.project
+  display block
+  margin 1.5em 0
+
+  border 0
+
+  text-align center
+
+.project:before
+  content ""
+
+.project-img
+  display block
+  margin 0 0 0.75em
+  width 100%
+
+  border 1px solid text-light
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+[role="contentinfo"]
+  padding 1.8em 2.4em 3.4em
+
+  background site-bg-dark url("img/pattern-slant-dark-rt.png") repeat left top
+
+  color button-muted-light
+  font-size 0.75em
+
+.copyright
+  float right
+  margin 0
+  padding 0 38px 0 0
+  position relative
+
+.contact
+  float left
+  margin 0
+  padding 0
+
+  & li
+    display inline-block
+    margin-right 1em
+
+  & li:before
+    left -0.75em
+
+  & li:first-child:before
+    content ""
+
+.top
+.top:link
+.top:visited
+  height 32px
+  overflow hidden
+  position absolute
+  right 0
+  top -7px
+  width 17px
+
+  background transparent url("img/rocket.png") no-repeat left -48px
+  border 0
+  transition none
+
+  text-indent -999em
+
+.top:hover
+.top:focus
+.top:active
+  background-position -17px -48px
+
+@keyframes smoke
+  0%
+    background-position 0 -80px
+  24.9%
+    background-position 0 -80px
+  25%
+    background-position -17px -80px
+  49.9%
+    background-position -17px -80px
+  50%
+    background-position -34px -80px
+  74.9%
+    background-position -34px -80px
+  75%
+    background-position -51px -80px
+  99.9%
+    background-position -51px -80px
+
+@keyframes rocket
+  0%
+    bottom 10px
+    opacity 0
+  5%
+    opacity 1
+  25%
+    bottom 30px
+  50%
+    bottom 100px
+  75%
+    bottom 200px
+    opacity 1
+  100%
+    bottom 350px
+    opacity 0
+
+.rocketeer
+  bottom 10px
+  height 64px
+  display none
+  opacity 0
+  overflow hidden
+  position fixed
+  right 1.8em
+  width 17px
+  z-index 1000
+
+  & b
+  & i
+    height 32px
+    left 0
+    position absolute
+    top 0
+    width 17px
+
+    background transparent url("img/rocket.png") no-repeat -17px -48px
+
+  & i
+    top 32px
+
+    background-position 0 -80px
+    animation smoke 350ms linear infinite
+
+.rocketeer-go
+  display block
+
+  animation rocket 650ms linear
