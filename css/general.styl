@@ -37,15 +37,31 @@ p
 a
 a:link
 a:visited
+.btn-link
+  display inline
+  margin 0
+  padding 0
+
+  background-color transparent
+  border 0
   border-bottom 0.1em solid rgba(link-normal,0.2)
   transition all 150ms linear
 
   color link-normal
+  font inherit
   text-decoration none
+
+.btn-link
+  border 0
+
+  text-transform uppercase
 
 a:hover
 a:focus
 a:active
+.btn-link:hover
+.btn-link:focus
+.btn-link:active
   border-color link-bright
 
   color link-bright
