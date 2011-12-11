@@ -28,10 +28,12 @@ function removeClass (elem, newClass) {
   elem.className = elem.className.replace(newClass, '').replace(/\s+/, ' ').replace(/\s+$/, '').replace(/^\s+/, '')
 }
 
-function addSwipeListener (elem, callback) {
+var Swiper = (function () {
   var threshold = {x : 10, y : 50}
     , directions = {left : 'left', right : 'right'}
     , returnObject = {target : elem, direction : directions.left}
+    , callback
+    , elem
     , originalCoord = {x : 0, y : 0}
     , finalCoord = {x : 0, y : 0}
     , changeX = 0
@@ -86,10 +88,30 @@ function addSwipeListener (elem, callback) {
     goingVertical = 0
   }
 
-  elem.addEventListener('touchstart', touchStartHandler, false)
-  elem.addEventListener('touchmove', touchMoveHandler, false)
-  elem.addEventListener('touchend', touchEndHandler, false)
-}
+  function addSwipeListener(el, cb) {
+    callback = cb
+    elem = el
+
+    elem.addEventListener('touchstart', touchStartHandler, false)
+    elem.addEventListener('touchmove', touchMoveHandler, false)
+    elem.addEventListener('touchend', touchEndHandler, false)
+  }
+
+  function removeSwipeListener(el) {
+    callback = null
+    elem = null
+
+    el.removeEventListener('touchstart', touchStartHandler)
+    el.removeEventListener('touchmove', touchMoveHandler)
+    el.removeEventListener('touchend', touchEndHandler)
+  }
+
+  return {
+    on : addSwipeListener
+    , off : removeSwipeListener
+    , noSwiping : removeSwipeListener
+  }
+}())
 
 var animatedScrollTo = (function () {
   var scrollAnim
@@ -233,7 +255,7 @@ var animatedScrollTo = (function () {
       testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
 
       if (Modernizr.touch) {
-        addSwipeListener(testimonialGroups[i], function (e) {
+        Swiper.on(testimonialGroups[i], function (e) {
           if (e.direction == 'left') {
             nextTestimonial()
           } else {
