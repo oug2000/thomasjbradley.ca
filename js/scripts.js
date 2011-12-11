@@ -94,7 +94,7 @@ function addSwipeListener (elem, callback) {
 var animatedScrollTo = (function () {
   var scrollAnim
     , currentScrollTop = -1
-    , fpms = 1000 / 60 // fps
+    , speed = 1000 / 60 // fps
 
   function getOffsetTop (elem) {
     var offset = elem.offsetTop
@@ -116,7 +116,7 @@ var animatedScrollTo = (function () {
     var elemOffsetTop = getOffsetTop(elem)
       , scrollUp = elemOffsetTop < getScrollTop()
       , scrollDistance = scrollUp ? getScrollTop() - elemOffsetTop : elemOffsetTop - getScrollTop()
-      , scrollDiff = scrollDistance / (time / fpms)
+      , scrollDiff = scrollDistance / (time / speed)
 
     currentScrollTop = -1
 
@@ -132,7 +132,7 @@ var animatedScrollTo = (function () {
         window.scrollTo(0, elemOffsetTop)
         callback && callback()
       }
-    }, fpms)
+    }, speed)
   }
 
   return scrollBrowser
