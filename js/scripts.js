@@ -235,13 +235,15 @@ var animatedScrollTo = (function () {
       testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', nextTestimonial, false)
       testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
 
-      addSwipeListener(testimonialGroups[i], function (e) {
-        if (e.direction == 'left') {
-          nextTestimonial()
-        } else {
-          prevTestimonial()
-        }
-      })
+      if (Modernizr.touch) {
+        addSwipeListener(testimonialGroups[i], function (e) {
+          if (e.direction == 'left') {
+            nextTestimonial()
+          } else {
+            prevTestimonial()
+          }
+        })
+      }
     }())
   }
 }())
