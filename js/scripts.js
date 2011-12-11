@@ -8,12 +8,13 @@ function navScroller (e) {
   })
 }
 
-function getOffsetLeft (elem) {
-  var offset = elem.offsetLeft
+function getOffset (elem) {
+  var offset = {left : elem.offsetLeft, top : elem.offsetTop}
     , parent = elem.offsetParent
 
   while (parent.tagName != 'BODY') {
-    offset += parent.offsetLeft
+    offset.left += parent.offsetLeft
+    offset.top += parent.offsetTop
     parent = parent.offsetParent
   }
 
@@ -40,15 +41,6 @@ var Swiper = (function () {
     , goingVertical = 0
     , callbackTimeout
 
-  function setVertical () {
-    if (goingVertical === 0) {
-      goingVertical = false
-
-      if (Math.abs(finalCoord.y - originalCoord.y) > Math.abs(finalCoord.x - originalCoord.x))
-        goingVertical = true
-    }
-  }
-
   function touchStartHandler (e) {
     originalCoord.x = e.targetTouches[0].pageX
     originalCoord.y = e.targetTouches[0].pageY
@@ -63,7 +55,13 @@ var Swiper = (function () {
   function touchMoveHandler (e) {
     finalCoord.x = e.targetTouches[0].pageX
     finalCoord.y = e.targetTouches[0].pageY
-    setVertical()
+
+    if (goingVertical === 0) {
+      goingVertical = false
+
+      if (Math.abs(finalCoord.y - originalCoord.y) > Math.abs(finalCoord.x - originalCoord.x))
+        goingVertical = true
+    }
 
     if (goingVertical === false)
       e.preventDefault()
@@ -111,6 +109,7 @@ var Swiper = (function () {
     , swipe : addSwipeListener
     , off : removeSwipeListener
     , noSwiping : removeSwipeListener
+    , directions : directions
   }
 }())
 
@@ -119,24 +118,12 @@ var animatedScrollTo = (function () {
     , currentScrollTop = -1
     , speed = 1000 / 60 // fps
 
-  function getOffsetTop (elem) {
-    var offset = elem.offsetTop
-      , parent = elem.offsetParent
-
-    while (parent.tagName != 'BODY') {
-      offset += parent.offsetTop
-      parent = parent.offsetParent
-    }
-
-    return offset
-  }
-
   function getScrollTop () {
     return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
   }
 
   function scrollBrowser (elem, time, callback) {
-    var elemOffsetTop = getOffsetTop(elem)
+    var elemOffsetTop = getOffset(elem).top
       , scrollUp = elemOffsetTop < getScrollTop()
       , scrollDistance = scrollUp ? getScrollTop() - elemOffsetTop : elemOffsetTop - getScrollTop()
       , scrollDiff = scrollDistance / (time / speed)
@@ -180,7 +167,7 @@ var animatedScrollTo = (function () {
     }
 
     e.preventDefault()
-    rocket.style.left = getOffsetLeft(this) + 'px'
+    rocket.style.left = getOffset(this).left + 'px'
     addClass(rocket, rocketClass)
     scrollUpTimer = setTimeout(animEndHandler, 500)
     animatedScrollTo(document.getElementById('top'), 500)
