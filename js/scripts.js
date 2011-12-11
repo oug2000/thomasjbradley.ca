@@ -30,6 +30,8 @@ function removeClass (elem, newClass) {
 
 function addSwipeListener (elem, callback) {
   var threshold = {x : 10, y : 50}
+    , directions = {left : 'left', right : 'right'}
+    , returnObject = {target : elem, direction : directions.left}
     , originalCoord = {x : 0, y : 0}
     , finalCoord = {x : 0, y : 0}
     , changeX = 0
@@ -73,9 +75,11 @@ function addSwipeListener (elem, callback) {
       if (Math.abs(changeX) > Math.abs(threshold.x)) {
         // Timeout stops the callback being fired if the tablet catches a scroll first
         // Stops weird paused transitions, they will then be triggered after scroll
-        callbackTimeout = setTimeout(function () { callback({target : elem, direction : 'left'}) }, 10)
+        returnObject.direction = directions.left
+        callbackTimeout = setTimeout(function () { callback(returnObject) }, 10)
       } else {
-        callbackTimeout = setTimeout(function () { callback({target : elem, direction : 'right'}) }, 10)
+        returnObject.direction = directions.right
+        callbackTimeout = setTimeout(function () { callback(returnObject) }, 10)
       }
     }
 
