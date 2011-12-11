@@ -72,20 +72,31 @@ var animatedScrollTo = (function () {
     , totalTestimonialGroups = testimonialGroups.length
     , i = 0
     , controls = document.getElementById('testimonial-controls-template').innerHTML
+    , rocket = document.getElementsByClassName('rocketeer')[0]
+    , animEndEventNames = {
+      'WebkitAnimation' : 'webkitAnimationEnd'
+      , 'MozAnimation' : 'mozAnimationEnd'
+      , 'OAnimation' : 'oAnimationEnd'
+      , 'msAnimation' : 'msAnimationEnd'
+      , 'animation' : 'AnimationEnd'
+    }
+    , animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
 
   document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
     var self = this
-      , rocket = document.getElementsByClassName('rocketeer')[0]
       , rocketClass = ' rocketeer-go'
+
+    function animEndHandler (e) {
+      rocket.className = rocket.className.replace(rocketClass, '')
+      window.location.hash = self.getAttribute('href')
+      rocket.removeEventListener(animEndEventName, animEndHandler)
+    }
 
     e.preventDefault()
 
     rocket.style.left = getOffsetLeft(this) + 'px'
     rocket.className += rocketClass
-    rocket.addEventListener('webkitAnimationEnd', function (e) {
-      rocket.className = rocket.className.replace(rocketClass, '')
-      window.location.hash = self.getAttribute('href')
-    })
+    rocket.addEventListener(animEndEventName, animEndHandler)
 
     animatedScrollTo(document.getElementById('top'), 500)
   })
