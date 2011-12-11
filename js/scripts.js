@@ -20,6 +20,14 @@ function getOffsetLeft (elem) {
   return offset
 }
 
+function addClass (elem, newClass) {
+  elem.className += ' ' + newClass
+}
+
+function removeClass (elem, newClass) {
+  elem.className = elem.className.replace(newClass, '').replace(/\s+/, ' ').replace(/\s+$/, '').replace(/^\s+/, '')
+}
+
 var animatedScrollTo = (function () {
   var scrollAnim = null
     , currentScrollTop = -1
@@ -84,20 +92,18 @@ var animatedScrollTo = (function () {
 
   document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
     var self = this
-      , rocketClass = ' rocketeer-go'
+      , rocketClass = 'rocketeer-go'
 
     function animEndHandler (e) {
-      rocket.className = rocket.className.replace(rocketClass, '')
+      removeClass(rocket, rocketClass)
       window.location.hash = self.getAttribute('href')
       rocket.removeEventListener(animEndEventName, animEndHandler, false)
     }
 
     e.preventDefault()
-
     rocket.style.left = getOffsetLeft(this) + 'px'
-    rocket.className += rocketClass
+    addClass(rocket, rocketClass)
     rocket.addEventListener(animEndEventName, animEndHandler, false)
-
     animatedScrollTo(document.getElementById('top'), 500)
   }, false)
 
@@ -113,6 +119,7 @@ var animatedScrollTo = (function () {
       , tempClone = null
       , j = 0
       , current = 0
+      , currentClass = 'testimonial-current'
 
       if (totalTestimonials <= 1) return
 
@@ -132,26 +139,26 @@ var animatedScrollTo = (function () {
         document.body.removeChild(tempClone)
 
         if (j > 0) {
-          testimonials[j].style.opacity = 0
+          testimonials[j].style.opacity = ''
           testimonials[j].setAttribute('aria-hidden', true)
         }
       }
 
-      testimonialGroups[i].appendChild(tallestClone)
-      testimonialGroups[i].className += ' testimonials-go'
+      testimonialGroups[i].getElementsByClassName('testimonials-list')[0].appendChild(tallestClone)
+      addClass(testimonialGroups[i], 'testimonials-go')
       tallestClone.style.position = 'relative'
       tallestClone.style.width = 'auto'
       tallestClone.style.top = 'auto'
       tallestClone.setAttribute('aria-hidden', true)
-      tallestClone.className += ' testimonial-spacer'
+      addClass(tallestClone, 'testimonial-spacer')
       testimonialGroups[i].innerHTML += controls
 
       testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', function () {
         var next = (current + 1 > totalTestimonials - 1) ? 0 : current + 1
 
-        testimonials[next].style.opacity = 1
+        addClass(testimonials[next], currentClass)
         testimonials[next].setAttribute('aria-hidden', false)
-        testimonials[current].style.opacity = 0
+        removeClass(testimonials[current], currentClass)
         testimonials[current].setAttribute('aria-hidden', true)
         current = next
       }, false)
@@ -159,9 +166,9 @@ var animatedScrollTo = (function () {
       testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', function () {
         var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
 
-        testimonials[prev].style.opacity = 1
+        addClass(testimonials[prev], currentClass)
         testimonials[prev].setAttribute('aria-hidden', false)
-        testimonials[current].style.opacity = 0
+        removeClass(testimonials[current], currentClass)
         testimonials[current].setAttribute('aria-hidden', true)
         current = prev
       }, false)

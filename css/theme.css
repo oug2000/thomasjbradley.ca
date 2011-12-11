@@ -139,11 +139,11 @@ del{color:#9b9691}
 #professor{z-index:20;background:transparent url("../img/pattern-90-lt.png") repeat left top}
 #developer{z-index:15;background:transparent url("../img/pattern-90-rt.png") repeat left top}
 #writer{z-index:10;background:transparent url("../img/pattern-slant-lt.png") repeat left top}
-.testimonials{position:relative}
+.testimonials,.testimonials-list{position:relative}
 .testimonial{display:none;margin:0 0 1.5em;opacity:0;padding:0;position:relative;-moz-transition:opacity 250ms linear;-ms-transition:opacity 250ms linear;-o-transition:opacity 250ms linear;-webkit-transition:opacity 250ms linear;transition:opacity 250ms linear}
-.testimonial:first-child{display:block;opacity:1;}
-.testimonials-go .testimonial{left:0;position:absolute;top:0;width:100%}
-.testimonial-spacer{position:relative;visibility:hidden}
+.testimonials-go .testimonial{left:0;height:100%;position:absolute;top:0;width:100%;z-index:10}
+.testimonial-current,.testimonials-go .testimonial-current{display:block;opacity:1;z-index:11}
+.testimonial-spacer,.testimonials-go .testimonial-spacer{position:relative;visibility:hidden;z-index:1}
 .testimonial:before{content:"“";left:-.2em;position:absolute;top:-.2em;z-index:1;color:#c1bdb7;font-size:3em;line-height:1}
 .testimonial p{margin:0;padding:0;position:relative;z-index:15;font-style:italic}
 .testimonial p:after{content:"“";left:-.2em;position:absolute;top:-.2em;z-index:1;color:#c1bdb7;font-size:3em;line-height:1;bottom:-.4em;content:"”";left:auto;right:.1em;top:auto;z-index:-1}
