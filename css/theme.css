@@ -130,9 +130,7 @@ del{color:#9b9691}
 }@media all and (min-width: 1150px){.site-title{float:right;margin-right:6.4%;text-align:right}
 .nav-prime{clear:right;float:right;margin-left:0;padding-left:1em;padding-right:11.6%;text-align:right}
 .my-why{margin-left:6.4%;padding:0;text-align:left}
-}.col{float:right;width:43%}
-.col:first-child{float:left;padding-left:0}
-.main{position:relative;z-index:25;-moz-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-ms-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-o-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-webkit-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);box-shadow:0 35px 40px -40px rgba(0,0,0,0.06)}
+}.main{position:relative;z-index:25;-moz-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-ms-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-o-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);-webkit-box-shadow:0 35px 40px -40px rgba(0,0,0,0.06);box-shadow:0 35px 40px -40px rgba(0,0,0,0.06)}
 .mod-title{margin:-1.7em 0 0;padding:0;position:absolute;font-size:3em;font-weight:600}
 .mod-why{margin-top:-.2em;font-size:1.25em;line-height:1.6}
 .mod-nohead{margin:0;padding:0;font-size:1.125em;line-height:1.37;}
@@ -157,12 +155,23 @@ del{color:#9b9691}
 .book-feature{margin-top:-2.9em}
 .book,.book:link,.book:visited{display:block;margin-bottom:1.5em;width:100%;border:0}
 .book-title{margin:0 0 1.4em;padding:0;font-size:1.125em;line-height:1.37}
-.book-cover{display:block;margin:0 auto;width:70%;border:1px solid #c1bdb7;-moz-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-ms-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-o-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-webkit-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);box-shadow:0 15px 20px -20px rgba(0,0,0,0.50)}
+.book-cover{display:block;margin:0 auto;max-width:150px;width:70%;border:1px solid #c1bdb7;-moz-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-ms-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-o-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-webkit-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);box-shadow:0 15px 20px -20px rgba(0,0,0,0.50)}
 .book-desc{display:block;margin-top:1.5em;color:#41403d}
-.project{display:block;margin:1.5em 0;border:0;text-align:center}
+.col{clear:both}
+.project{display:inline;float:right;margin:1.5em 0;width:48%;border:0;text-align:center}
+.project:first-child{float:left}
 .project:before{content:""}
 .project-img{display:block;margin:0 0 .75em;width:100%;border:1px solid #c1bdb7;-moz-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-ms-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-o-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);-webkit-box-shadow:0 15px 20px -20px rgba(0,0,0,0.50);box-shadow:0 15px 20px -20px rgba(0,0,0,0.50)}
-[role="contentinfo"]{padding:1.8em 2.5% 1.8em;background:#beb4aa url("../img/pattern-slant-dark-rt.png") repeat left top;color:#948778;font-size:.75em;text-align:center}
+@media all and (min-width: 400px){.book-cover{float:left;margin-right:2em}
+.book-desc{text-align:left}
+}@media all and (min-width: 600px){.col{clear:none;float:right;width:32%}
+.col:first-child{float:left;padding-left:0}
+.project,.project:first-child{display:block;float:none;width:auto}
+}@media all and (min-width: 700px){.book-cover{float:none;margin-right:auto}
+.book-desc{text-align:center}
+}@media all and (min-width: 1150px){.col{clear:right;width:40%}
+.book-cover{max-width:70%}
+}[role="contentinfo"]{padding:1.8em 2.5% 1.8em;background:#beb4aa url("../img/pattern-slant-dark-rt.png") repeat left top;color:#948778;font-size:.75em;text-align:center}
 .copyright{margin:1.5em 0 0;padding:0;position:relative}
 .contact{margin:0;padding:0;}
 .contact li{display:inline-block;margin-right:1em}

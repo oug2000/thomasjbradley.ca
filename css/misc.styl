@@ -1,11 +1,3 @@
-.col
-  float right
-  width 43%
-
-.col:first-child
-  float left
-  padding-left 0
-
 .main
   position relative
   z-index 25
@@ -148,6 +140,7 @@
 .book-cover
   display block
   margin 0 auto
+  max-width 150px
   width 70%
 
   border 1px solid text-light
@@ -159,13 +152,21 @@
 
   color text-dark
 
+.col
+  clear both
+
 .project
-  display block
+  display inline
+  float right
   margin 1.5em 0
+  width 48%
 
   border 0
 
   text-align center
+
+.project:first-child
+  float left
 
 .project:before
   content ""
@@ -177,3 +178,47 @@
 
   border 1px solid text-light
   box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+@media all and (min-width: 400px)
+
+  .book-cover
+    float left
+    margin-right 2em
+
+  .book-desc
+    text-align left
+
+@media all and (min-width: 600px)
+
+  .col
+    clear none
+    float right
+    width 32%
+
+  .col:first-child
+    float left
+    padding-left 0
+
+  .project
+  .project:first-child
+    display block
+    float none
+    width auto
+
+@media all and (min-width: 700px)
+
+  .book-cover
+    float none
+    margin-right auto
+
+  .book-desc
+    text-align center
+
+@media all and (min-width: 1150px)
+
+  .col
+    clear right
+    width 40%
+
+  .book-cover
+    max-width 70%
