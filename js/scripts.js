@@ -149,7 +149,7 @@ var animatedScrollTo = (function () {
         var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
 
         testimonials[prev].style.opacity = 1
-        testimonials[next].setAttribute('aria-hidden', false)
+        testimonials[prev].setAttribute('aria-hidden', false)
         testimonials[current].style.opacity = 0
         testimonials[current].setAttribute('aria-hidden', true)
         current = prev
