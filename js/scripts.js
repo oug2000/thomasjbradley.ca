@@ -108,6 +108,7 @@ var Swiper = (function () {
 
   return {
     on : addSwipeListener
+    , swipe : addSwipeListener
     , off : removeSwipeListener
     , noSwiping : removeSwipeListener
   }
@@ -255,7 +256,7 @@ var animatedScrollTo = (function () {
       testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
 
       if (Modernizr.touch) {
-        Swiper.on(testimonialGroups[i], function (e) {
+        Swiper.swipe(testimonialGroups[i], function (e) {
           if (e.direction == 'left') {
             nextTestimonial()
           } else {
