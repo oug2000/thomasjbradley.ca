@@ -28,8 +28,67 @@ function removeClass (elem, newClass) {
   elem.className = elem.className.replace(newClass, '').replace(/\s+/, ' ').replace(/\s+$/, '').replace(/^\s+/, '')
 }
 
+function addSwipeListener (elem, callback) {
+  var threshold = {x : 10, y : 50}
+    , originalCoord = {x : 0, y : 0}
+    , finalCoord = {x : 0, y : 0}
+    , changeX = 0
+    , goingVertical = 0
+    , callbackTimeout
+
+  function setVertical () {
+    if (goingVertical === 0) {
+      goingVertical = false
+
+      if (Math.abs(finalCoord.y - originalCoord.y) > Math.abs(finalCoord.x - originalCoord.x))
+        goingVertical = true
+    }
+  }
+
+  function touchStartHandler (e) {
+    originalCoord.x = e.targetTouches[0].pageX
+    originalCoord.y = e.targetTouches[0].pageY
+
+    finalCoord.x = originalCoord.x
+    finalCoord.y = originalCoord.y
+
+    goingVertical = 0
+    clearTimeout(callbackTimeout)
+  }
+
+  function touchMoveHandler (e) {
+    finalCoord.x = e.targetTouches[0].pageX
+    finalCoord.y = e.targetTouches[0].pageY
+    setVertical()
+
+    if (goingVertical === false)
+      e.preventDefault()
+  }
+
+  function touchEndHandler (e) {
+    changeX = originalCoord.x - finalCoord.x
+    clearTimeout(callbackTimeout)
+
+    if (goingVertical === false) {
+      if (Math.abs(changeX) > Math.abs(threshold.x)) {
+        // Timeout stops the callback being fired if the tablet catches a scroll first
+        // Stops weird paused transitions, they will then be triggered after scroll
+        callbackTimeout = setTimeout(function () { callback({target : elem, direction : 'left'}) }, 10)
+      } else {
+        callbackTimeout = setTimeout(function () { callback({target : elem, direction : 'right'}) }, 10)
+      }
+    }
+
+    goingVertical = 0
+  }
+
+  elem.addEventListener('touchstart', touchStartHandler, false)
+  elem.addEventListener('touchmove', touchMoveHandler, false)
+  elem.addEventListener('touchend', touchEndHandler, false)
+}
+
 var animatedScrollTo = (function () {
-  var scrollAnim = null
+  var scrollAnim
     , currentScrollTop = -1
     , fpms = 1000 / 60 // fps
 
@@ -116,12 +175,32 @@ var animatedScrollTo = (function () {
       var testimonials = testimonialGroups[i].getElementsByClassName('testimonial')
       , totalTestimonials = testimonials.length
       , tallestClone = {offsetHeight: 0}
-      , tempClone = null
+      , tempClone
       , j = 0
       , current = 0
       , currentClass = 'testimonial-current'
 
       if (totalTestimonials <= 1) return
+
+      function nextTestimonial () {
+        var next = (current + 1 > totalTestimonials - 1) ? 0 : current + 1
+
+        addClass(testimonials[next], currentClass)
+        testimonials[next].setAttribute('aria-hidden', false)
+        removeClass(testimonials[current], currentClass)
+        testimonials[current].setAttribute('aria-hidden', true)
+        current = next
+      }
+
+      function prevTestimonial () {
+        var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
+
+        addClass(testimonials[prev], currentClass)
+        testimonials[prev].setAttribute('aria-hidden', false)
+        removeClass(testimonials[current], currentClass)
+        testimonials[current].setAttribute('aria-hidden', true)
+        current = prev
+      }
 
       for (j = 0; j < totalTestimonials; j++) {
         tempClone = testimonials[j].cloneNode(true)
@@ -153,25 +232,16 @@ var animatedScrollTo = (function () {
       addClass(tallestClone, 'testimonial-spacer')
       testimonialGroups[i].innerHTML += controls
 
-      testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', function () {
-        var next = (current + 1 > totalTestimonials - 1) ? 0 : current + 1
+      testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', nextTestimonial, false)
+      testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
 
-        addClass(testimonials[next], currentClass)
-        testimonials[next].setAttribute('aria-hidden', false)
-        removeClass(testimonials[current], currentClass)
-        testimonials[current].setAttribute('aria-hidden', true)
-        current = next
-      }, false)
-
-      testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', function () {
-        var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
-
-        addClass(testimonials[prev], currentClass)
-        testimonials[prev].setAttribute('aria-hidden', false)
-        removeClass(testimonials[current], currentClass)
-        testimonials[current].setAttribute('aria-hidden', true)
-        current = prev
-      }, false)
+      addSwipeListener(testimonialGroups[i], function (e) {
+        if (e.direction == 'left') {
+          nextTestimonial()
+        } else {
+          prevTestimonial()
+        }
+      })
     }())
   }
 }())
