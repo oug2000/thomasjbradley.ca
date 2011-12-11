@@ -75,10 +75,10 @@ var animatedScrollTo = (function () {
     , rocket = document.getElementsByClassName('rocketeer')[0]
     , animEndEventNames = {
       'WebkitAnimation' : 'webkitAnimationEnd'
-      , 'MozAnimation' : 'mozAnimationEnd'
+      , 'MozAnimation' : 'animationend'
       , 'OAnimation' : 'oAnimationEnd'
-      , 'msAnimation' : 'msAnimationEnd'
-      , 'animation' : 'AnimationEnd'
+      , 'msAnimation' : 'msAnimationend'
+      , 'animation' : 'animationend'
     }
     , animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
 
@@ -89,21 +89,21 @@ var animatedScrollTo = (function () {
     function animEndHandler (e) {
       rocket.className = rocket.className.replace(rocketClass, '')
       window.location.hash = self.getAttribute('href')
-      rocket.removeEventListener(animEndEventName, animEndHandler)
+      rocket.removeEventListener(animEndEventName, animEndHandler, false)
     }
 
     e.preventDefault()
 
     rocket.style.left = getOffsetLeft(this) + 'px'
     rocket.className += rocketClass
-    rocket.addEventListener(animEndEventName, animEndHandler)
+    rocket.addEventListener(animEndEventName, animEndHandler, false)
 
     animatedScrollTo(document.getElementById('top'), 500)
-  })
+  }, false)
 
-  document.getElementsByClassName('nav-prof')[0].addEventListener('click', navScroller)
-  document.getElementsByClassName('nav-dev')[0].addEventListener('click', navScroller)
-  document.getElementsByClassName('nav-write')[0].addEventListener('click', navScroller)
+  document.getElementsByClassName('nav-prof')[0].addEventListener('click', navScroller, false)
+  document.getElementsByClassName('nav-dev')[0].addEventListener('click', navScroller, false)
+  document.getElementsByClassName('nav-write')[0].addEventListener('click', navScroller, false)
 
   for (i = 0; i < totalTestimonialGroups; i++) {
     ;(function () {
@@ -154,7 +154,7 @@ var animatedScrollTo = (function () {
         testimonials[current].style.opacity = 0
         testimonials[current].setAttribute('aria-hidden', true)
         current = next
-      })
+      }, false)
 
       testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', function () {
         var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
@@ -164,7 +164,7 @@ var animatedScrollTo = (function () {
         testimonials[current].style.opacity = 0
         testimonials[current].setAttribute('aria-hidden', true)
         current = prev
-      })
+      }, false)
     }())
   }
 }())
