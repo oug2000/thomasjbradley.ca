@@ -144,29 +144,22 @@ var animatedScrollTo = (function () {
     , i = 0
     , controls = document.getElementById('testimonial-controls-template').innerHTML
     , rocket = document.getElementsByClassName('rocketeer')[0]
-    , animEndEventNames = {
-      'WebkitAnimation' : 'webkitAnimationEnd'
-      , 'MozAnimation' : 'animationend'
-      , 'OAnimation' : 'oAnimationEnd'
-      , 'msAnimation' : 'msAnimationend'
-      , 'animation' : 'animationend'
-    }
-    , animEndEventName = animEndEventNames[Modernizr.prefixed('animation')];
+    , scrollUpTimer
 
   document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
     var self = this
       , rocketClass = 'rocketeer-go'
 
-    function animEndHandler (e) {
+    function animEndHandler () {
+      clearTimeout(scrollUpTimer)
       removeClass(rocket, rocketClass)
       window.location.hash = self.getAttribute('href')
-      rocket.removeEventListener(animEndEventName, animEndHandler, false)
     }
 
     e.preventDefault()
     rocket.style.left = getOffsetLeft(this) + 'px'
     addClass(rocket, rocketClass)
-    rocket.addEventListener(animEndEventName, animEndHandler, false)
+    scrollUpTimer = setTimeout(animEndHandler, 500)
     animatedScrollTo(document.getElementById('top'), 500)
   }, false)
 
