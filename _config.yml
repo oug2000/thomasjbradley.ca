@@ -1,10 +1,20 @@
 auto: true
 pygments: true
 permalink: /articles/:title
+
 stylus:
   path: ./static
   compress: true
   use: :nib
+
+sitemap:
+  url: http://thomasjbradley.com
+  hasposts:
+    - index.html
+    - articles.html
+  exclude:
+    - theme.styl
+
 exclude:
   - footer.styl
   - general.styl
