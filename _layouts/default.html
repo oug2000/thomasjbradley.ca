@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>{% if page.title-before %}{{page.title-before}} · {% endif %}Thomas J Bradley{% if page.title-after %} · {{page.title-after}}{% endif %}</title>
+  <link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,700italic,400,300,700,600" rel="stylesheet">
+  <link href="/static/theme.css" rel="stylesheet">
+  <script src="/static/modernizr.custom.min.js"></script>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="author" href="https://plus.google.com/112719250789350308611">
+</head>
+<body>
+{{content}}
+<script type="text/template" id="testimonial-controls-template">
+  <ul class="testimonial-controls">
+    <li class="prev"><button class="btn-link">⇠ Previous</button></li>
+    <li class="next"><button class="btn-link">Next ⇢</button></li>
+  </ul>
+</script>
+<script src="/static/scripts.js"></script>
+</body>
+</html>
