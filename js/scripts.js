@@ -180,12 +180,12 @@ var animatedScrollTo = (function () {
   for (i = 0; i < totalTestimonialGroups; i++) {
     ;(function () {
       var testimonials = testimonialGroups[i].getElementsByClassName('testimonial')
-      , totalTestimonials = testimonials.length
-      , tallestClone = {offsetHeight: 0}
-      , tempClone
-      , j = 0
-      , current = 0
-      , currentClass = 'testimonial-current'
+        , totalTestimonials = testimonials.length
+        , tallestClone = {offsetHeight: 0}
+        , tempClone
+        , j = 0
+        , current = 0
+        , currentClass = 'testimonial-current'
 
       if (totalTestimonials <= 1) return
 
@@ -244,7 +244,7 @@ var animatedScrollTo = (function () {
 
       if (Modernizr.touch) {
         Swiper.swipe(testimonialGroups[i], function (e) {
-          if (e.direction == 'left') {
+          if (e.direction == Swiper.directions.left) {
             nextTestimonial()
           } else {
             prevTestimonial()
