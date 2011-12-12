@@ -1,3 +1,14 @@
 auto: true
 pygments: true
 permalink: /articles/:title
+stylus:
+  path: ./static
+  compress: true
+  use: :nib
+exclude:
+  - footer.styl
+  - general.styl
+  - grid.styl
+  - header.styl
+  - misc.styl
+  - normalize.styl
