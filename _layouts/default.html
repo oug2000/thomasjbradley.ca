@@ -10,7 +10,49 @@
   <link rel="author" href="https://plus.google.com/112719250789350308611">
 </head>
 <body>
-{{content}}
+
+<header role="banner" class="module module-wide clearfix" id="top">
+  <div class="box intro masthead">
+    <h1 class="site-title"><a href="/">Thomas J Bradley<i class="logo"><i></i><i></i></i></a></h1>
+    <nav class="nav-prime">
+      <ul>
+        <li>
+          <a href="/#professor" class="nav-prof" data-scrollspeed="150">Professor</a>
+          <ul><li><a href="http://students.thomasjbradley.ca">Students</a></li></ul>
+        </li>
+        <li>
+          <a href="/#developer" class="nav-dev" data-scrollspeed="250">Developer</a>
+          <ul><li><a href="/lab">Lab Projects</a></li></ul>
+        </li>
+        <li>
+          <a href="/#writer" class="nav-write" data-scrollspeed="400">Writer</a>
+          <ul>
+            <li><a href="/articles">Articles</a></li>
+            <li><a href="/books">Books</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+  <div class="box intro intro-why">
+    <p class="my-why">I believe that everybody should perpetually <strong>learn</strong>, <strong>try</strong>, <strong>build</strong>, <strong>break</strong>, <span title="and">&amp;</span> <strong>fix</strong> things—the open web is the perfect platform for exactly that.</p>
+  </div>
+</header>
+
+<div class="main" role="main">
+  {{content}}
+</div>
+
+<footer role="contentinfo" class="clearfix vcard">
+  <ul class="contact">
+    <li><a href="mailto:hey@thomasjbradley.ca" class="email">hey@thomasjbradley.ca</a></li>
+    <li><a href="http://twitter.com/thomasjbradley">@thomasjbradley</a></li>
+    <li><a href="http://github.com/thomasjbradley">github:thomasjbradley</a></li>
+  </ul>
+  <p class="copyright">© <span class="fn">Thomas J Bradley</span>. <span class="adr"><span class="locality">Ottawa</span>, <span class="country-name">Canada</span></span>. <a href="#top" class="top" title="Rocket to the top!">Rocket to the top!</a></p>
+  <span class="rocketeer"><b></b><i></i></span>
+</footer>
+
 <script type="text/template" id="testimonial-controls-template">
   <ul class="testimonial-controls">
     <li class="prev"><button class="btn-link">⇠ Previous</button></li>
