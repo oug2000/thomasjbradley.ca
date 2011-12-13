@@ -1,6 +1,15 @@
-auto: true
 pygments: true
 permalink: /articles/:title
+
+env:
+  prod:
+    img: http://images.thomasjbradley.ca
+    img2: http://images2.thomasjbradley.ca
+    static: http://static.thomasjbradley.ca
+  dev:
+    img: /img
+    img2: /img2
+    static: /static
 
 stylus:
   path: ./static
