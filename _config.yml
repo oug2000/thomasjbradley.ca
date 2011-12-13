@@ -1,5 +1,6 @@
 pygments: true
 permalink: /articles/:title
+destination: __local
 
 env:
   prod:
