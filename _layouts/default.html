@@ -22,13 +22,13 @@
         </li>
         <li>
           <a href="/#developer" class="nav-dev" data-scrollspeed="250">Developer</a>
-          <ul><li{{page.url|thispage:"lab":"current"}}><a href="/lab/">Lab Projects</a></li></ul>
+          <ul><li{{"current"|onpage:"lab":page.url}}><a href="/lab/">{{"Lab Projects"|markonpage:"lab":page.url}}</a></li></ul>
         </li>
         <li>
           <a href="/#writer" class="nav-write" data-scrollspeed="400">Writer</a>
           <ul>
-            <li{{page.url|thispage:"article":"current"}}><a href="/articles/">Articles</a></li>
-            <li{{page.url|thispage:"book":"current"}}><a href="/books/">Books</a></li>
+            <li{{"current"|onpage:"article":page.url}}><a href="/articles/">{{"Articles"|markonpage:"article":page.url}}</a></li>
+            <li{{"current"|onpage:"book":page.url}}><a href="/books/">{{"Books"|markonpage:"book":page.url}}</a></li>
           </ul>
         </li>
       </ul>
