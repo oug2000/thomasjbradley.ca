@@ -226,12 +226,25 @@
   content ""
 
 .project-img
+a.lab-img
   display block
   margin 0 0 0.75em
   width 100%
 
   border 1px solid text-light
   box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+a.lab-img img
+  width 100%
+
+.lab-feature
+  float left
+  padding-top 0
+  width 45%
+
+.lab-download
+  float right
+  width 45%
 
 .files
   margin 0 0 1.375em
@@ -314,6 +327,16 @@
   .book-desc
     text-align center
 
+  .lab-feature
+    padding-top 7.5em
+    width 20%
+
+  .lab-download
+    left 2.5%
+    position absolute
+    top 13em
+    width 20%
+
 @media all and (min-width: 1150px)
 
   .col
@@ -322,3 +345,12 @@
 
   .book-cover
     max-width 70%
+
+  .lab-feature
+    width 64.5%
+
+  .lab-download
+    left auto
+    position relative
+    top auto
+    width 20%
