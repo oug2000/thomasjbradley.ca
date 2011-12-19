@@ -1,8 +1,9 @@
 [role="banner"]
   margin 0
   padding 0
+  z-index 100
 
-  background site-bg-dark url("../img/pattern-slant-dark-rt.png") repeat left top
+  background site-bg-dark url("{{'img'|env}}/pattern-slant-dark-rt.png") repeat left top
 
   color button-muted
 
@@ -32,7 +33,7 @@
   & .logo i + i
     left 0
 
-    background transparent url("../img/rocket.png") no-repeat left top
+    background transparent url("{{'img'|env}}/rocket.png") no-repeat left top
     transition all 150ms linear 10ms
 
   & .logo i + i
@@ -134,8 +135,8 @@
       & a:visited
         font-weight 300
 
-      & a.current:link
-        border-bottom 1px solid site-bg
+    & li.current a:link
+      border-bottom 1px solid site-bg
 
     & li:before
       content "·"

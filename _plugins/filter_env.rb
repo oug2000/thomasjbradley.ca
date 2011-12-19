@@ -12,7 +12,11 @@ module Jekyll
         end
       end
 
-      url = @context.registers[:site].config['env'][env][input]
+      if @context.registers[:config]
+        url = @context.registers[:config]['env'][env][input]
+      else
+        url = @context.registers[:site].config['env'][env][input]
+      end
 
       "#{url}"
     end

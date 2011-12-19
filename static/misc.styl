@@ -3,13 +3,30 @@
   z-index 25
   box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
 
+.mod-group-head
+  padding 1.5em 2.5% 1.9em 2.5%
+  position relative
+  z-index 40
+
+  box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
+
+.mod-main-head
+  z-index 50
+
 .mod-title
   margin -1.7em 0 0
   padding 0
   position absolute
 
+  color text-dark
   font-size 3em
   font-weight 600
+
+.mod-subtitle
+  font-size 2.5em
+
+.mod-group-title
+  margin-bottom 0
 
 .mod-why
   margin-top -0.2em
@@ -29,20 +46,27 @@
 
     font-style normal
 
-#professor
-  z-index 20
+.lt90
+  background transparent url("{{'img'|env}}/pattern-90-lt.png") repeat left top
 
-  background transparent url("../img/pattern-90-lt.png") repeat left top
+.rt90
+  background transparent url("{{'img'|env}}/pattern-90-rt.png") repeat left top
+
+.slantlt
+  background transparent url("{{'img'|env}}/pattern-slant-lt.png") repeat left top
+
+.slantrt
+  background transparent url("{{'img'|env}}/pattern-slant-rt.png") repeat left top
+
+#professor
+#websites-webapps
+  z-index 20
 
 #developer
   z-index 15
 
-  background transparent url("../img/pattern-90-rt.png") repeat left top
-
 #writer
   z-index 10
-
-  background transparent url("../img/pattern-slant-lt.png") repeat left top
 
 .testimonials
 .testimonials-list
@@ -209,6 +233,49 @@
   border 1px solid text-light
   box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
 
+.files
+  margin 0 0 1.375em
+  padding 0
+
+  list-style-type none
+
+  & li
+    margin 0 0 0.8em 0
+    padding 0
+
+  & li:before
+    content ""
+
+  & a
+  & a:link
+  & a:visited
+    display block
+    margin 0
+    min-height 45px
+    padding 5px 0 0 38px
+
+    background transparent url("{{'img'|env}}/icon-file.png") no-repeat left center
+    border 0
+
+    text-decoration none
+
+  & span
+    display block
+
+    color text-medium
+    font-size 0.75em
+    font-weight normal
+    line-height 1em
+
+  & .pdf a
+    background-image url("{{'img'|env}}/icon-pdf.png")
+
+  & .vcf a
+    background-image url("{{'img'|env}}/icon-vcf.png")
+
+  & .gz a
+    background-image url("{{'img'|env}}/icon-gz.png")
+
 @media all and (min-width: 400px)
 
   .book-cover
@@ -236,6 +303,9 @@
     width auto
 
 @media all and (min-width: 700px)
+
+  .mod-group-head
+    padding-left 14.4%
 
   .book-cover
     float none

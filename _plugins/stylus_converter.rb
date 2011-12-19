@@ -38,7 +38,9 @@ module Jekyll
     def convert(content)
       begin
         setup
-        Stylus.compile content
+        compiled_content = Stylus.compile content
+        info = { :filters => [Jekyll::Filters], :registers => { :site => Jekyll::Site, :config => @config } }
+        Liquid::Template.parse(compiled_content).render({}, info)
       rescue => e
         puts "Stylus Exception: #{e.message}"
       end
