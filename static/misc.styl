@@ -1,3 +1,7 @@
+.more-text
+  left -999em
+  position absolute
+
 .main
   position relative
   z-index 25
@@ -289,7 +293,36 @@ a.lab-img img
   & .gz a
     background-image url("{{'img'|env}}/icon-gz.png")
 
+.apps-list
+  margin 0
+  padding 4em 0
+
+.app
+  margin 0 2.5% 1.5em
+
+  & a
+  & a:link
+  & a:visited
+    border 0
+
+  & a .app-desc
+    display block
+
+    color text-dark
+
+.app:before
+  content ""
+
+.app-title
+  margin 0 0 0.3em
+
+  font-size 1.5em
+
 @media all and (min-width: 400px)
+
+  .more-text
+    left auto
+    position static
 
   .book-cover
     float left
@@ -297,6 +330,15 @@ a.lab-img img
 
   .book-desc
     text-align left
+
+  .app
+    display inline
+    float left
+    margin-right 0
+    width: 45%
+
+  .app:nth-child(3)
+    clear left
 
 @media all and (min-width: 600px)
 
@@ -336,6 +378,15 @@ a.lab-img img
     position absolute
     top 13em
     width 20%
+
+
+@media all and (min-width: 900px)
+
+  .app
+    width: 21.85%
+
+  .app:nth-child(3)
+    clear none
 
 @media all and (min-width: 1150px)
 
