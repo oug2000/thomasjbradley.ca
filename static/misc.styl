@@ -72,11 +72,6 @@
 #writer
   z-index 10
 
-#signature-pad
-  padding-bottom 0
-
-  box-shadow none
-
 .testimonials
 .testimonials-list
   position relative
@@ -314,6 +309,19 @@ a.lab-img img
     display block
 
     color text-dark
+
+  & a .app-title
+  & a:link .app-title
+  & a:visited .app-title
+    display inline-block
+
+    border-bottom 0.1em solid rgba(link-normal,0.2)
+    transition all 150ms linear
+
+  & a:hover .app-title
+  & a:focus .app-title
+  & a:active .app-title
+    border-color link-bright
 
 .app:before
   content ""
