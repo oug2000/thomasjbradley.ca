@@ -1,0 +1,100 @@
+---
+layout: article
+title: Signature to Image
+priority: 0.6
+changefreq: monthly
+desc: "A supplemental script for Signature Pad that generates an image of the signature’s JSON output server-side using PHP."
+---
+
+- [Introduction](#introduction)
+- [How-to](#howto)
+	- [How-to: step-by-step](#howto-steps)
+- [Function Reference](#functions)
+- [Options](#options)
+	- [Options Reference](#optionsreference)
+- [Version History](#changelog)
+- [License](#license)
+- [Other Solutions](#othersolutions)
+
+## Introduction
+
+Signature to Image is a simple PHP script that will take the JSON output of [Signature Pad](/lab/signature-pad/) and generate an image file server-side to be saved for later. Uses the GD Image Library for image generation and PHP’s built in `json_decode()` if a string is passed.
+
+Get the source code on GitHub:
+<http://github.com/thomasjbradley/signature-to-image/>
+
+## How-to
+
+The whole signature to image generation requires just a few lines of PHP:
+
+{% highlight php %}
+{% include sigimg/howto.php %}
+{% endhighlight %}
+
+### How-to: step-by-step[howto-steps]
+
+First, include the required PHP file: `signature-to-image.php`.
+
+{% highlight php %}
+{% include sigimg/howto-1.php %}
+{% endhighlight %}
+
+Get the signature from the form post. Signature Pad defaults to naming the post field as `output`.
+
+{% highlight php %}
+{% include sigimg/howto-2.php %}
+{% endhighlight %}
+
+Then, call the function, passing a string representing the JSON, submitted by [Signature Pad](/lab/signature-pad/), or an already decoded JSON object (using `json_decode()`).
+
+{% highlight php %}
+{% include sigimg/howto-3.php %}
+{% endhighlight %}
+
+The `$img` variable will be an image resource, which you can either display immediately or save to a file.
+
+#### Save to file
+
+{% highlight php %}
+{% include sigimg/howto-4.php %}
+{% endhighlight %}
+
+#### Display in the browser
+
+{% highlight php %}
+{% include sigimg/howto-5.php %}
+{% endhighlight %}
+
+#### Cleanup
+
+When you have finished with the image resource, make sure to clean up after yourself and free some memory.
+
+{% highlight php %}
+{% include sigimg/howto-6.php %}
+{% endhighlight %}
+
+## Function Reference[functions]
+
+{% include sigimg/functions.html %}
+
+## Options
+
+Options can be passed as the second argument of the function when called. Only options that are different from the defaults need to be included in the options array.
+
+{% highlight php %}
+{% include sigimg/options.php %}
+{% endhighlight %}
+
+It’s highly recommended that the options used server-side match the values used in the Javascript.
+
+### Options Reference
+
+{% include sigimg/options.html %}
+
+## Version History[changelog]
+
+Check out the Changelog on GitHub.
+
+## License
+
+Signature to Image is licensed under the New BSD license, which is included in the downloadable package.

@@ -1,0 +1,2 @@
+<?php
+$img = sigJsonToImage($json);
