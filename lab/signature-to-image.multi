@@ -93,8 +93,14 @@ It’s highly recommended that the options used server-side match the values use
 
 ## Version History[changelog]
 
-Check out the Changelog on GitHub.
+Check out the [changelog on GitHub](https://github.com/thomasjbradley/signature-to-image/blob/master/CHANGELOG.md).
 
 ## License
 
-Signature to Image is licensed under the New BSD license, which is included in the downloadable package.
+Signature to Image is licensed under the [New BSD license](https://github.com/thomasjbradley/signature-to-image/blob/master/NEW-BSD-LICENSE.txt), which is included in the downloadable package.
+
+***
+
+## Other Solutions
+
+{% include sigimg/other-solutions.html %}
