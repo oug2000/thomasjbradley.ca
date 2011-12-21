@@ -12,7 +12,7 @@ desc: "A supplemental script for Signature Pad that generates an image of the si
 
 - [Introduction](#introduction)
 - [How-to](#howto)
-	- [How-to: step-by-step](#howto-steps)
+	- [How-to: Step-by-Step](#howto-steps)
 - [Function Reference](#functions)
 - [Options](#options)
 	- [Options Reference](#optionsreference)
@@ -35,7 +35,7 @@ The whole signature to image generation requires just a few lines of PHP:
 {% include sigimg/howto.php %}
 {% endhighlight %}
 
-### How-to: step-by-step[howto-steps]
+### How-to: Step-by-Step[howto-steps]
 
 First, include the required PHP file: `signature-to-image.php`.
 
