@@ -6,6 +6,10 @@ changefreq: monthly
 desc: "A supplemental script for Signature Pad that generates an image of the signature’s JSON output server-side using PHP."
 ---
 
+<div class="main-download">
+	{% include sigimg/download.html %}
+</div>
+
 - [Introduction](#introduction)
 - [How-to](#howto)
 	- [How-to: step-by-step](#howto-steps)
