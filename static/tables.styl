@@ -1,0 +1,74 @@
+table
+  margin 1.375em 0
+  padding 0
+
+  border 0
+  border-collapse collapse
+  table-layout fixed
+
+table th
+table td
+  margin 0
+  padding 0.3em 0
+
+table th
+  border-bottom 1px solid site-bg-dark
+
+  font-weight 700
+  text-align left
+
+table td
+table tfoot th
+  vertical-align top
+
+  border-bottom 0
+  border-top 1px solid site-bg-dark
+
+table p
+table dl
+table strong
+table ol
+table ul
+  font-size 0.875em
+
+.grand-total
+  color #7b345e
+  font-size 1.5em
+  font-weight bold
+
+.grand-total th
+  padding-right 1em
+
+  text-align right
+
+.grand-total th
+.grand-total td
+  border-top 4px double site-bg-dark
+
+@media all and (min-width: 700px)
+
+  table
+    margin-left -17.4%
+    //margin-right -18.8%
+    width 136%
+
+  table.reference .return
+  table.reference .value
+  table.reference .type
+  table.reference .arguments
+    padding-right 3.5%
+
+  table.reference .method
+  table.reference .name
+    padding-right 3.5%
+
+@media all and (min-width: 1150px)
+
+  table
+    margin-left -26.4%
+    //margin-right -54.6%
+    width 180.5%
+
+  table.reference .method
+  table.reference .name
+    width 15%

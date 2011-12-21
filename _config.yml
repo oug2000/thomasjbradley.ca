@@ -31,4 +31,6 @@ exclude:
   - grid.styl
   - header.styl
   - misc.styl
+  - code.styl
+  - tables.styl
   - normalize.styl
