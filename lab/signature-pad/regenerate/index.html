@@ -1,0 +1,26 @@
+---
+layout: demo-sigpad
+title: Regenerate a Signature
+---
+
+<h1>Regenerate a Signature</h1>
+<p>This demo showcases regeneration of a signature from a stored JSON array.</p>
+<p><a href="/lab/signature-pad/#regenerate">Find the full documentation in the lab</a></p>
+<hr>
+
+<div class="sigPad signed">
+  <div class="sigWrapper">
+    <div class="typed">Sir John A. Macdonald</div>
+    <canvas class="pad" width="198" height="55"></canvas>
+  </div>
+  <p>Sir John A. Macdonald<br>July 1, 1867</p>
+</div>
+
+<script src="{{"static"|env}}/jquery.signaturepad.min.js"></script>
+<script src="{{"static"|env}}/sample-signature-output.js"></script>
+<script>
+  $(document).ready(function () {
+    $('.sigPad').signaturePad({displayOnly:true}).regenerate(sig);
+  });
+</script>
+<script src="{{"static"|env}}/json2.min.js"></script>

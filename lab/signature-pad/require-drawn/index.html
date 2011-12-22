@@ -1,20 +1,18 @@
 ---
 layout: demo-sigpad
-title: Accept a Signature
+title: Require a Drawn Signature
 ---
 
-<h1>Accept a Signature</h1>
-<p>This demo showcases an HTML form and the Signature Pad ready to accept a new signature.</p>
-<p><a href="/lab/signature-pad/#accept">Find the full documentation in the lab</a></p>
+<h1>Require a Drawn Signature</h1>
+<p>This demo showcases an HTML form where the user is required to draw their signature before submission.
+<p><a href="/lab/signature-pad/#require-drawn">Find the full documentation in the lab</a>
 <hr>
 
 <form method="post" action="#" class="sigPad">
   <label for="name">Print your name</label>
   <input type="text" name="name" id="name" class="name">
-  <p class="typeItDesc">Review your signature</p>
   <p class="drawItDesc">Draw your signature</p>
   <ul class="sigNav">
-    <li class="typeIt"><a href="#type-it" class="current">Type It</a></li>
     <li class="drawIt"><a href="#draw-it" >Draw It</a></li>
     <li class="clearButton"><a href="#clear">Clear</a></li>
   </ul>
@@ -29,7 +27,7 @@ title: Accept a Signature
 <script src="{{"static"|env}}/jquery.signaturepad.min.js"></script>
 <script>
   $(document).ready(function () {
-    $('.sigPad').signaturePad();
+    $('.sigPad').signaturePad({drawOnly:true});
   });
 </script>
 <script src="{{"static"|env}}/json2.min.js"></script>
