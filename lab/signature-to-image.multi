@@ -13,9 +13,9 @@ desc: "A supplemental script for Signature Pad that generates an image of the si
 - [Introduction](#introduction)
 - [How-to](#howto)
 	- [How-to: Step-by-Step](#howto-steps)
-- [Function Reference](#functions)
+- [Function Reference](#function-ref)
 - [Options](#options)
-	- [Options Reference](#optionsreference)
+	- [Options Reference](#options-ref)
 - [Version History](#changelog)
 - [License](#license)
 - [Other Solutions](#othersolutions)
@@ -63,7 +63,7 @@ When you have finished with the image resource, make sure to clean up after your
 
 {% highlight php %}{% include sigimg/howto-6.php %}{% endhighlight %}
 
-## Function Reference[functions]
+## Function Reference[functions-ref]
 
 {% include sigimg/functions-reference.html %}
 
@@ -75,7 +75,7 @@ Options can be passed as the second argument of the function when called. Only o
 
 It’s highly recommended that the options used server-side match the values used in the Javascript.
 
-### Options Reference
+### Options Reference[options-ref]
 
 {% include sigimg/options-reference.html %}
 
