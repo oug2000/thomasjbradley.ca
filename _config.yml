@@ -23,9 +23,13 @@ sitemap:
     - index.html
     - articles.html
   exclude:
+    - htaccess
     - theme.styl
+    - demo.styl
 
 exclude:
+  - deploy.sh
+  - update-sigpad-assets.sh
   - footer.styl
   - general.styl
   - grid.styl
@@ -34,3 +38,5 @@ exclude:
   - code.styl
   - tables.styl
   - normalize.styl
+  - config.styl
+  - site-title.styl
