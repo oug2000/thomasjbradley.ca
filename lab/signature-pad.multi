@@ -1,0 +1,271 @@
+---
+layout: article
+title: Signature Pad
+priority: 0.7
+changefreq: monthly
+desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based signature pad. Records the drawn signature in JSON for later regeneration."
+---
+
+<div class="main-download">
+	{% include sigpad/download.html %}
+</div>
+
+- [Introduction](#intro)
+- [Demos](#demos)
+	- [Demo of accepting a signature](/lab/signature-pad-accept/)
+	- [Demo of requiring a drawn signature](/lab/signature-pad-require-drawn/)
+	- [Demo of regenerating a signature](/lab/signature-pad-regenerate/)
+- [How to Use the Plugin](#howto)
+- [Accepting Signatures](#accept)
+	- [Javascript](#accept-js)
+	- [HTML Template](#accept-html)
+		- [Further HTML Explanation](#accept-html-exp)
+	- [Form Submission](#accept-form)
+- [Require a Drawn Signature](#require-drawn)
+- [Regenerating Signatures](#regenerate)
+	- [Javascript](#regenerate-js)
+		- [Alternate Javascript](#regenerate-js-alt)
+	- [HTML Template](#regenerate-html)
+- [Converting to an Image](#images)
+	- [Client Side](#images-clientside)
+	- [Server Side](#images-serverside)
+- [Options](#options)
+	- [Changing Default Options](#options-change)
+	- [Options Reference](#options-ref)
+- [API](#api)
+	- [API Reference](#api-ref)
+	- [API Limitations](#api-limits)
+- [Version History](#changelog)
+- [License](#license)
+
+## Introduction[intro]
+
+The Signature Pad jQuery plugin will transform an HTML form into a signature pad. The Signature Pad has two modes: TypeIt and DrawIt. In TypeIt mode the user’s signature is automatically generated as HTML text, styled with `@font-face`, from the input field where they type their name. In DrawIt mode the user is able to draw their signature on the canvas element.
+
+The drawn signature is written out to a hidden input field as a JSON array using `JSON.strinify()`. Since the signature is saved as JSON it can be submitted as part of the form and kept on file. Using the JSON array, the signature can then be regenerated into the canvas element for display.
+
+*Obviously, Signature Pad has a couple extra dependencies: [Douglas Crockford’s JSON 2](http://www.json.org/js.html) and [FlashCanvas 1.5](http://flashcanvas.net/). (Both scripts are included in the downloadable package.)*
+
+Signature Pad tries to maintain a certain level of progressive enhancement, while still giving developers enough control. There is very little generated HTML. The HTML in the examples has some elements that should be hidden by default (including canvas). Signature Pad will trigger the display of certain items if the browser supports Javascript and canvas.
+
+**Signature Pad works with both mouse and touch devices.**
+
+Get the source code on GitHub: <http://github.com/thomasjbradley/signature-pad/>
+
+---
+
+## Demos
+
+[Demo of accepting a signature](/lab/signature-pad-accept/)
+This demo showcases an HTML form and the Signature Pad ready to accept a new signature.
+
+[Demo of requiring a drawn signature](/lab/signature-pad-require-drawn/)
+This demo showcases an HTML form where the user is required to draw their signature before submission.
+
+[Demo of regenerating a signature](/lab/signature-pad-regenerate/)
+This demo showcases regeneration of a signature from a stored JSON array.
+
+---
+
+## How to Use the Plugin[howto]
+
+First, include all the required Javascript files: `jquery.js`, `jquery.signaturepad.js`, `flashcanvas.js` and `json2.js`.
+
+{% highlight html %}{% include sigpad/howto-1.html %}{% endhighlight %}
+
+*Don’t forget to include the flashcanvas.swf file.*
+
+And the CSS file: `jquery.signaturepad.css`.
+
+{% highlight html %}{% include sigpad/howto-2.html %}{% endhighlight %}
+
+The CSS file contains a generic display for the form and Signature Pad, which you are encouraged to change for your web site’s theme.
+
+After including all the external resources, simply call the jQuery plugin method on the HTML form element:
+
+{% highlight js %}{% include sigpad/howto-3.js %}{% endhighlight %}
+
+The method accepts an options object for the Signature Pad instance. [Signature Pad Options Reference](#options-reference)
+
+Calling the `signaturePad()` method also returns an API for the Signature Pad instance. [Signature Pad API Reference](#api-reference)
+
+### Accepting Signatures[accept]
+
+**[Demo of accepting a signature](/lab/signature-pad-accept/)**
+
+When accepting a signature, it is best to wrap the Signature Pad in a form so the signature can be submitted to the server for storage.
+
+#### Javascript[accept-js]
+
+{% highlight js %}{% include sigpad/accept.js %}{% endhighlight %}
+
+That’s really all there is to it! (`.sigPad` is the class for the form element itself.) Of course there is some corresponding HTML, have a look below for the template.
+
+#### HTML Template[accept-html]
+
+{% highlight html %}{% include sigpad/accept.html %}{% endhighlight %}
+
+This is the HTML used on the accept demo and contains all the bits that Signature Pad looks for. *Remember, all of the class names are configurable [options](#options).*
+
+##### Further HTML Explanation[accept-html-exp]
+
+Let’s go through it and explain in detail some of the important parts.
+
+{% highlight html %}{% include sigpad/accept-exp-1.html %}{% endhighlight %}
+
+The value of the `.name` input element is used for creating the automatically generated signature.
+
+{% highlight html %}{% include sigpad/accept-exp-2.html %}{% endhighlight %}
+
+These two paragraphs, `.typeItDesc` and `.drawItDesc` are used as descriptive labels for the canvas Signature Pad. They are hidden or shown depending on whether the user is drawing their signature or using the automatically generated one.
+
+{% highlight html %}{% include sigpad/accept-exp-3.html %}{% endhighlight %}
+
+The `.sigNav` ul element is shown if the canvas can be drawn on (aka, `canvas.getContext()` is available). The list contains the links for switching modes.
+
+{% highlight html %}{% include sigpad/accept-exp-4.html %}{% endhighlight %}
+
+The `.clearButton` element is a button/link to allow the user to clear their signature if they mess it up. Displayed only when in DrawIt mode.
+
+{% highlight html %}{% include sigpad/accept-exp-5.html %}{% endhighlight %}
+
+The `.sig` and `.sigWrapper` div is hidden by default and wraps the canvas and generated signature together allowing overlapping positions.
+
+{% highlight html %}{% include sigpad/accept-exp-6.html %}{% endhighlight %}
+
+The `.typed` div will have the value typed into the input field inserted into it. This is effectively the automatically generated signature. It can be styled in any fashion, but the samples use `@font-face` to make the text look semi-handwritten.
+
+{% highlight html %}{% include sigpad/accept-exp-7.html %}{% endhighlight %}
+
+Obviously the canvas element for allowing the user to draw their signature.
+
+{% highlight html %}{% include sigpad/accept-exp-8.html %}{% endhighlight %}
+
+The `.output` hidden input field is where the JSON representation of the signature is stored for submission to a server.
+
+#### Form Submission[accept-form]
+
+Signature Pad automatically validates the name input field on form submission by checking to see if it is empty. If the field is empty the form isn’t submitted and Signature Pad prepends an error message to the top of the form. Signature Pad assigns an error class to the input and the label and also sets the focus on the name field.
+
+Both the error message and error class are [options](#options) that can be changed.
+
+### Require a Drawn Signature[require-drawn]
+
+**[Demo of requiring a drawn signature](/lab/signature-pad-require-drawn/)**
+
+The form can be set up to require the user to draw their signature as well as type their name into the field.
+
+This example is almost identical to the above example, but since the user must draw their signature the HTML for typing their signature is not required. So remove the following two lines:
+
+<div class="del">{% highlight html %}{% include sigpad/require-1.html %}{% endhighlight %}</div>
+
+and
+
+<div class="del">{% highlight html %}{% include sigpad/require-2.html %}{% endhighlight %}</div>
+
+Then add the `drawOnly` option to the Javascript and set it to true. This option disables the typeIt actions and validates that the user has drawn their signature.
+
+{% highlight js %}{% include sigpad/require.js %}{% endhighlight %}
+
+### Regenerating Signatures[regenerate]
+
+**[Demo of regenerating a signature](/lab/signature-pad-regenerate/)**
+
+Regenerating signatures from a JSON representation is quite simple. Signature Pad accepts the JSON (string or native Javascript array) and simply redraws the signature onto the canvas element.
+
+#### Javascript[regenerate-js]
+
+{% highlight js %}{% include sigpad/regenerate.js %}{% endhighlight %}
+
+`sig` is a variable that contains the JSON representation of the signature. In the above example you can see what the JSON looks like—though it has been trimmed for brevity’s sake.
+
+Also notice that an options variable is passed into the `signaturePad()` method. The `displayOnly` property tells Signature Pad not to initialise any of the standard HTML elements, mouse events or click events. [Signature Pad Options Reference](#options-reference)
+
+After initialising the canvas, call the `regnerate()` method and pass it our JSON signature. This method simply redraws the signature onto the canvas element.
+
+##### Alternative Javascript[regenerate-js-alt]
+
+{% highlight js %}{% include sigpad/regenerate-alt.js %}{% endhighlight %}
+
+Both snippets do exactly the same thing. The only difference is that in this example the API is stored in a variable and referred to later on.
+
+#### HTML Template[regenerate-html]
+
+{% highlight html %}{% include sigpad/regenerate.html %}{% endhighlight %}
+
+The HTML for displaying a signature is much simpler. The primary component is of course the canvas element. The typed `<div>` is still there, for progressive enhancement, and will show the automatically generated signature using HTML and CSS if Javascript and canvas are not available.
+
+---
+
+## Converting to an Image[images]
+
+### Client Side[images-clientside]
+
+The API includes a method called `signatureToImage()` which will return a Base64 encoded PNG to Javascript.
+
+*Unfortunately, the function doesn’t work in all browsers, only because the underlying `toDataURL()` method of `<canvas>` isn’t implemented well. The primary culprit of poor implementation is Android OS < 3. The function does work in IE thanks to FlashCanvas.*
+
+### Server Side[images-serverside]
+
+PHP to JPEG, PNG or GIF
+: [Signature to Image](/lab/signature-to-image/) is a simple PHP script that will take the JSON output and convert it to an image server-side. [Read more about Signature to Image](/lab/signature-to-image/).
+
+{% include sigimg/other-solutions.multi %}
+
+---
+
+## Options
+
+Options can be passed into the method when Signature Pad is instantiated. Only options that are different from the defaults need to be included in the options variable.
+
+{% highlight js %}{% include sigpad/options-1.js %}{% endhighlight %}
+
+### Changing Default Options[options-change]
+
+The default options can be changed globally for all instances of Signature Pad on the page using the jQuery plugin construct:
+
+{% highlight js %}{% include sigpad/options-2.js %}{% endhighlight %}
+
+Setting default options always follows this pattern:
+
+{% highlight js %}{% include sigpad/options-3.js %}{% endhighlight %}
+
+### Options Reference[options-ref]
+
+{% include sigpad/options-reference.html %}
+
+---
+
+## API
+
+The API is returned from the instantiation of the Signature Pad and can be stored in a variable or chained.
+
+{% highlight js %}{% include sigpad/api-1.js %}{% endhighlight %}
+
+*API chaining after instantiation.*
+
+{% highlight js %}{% include sigpad/api-2.js %}{% endhighlight %}
+
+*Storage of the API in a variable.*
+
+### API Reference[api-ref]
+
+{% include sigpad/api-reference.html %}
+
+### API Limitations[api-limits]
+
+Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element. If you would like to store the API for multiple elements they must be initialised with separate jQuery calls.
+
+---
+
+## Version History[changelog]
+
+Check out the [changelog on GitHub](https://github.com/thomasjbradley/signature-pad/blob/master/CHANGELOG.md).
+
+---
+
+## License
+
+Signature Pad is licensed under the [New BSD license](https://github.com/thomasjbradley/signature-pad/blob/master/NEW-BSD-LICENSE.txt), which is included in the downloadable package.
+
+All dependencies: [jQuery](http://jquery.com/), [JSON 2](http://www.json.org/js.html), and [FlashCanvas](http://flashcanvas.net/) retain their own licenses.

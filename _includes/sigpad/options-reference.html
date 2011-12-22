@@ -1,0 +1,211 @@
+<table class="reference alternate">
+  <col class="name">
+  <col class="type">
+  <col class="value">
+  <col class="description">
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Type</th>
+      <th scope="col">Default Value</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="name"><code>defaultAction</code></td>
+      <td class="type"><code><i>string</i></code><p><em>typeIt</em> or <em>drawIt</em></td>
+      <td class="value"><code><span class="s">typeIt</span></code></td>
+      <td><p>Which action to be active on start-up. TypeIt will display the typed signature immediately; DrawIt will allow the user to draw immediately.</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>displayOnly</code></td>
+      <td class="type"><code><i>boolean</i></code></td>
+      <td class="value"><code><b>false</b></code></td>
+      <td><p>Initialise the canvas for signature display only;<br>Ignore buttons and inputs;<br>Don’t bind events</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>drawOnly</code></td>
+      <td class="type"><code><i>boolean</i></code></td>
+      <td class="value"><code><b>false</b></code></td>
+      <td><p>Initialise the signature pad without the typeIt abilities; Require the user to draw a signature</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>canvas</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">canvas</span></code></td>
+      <td><p>Selector for the canvas element from inside the form element</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>sig</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.sig</span></code></td>
+      <td><p>Parts of the signature form that require Javascript (hidden by default)</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>sigNav</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.sigNav</span></code></td>
+      <td><p>The TypeIt/DrawIt navigation (hidden by default)</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>bgColour</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a CSS colour</p></td>
+      <td class="value"><code><span class="s">#fff</span></code></td>
+      <td><p>The colour fill for the background of the canvas</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>penColour</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a CSS colour</p></td>
+      <td class="value"><code><span class="s">#145394</span></code></td>
+      <td><p>Colour of the drawing ink</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>penWidth</code></td>
+      <td class="type"><code><i>integer</i></code></td>
+      <td class="value"><code><span class="o">2</span></code></td>
+      <td><p>Thickness, in pixels, of the drawing pen</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>penCap</code></td>
+      <td class="type"><code><i>string</i></code><p>butt, round, square</p></td>
+      <td class="value"><code><span class="s">round</span></code></td>
+      <td><p>Determines how the end points of each line are drawn</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>lineColour</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a CSS colour</p></td>
+      <td class="value"><code><span class="s">#ccc</span></code></td>
+      <td><p>Colour of the signature line</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>lineWidth</code></td>
+      <td class="type"><code><i>integer</i></code></td>
+      <td class="value"><code><span class="o">2</span></code></td>
+      <td><p>Thickness, in pixels, of the signature line</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>lineMargin</code></td>
+      <td class="type"><code><i>integer</i></code></td>
+      <td class="value"><code><span class="o">2</span></code></td>
+      <td><p>The margin on the left and the right of signature line</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>lineTop</code></td>
+      <td class="type"><code><i>integer</i></code></td>
+      <td class="value"><code><span class="o">35</span></code></td>
+      <td><p>Distance to draw the signature line from the top of the canvas</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>name</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.name</span></code></td>
+      <td><p>The input field for typing a name</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>typed</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.typed</span></code></td>
+      <td><p>The HTML element to display the printed name</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>clear</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.clearButton</span></code></td>
+      <td><p>The button/link for clearing the canvas</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>typeIt</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.typeIt a</span></code></td>
+      <td><p>The button/tab to trigger the TypeIt state for automatic signature generation (default state)</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>drawIt</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.drawIt a</span></code></td>
+      <td><p>The button/tab to trigger the DrawIt state for drawing a signature on the canvas</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>typeItDesc</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.typeItDesc</span></code></td>
+      <td><p>The description for TypeIt state</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>drawItDesc</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.drawItDesc</span></code></td>
+      <td><p>The description for DrawIt state (hidden by default)</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>output</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a jQuery selector</p></td>
+      <td class="value"><code><span class="s">.output</span></code></td>
+      <td><p>The hidden input field for remembering the signatures JSON array</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>currentClass</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a valid CSS class name</p></td>
+      <td class="value"><code><span class="s">current</span></code></td>
+      <td><p>The class used to mark items as being currently active. Used for the TypeIt/DrawIt tabs and the canvas wrapper element</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>validateFields</code></td>
+      <td class="type"><code><i>boolean</i></code></td>
+      <td class="value"><code><b>true</b></code></td>
+      <td><p>Whether the name and signature pad fields should be validated for completeness</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>errorClass</code></td>
+      <td class="type"><code><i>string</i></code><p>Representing a valid CSS class name</p></td>
+      <td class="value"><code><span class="s">error</span></code></td>
+      <td><p>The class applied to the new error HTML element, name input field and name input label</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>errorMessage</code></td>
+      <td class="type"><code><i>string</i></code></td>
+      <td class="value"><code><span class="s">Please enter your name</span></code></td>
+      <td><p>The error message displayed on invalid submission</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>errorMessageDraw</code></td>
+      <td class="type"><code><i>string</i></code></td>
+      <td class="value"><code><span class="s">Please sign the document</span></code></td>
+      <td><p>The error message displayed when in <code>drawOnly <span class="o">:</span> <b>true</b></code> and no signature has been drawn</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code>onBeforeValidate</code></td>
+      <td class="type"><code><b>function</b> (<var>context</var>, <var>settings</var>)</code></td>
+      <td class="value"><code><span class="c">(built in)</span></code></td>
+      <td>
+        <p>Pass a function callback to be executed before the form is validated. Can be used to clear the old validation errors.</p>
+        <strong>Arguments</strong>
+        <ol>
+          <li><b>context</b>—a jQuery object representing the selected element to initalize the signature pad</li>
+          <li><b>settings</b>—the signature pad settings object</li>
+        </ol>
+      </td>
+    </tr>
+    <tr>
+      <td class="name"><code>onFormError</code></td>
+      <td class="type"><code><b>function</b> (<var>errors</var>, <var>context</var>, <var>settings</var>)</code></td>
+      <td class="value"><code><span class="c">(built in)</span></code></td>
+      <td>
+        <p>Pass a function callback to be executed when the form is invalid. Can be used to display error messages to the user.</p>
+        <strong>Arguments</strong>
+        <ol>
+          <li>
+            <b>errors</b>—an object containing the errors present:
+            <pre style="margin-top:0"><code>{
+  drawInvalid <span class="o">:</span> <b>true</b><span class="o">|</span><b>false</b>
+  , nameInvalid <span class="o">:</span> <b>true</b><span class="o">|</span><b>false</b>
+}</code></pre>
+          </li>
+          <li><b>context</b>—a jQuery object representing the selected element to initalize the signature pad</li>
+          <li><b>settings</b>—the signature pad settings object</li>
+        </ol>
+      </td>
+    </tr>
+  </tbody>
+</table>

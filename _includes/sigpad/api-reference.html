@@ -1,0 +1,67 @@
+<table class="reference">
+  <col class="method">
+  <col class="arguments">
+  <col class="return">
+  <col class="description">
+  <thead>
+    <tr>
+      <th scope="col">Method</th>
+      <th scope="col">Arguments</th>
+      <th scope="col">Return</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code><b>regenerate</b>(<var>paths</var>)</code></td>
+      <td class="arguments"><code><var>paths</var>:<i>array|string</i></code><p>An array of objects representing the movement and lines of the signature</p></td>
+      <td class="return"><code><i>void</i></code></td>
+      <td><p>Redraws a signature on the canvas element using an array of objects representing the movement and lines of the signature</p></td>
+    </tr>
+    <tr>
+      <td><code><b>clearCanvas</b>()</code></td>
+      <td class="arguments">&nbsp;</td>
+      <td class="return"><code><i>void</i></code></td>
+      <td><p>Clears all the drawn elements off the canvas and redraws the background colour and signature line</p></td>
+    </tr>
+    <tr>
+      <td><code><b>getSignature</b>()</code></td>
+      <td class="arguments">&nbsp;</td>
+      <td class="return"><code><i>array</i></code><p>The signature as a native Javascript array</p></td>
+      <td>
+        <p>Returns the drawn signature as a native Javascript array</p>
+        <p style="margin-bottom:0;">Each item in the array is an object following this format:</p>
+        <p><code>{lx <span class="o">:</span> <span class="o">20</span>, ly <span class="o">:</span> <span class="o">34</span>, mx <span class="o">:</span> <span class="o">20</span>, my <span class="o">:</span> <span class="o">34</span>}</code></p>
+        <dl class="alt">
+          <dt>lx</dt>
+          <dd>The lineTo() x coordinate</dd>
+          <dt>ly</dt>
+          <dd>The lineTo() y coordinate</dd>
+          <dt>mx</dt>
+          <dd>The moveTo() x coordinate</dd>
+          <dt>my</dt>
+          <dd>The moveTo() y coordinate</dd>
+        </dl>
+      </td>
+    </tr>
+    <tr>
+      <td><code><b>getSignatureString</b>()</code></td>
+      <td class="arguments">&nbsp;</td>
+      <td class="return"><code><i>string</i></code><p>The signature as a JSON string; for saving</p></td>
+      <td>
+        <p>Returns the drawn signature as a Javascript string in the JSON format</p>
+        <p style="margin-bottom:0;">The string follows this format:</p>
+        <p><code><span class="s">[{"lx":20,"ly":34,"mx":20,"my":34},…]</span></code></p>
+      </td>
+    </tr>
+    <tr>
+      <td><code><b>getSignatureImage</b>()</code></td>
+      <td class="arguments">&nbsp;</td>
+      <td class="return"><code><i>string</i></code><p>The Base64 encoded PNG of the signature</p></td>
+      <td>
+        <p style="margin-bottom:0;">Returns a Base64 encoded PNG of the canvas</p>
+        <p><a href="~/lab/signature-to-image">Check out Signature to Image for a server-side solution</a></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
