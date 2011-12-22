@@ -3,6 +3,11 @@ layout: none
 permalink: .htaccess
 ---
 
+# Signature Pad Demos
+Redirect 301 /lab/signature-pad-accept /lab/signature-pad/accept/
+Redirect 301 /lab/signature-pad-require-drawn /lab/signature-pad/require-drawn/
+Redirect 301 /lab/signature-pad-regenerate /lab/signature-pad/regenerate/
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
