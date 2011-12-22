@@ -31,51 +31,37 @@ Get the source code on GitHub:
 
 The whole signature to image generation requires just a few lines of PHP:
 
-{% highlight php %}
-{% include sigimg/howto.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto.php %}{% endhighlight %}
 
 ### How-to: Step-by-Step[howto-steps]
 
 First, include the required PHP file: `signature-to-image.php`.
 
-{% highlight php %}
-{% include sigimg/howto-1.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-1.php %}{% endhighlight %}
 
 Get the signature from the form post. Signature Pad defaults to naming the post field as `output`.
 
-{% highlight php %}
-{% include sigimg/howto-2.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-2.php %}{% endhighlight %}
 
 Then, call the function, passing a string representing the JSON, submitted by [Signature Pad](/lab/signature-pad/), or an already decoded JSON object (using `json_decode()`).
 
-{% highlight php %}
-{% include sigimg/howto-3.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-3.php %}{% endhighlight %}
 
 The `$img` variable will be an image resource, which you can either display immediately or save to a file.
 
 #### Save to file
 
-{% highlight php %}
-{% include sigimg/howto-4.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-4.php %}{% endhighlight %}
 
 #### Display in the browser
 
-{% highlight php %}
-{% include sigimg/howto-5.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-5.php %}{% endhighlight %}
 
 #### Cleanup
 
 When you have finished with the image resource, make sure to clean up after yourself and free some memory.
 
-{% highlight php %}
-{% include sigimg/howto-6.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/howto-6.php %}{% endhighlight %}
 
 ## Function Reference[functions]
 
@@ -85,9 +71,7 @@ When you have finished with the image resource, make sure to clean up after your
 
 Options can be passed as the second argument of the function when called. Only options that are different from the defaults need to be included in the options array.
 
-{% highlight php %}
-{% include sigimg/options.php %}
-{% endhighlight %}
+{% highlight php %}{% include sigimg/options.php %}{% endhighlight %}
 
 It’s highly recommended that the options used server-side match the values used in the Javascript.
 
@@ -103,7 +87,7 @@ Check out the [changelog on GitHub](https://github.com/thomasjbradley/signature-
 
 Signature to Image is licensed under the [New BSD license](https://github.com/thomasjbradley/signature-to-image/blob/master/NEW-BSD-LICENSE.txt), which is included in the downloadable package.
 
-***
+---
 
 ## Other Solutions
 
