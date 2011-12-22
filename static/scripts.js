@@ -155,6 +155,9 @@ var animatedScrollTo = (function () {
     , controls = document.getElementById('testimonial-controls-template').innerHTML
     , rocket = document.getElementsByClassName('rocketeer')[0]
     , scrollUpTimer
+    , navProf = document.getElementsByClassName('nav-prof')[0]
+    , navDev = document.getElementsByClassName('nav-dev')[0]
+    , navWrite = document.getElementsByClassName('nav-write')[0]
 
   document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
     var self = this
@@ -173,9 +176,14 @@ var animatedScrollTo = (function () {
     animatedScrollTo(document.getElementById('top'), 500)
   }, false)
 
-  document.getElementsByClassName('nav-prof')[0].addEventListener('click', navScroller, false)
-  document.getElementsByClassName('nav-dev')[0].addEventListener('click', navScroller, false)
-  document.getElementsByClassName('nav-write')[0].addEventListener('click', navScroller, false)
+  if (document.getElementById(navProf.getAttribute('href').replace(/\/#/, '')))
+    navProf.addEventListener('click', navScroller, false)
+
+  if (document.getElementById(navDev.getAttribute('href').replace(/\/#/, '')))
+    navDev.addEventListener('click', navScroller, false)
+
+  if (document.getElementById(navWrite.getAttribute('href').replace(/\/#/, '')))
+    navWrite.addEventListener('click', navScroller, false)
 
   for (i = 0; i < totalTestimonialGroups; i++) {
     ;(function () {
