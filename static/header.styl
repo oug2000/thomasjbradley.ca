@@ -1,3 +1,5 @@
+@import 'site-title'
+
 [role="banner"]
   margin 0
   padding 0
@@ -10,60 +12,6 @@
 .masthead
   margin 0 auto
   text-align center
-
-.site-title
-  display inline-block
-  margin 0
-  padding 0
-  position relative
-
-  font-size 1.5em
-  font-weight 600
-  line-height 1.8
-
-  & .logo
-  & .logo i:first-child
-  & .logo i + i
-    height 47px
-    position absolute
-    right 0
-    width 25px
-
-  & .logo i:first-child
-  & .logo i + i
-    left 0
-
-    background transparent url("{{'img'|env}}/rocket.png") no-repeat left top
-    transition all 150ms linear 10ms
-
-  & .logo i + i
-    left auto
-    right 0
-    width 0
-
-    background-position right top
-    transition all 150ms linear
-
-  & a
-  & a:link
-  & a:visited
-    display block
-    padding-right 55px
-    position relative
-
-    border 0
-
-    color button-muted
-
-  & a:hover .logo i:first-child
-  & a:focus .logo i:first-child
-  & a:active .logo i:first-child
-    width 0
-
-  & a:hover .logo i + i
-  & a:focus .logo i + i
-  & a:active .logo i + i
-    width 25px
 
 .nav-prime
   margin 2.3em 0 0
