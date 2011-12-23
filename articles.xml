@@ -1,0 +1,28 @@
+---
+---
+<?xml version="1.0" encoding="utf-8"?>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sy="http://purl.org/rss/1.0/modules/syndication/" version="2.0">
+	<channel>
+		<title>Articles &amp; Essays · Thomas J Bradley</title>
+		<link>http://thomasjbradley.ca/</link>
+		<description>Articles and essays written by Thomas J Bradley on topics including web development, web education, and Canadiana.</description>
+		<docs>http://www.rssboard.org/rss-specification</docs>
+		<language>en-ca</language>
+		<pubDate>{{site.time|date:"%a, %d %b %Y %H:%M:%S -0500"}}</pubDate>
+		<lastBuildDate>{{site.time|date:"%a, %d %b %Y %H:%M:%S -0500"}}</lastBuildDate>
+		<atom:link href="http://thomasjbradley.ca/articles.xml" rel="self" type="application/rss+xml"/>
+		<sy:updatePeriod>daily</sy:updatePeriod>
+		<sy:updateFrequency>1</sy:updateFrequency>
+		{% for post in site.posts limit:10 %}
+		<item>
+			<title>{{post.title}}</title>
+			<link>http://thomasjbradley.ca{{post.url}}</link>
+			<pubDate>{{post.date|date:"%a, %d %b %Y %H:%M:%S -0500"}}</pubDate>
+			<guid isPermaLink="true">http://thomasjbradley.ca{{post.url}}</guid>
+			<dc:creator>Thomas J Bradley</dc:creator>
+			<description>{{post.desc}}</description>
+			<content:encoded><![CDATA[<p><strong>{{post.desc}}</strong></p>{{post.content}}]]></content:encoded>
+		</item>
+		{% endfor %}
+	</channel>
+</rss>
