@@ -1,6 +1,6 @@
 ---
-layout: article
-title: Signature to Image
+layout: page
+title: "Signature to Image"
 priority: 0.6
 changefreq: monthly
 desc: "A supplemental script for Signature Pad that generates an image of the signature’s JSON output server-side using PHP."

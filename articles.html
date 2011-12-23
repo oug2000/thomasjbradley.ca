@@ -1,9 +1,33 @@
 ---
 layout: default
-title: Articles
+title: "Articles"
 permalink: /articles/index.html
 priority: 0.7
 changefreq: monthly
 ---
 
-<h1>Articles</h1>
+<header class="module-wrapper slantlt">
+  <div class="mod-group-head mod-main-head">
+    <h1>Articles</h1>
+    <p class="mod-why mod-group-title">Articles, essays and tips &amp; tricks on topics including web development, web education and Canadiana.</p>
+  </div>
+</header>
+
+<div class="module-wrapper rt45">
+  <div class="mod-group-head">
+    <ol class="hfeed">
+      {% for post in site.posts %}
+      <li class="hentry">
+        <article>
+          <strong class="entry-title"><a href="{{post.url}}" class="bookmark">{{post.title}}</a></strong>
+          <p>{{post.desc}}</p>
+          <footer>
+            <time class="updated hidden" datetime="{{page.date|date:"%Y-%m-%d"}}" pubdate>{{page.date|date:"%Y-%m-%d"}}</time>
+            <span class="author hidden vcard"><span class="fn">Thomas J Bradley</span></span>
+          </footer>
+        </article>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</div>

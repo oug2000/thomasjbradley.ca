@@ -13,13 +13,6 @@ layout: default
   <div class="module module-article clearfix">
     <div class="unit article">
       {{content}}
-
-      <footer class="publish-details">
-      <p>Published <time datetime="{{page.date|date:"%Y-%m-%d"}}" pubdate>{{page.date|date:"%A, %B %d, %Y"}}</time>
-      {% if page.updated %}
-      • Last updated <time datetime="{{page.updated|date:"%Y-%m-%d"}}">{{page.updated|date:"%A, %B %d, %Y"}}</time></p>
-      {% endif %}
-      </footer>
     </div>
   </div>
 </div>

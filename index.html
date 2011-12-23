@@ -121,36 +121,18 @@ priority: 1
   <div class="unit secondary">
     <h3 class="mod-nohead">Recent Articles <span title="and">&amp;</span> Essays</h3>
     <ol class="hfeed">
+      {% for post in site.posts limit:3 %}
       <li class="hentry">
         <article>
-          <h4 class="entry-title"><a href="#" class="bookmark">Marking Up Code for the Ambitious</a></h4>
-          <p>Code markup in online content and documentation can be improved. Here’s a proposal for the ambitious semanticists out there.</p>
+          <h4 class="entry-title"><a href="{{post.url}}" class="bookmark">{{post.title}}</a></h4>
+          <p>{{post.desc}}</p>
           <footer>
-            <time class="updated hidden" datetime="2011-12-11">2011-12-11</time>
+            <time class="updated hidden" datetime="{{page.date|date:"%Y-%m-%d"}}" pubdate>{{page.date|date:"%Y-%m-%d"}}</time>
             <span class="author hidden vcard"><span class="fn">Thomas J Bradley</span></span>
           </footer>
         </article>
       </li>
-      <li class="hentry">
-        <article>
-          <h4 class="entry-title"><a href="#" class="bookmark">Park Finder: A Mobile First Application</a></h4>
-          <p>A small, location-based application using Ottawa’s open data and mobile first ideas.</p>
-          <footer>
-            <time class="updated hidden" datetime="2011-12-11">2011-12-11</time>
-            <span class="author hidden vcard"><span class="fn">Thomas J Bradley</span></span>
-          </footer>
-        </article>
-      </li>
-      <li class="hentry">
-        <article>
-          <h4 class="entry-title"><a href="#" class="bookmark">Mobile Testing Suite</a></h4>
-          <p>Since the mobile internet is growing at an extremely quick pace I felt it was prudent to start testing/developing sites on mobile devices.</p>
-          <footer>
-            <time class="updated hidden" datetime="2011-12-11">2011-12-11</time>
-            <span class="author hidden vcard"><span class="fn">Thomas J Bradley</span></span>
-          </footer>
-        </article>
-      </li>
+      {% endfor %}
     </ol>
   </div>
 </article>
