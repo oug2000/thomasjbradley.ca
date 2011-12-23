@@ -40,3 +40,4 @@ exclude:
   - normalize.styl
   - config.styl
   - site-title.styl
+  - blog-posts.styl
