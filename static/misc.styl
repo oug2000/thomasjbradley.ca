@@ -250,7 +250,7 @@ a.lab-img img
   padding-top 0
   width 45%
 
-.lab-download
+.module-feature .lab-download
   float right
   width 45%
 
@@ -318,6 +318,8 @@ a.lab-img img
     border 0
 
   & a .app-desc
+  & a:link .app-desc
+  & a:visited .app-desc
     display block
 
     color text-dark
@@ -330,10 +332,14 @@ a.lab-img img
     border-bottom 0.1em solid rgba(link-normal,0.2)
     transition all 150ms linear
 
+    color link-normal
+
   & a:hover .app-title
   & a:focus .app-title
   & a:active .app-title
     border-color link-bright
+
+    color link-bright
 
 .app:before
   content ""
@@ -398,7 +404,7 @@ a.lab-img img
     padding-top 7.5em
     width 20%
 
-  .lab-download
+  .module-feature .lab-download
     left 2.5%
     position absolute
     top 13em
@@ -424,11 +430,11 @@ a.lab-img img
   .lab-feature
     width 64.5%
 
-  .lab-download
+  .module-feature .lab-download
     left auto
     position relative
     top auto
-    width 20%
+    width 100%
 
   .main-download
     left -26%
