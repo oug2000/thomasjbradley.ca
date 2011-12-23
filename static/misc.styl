@@ -363,6 +363,41 @@ a.lab-img img
   font-style italic
   text-align center
 
+.feed-icon
+.feed-icon:link
+.feed-icon:visited
+  display inline-block
+  height 16px
+  margin 0
+  overflow hidden
+  padding 0
+  width 16px
+
+  background transparent url("{{'img'|env}}/feed-icon.png") no-repeat left top
+  border 0
+  transition none
+
+  text-indent -999em
+  vertical-align middle
+
+.feed-icon:hover
+.feed-icon:focus
+.feed-icon:active
+  background-position -18px top
+
+.feed-icon-alt
+.feed-icon-alt:link
+.feed-icon-alt:visited
+  height 32px
+  width 32px
+
+  background-position: 0 -18px
+
+.feed-icon-alt:hover
+.feed-icon-alt:focus
+.feed-icon-alt:active
+  background-position -34px -18px
+
 @media all and (min-width: 400px)
 
   .more-text
