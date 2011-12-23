@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en-ca">
+<head>
+  <meta charset="utf-8">
+  <title>{{page.title}} · Thomas J Bradley</title>
+  <link href="{{"static"|env}}/demo.css" rel="stylesheet">
+  {% include common-head.html %}
+  <style>
+  #gco { margin: 0; padding: 2px 12px 6px; background: #000 none no-repeat center; text-align: center; }
+  #gco a, #gco:link, #gco:visited { border: 0; color: #fff; font-weight: bold; text-decoration: none; }
+  #gco a:hover, #gco a:focus, #gco a:active { border: 0; }
+  #gco ul { margin: 0; overflow: hidden; padding: 0; list-style-type: none; }
+  #gco li { float: left; height: 2.1em; margin: 2px 0 0 0; padding: 0; list-style-type: none; vertical-align: middle; }
+  #gco li#gco-sig { border-right: 1px solid #333; }
+  #gco li#gco-sig a { display: block; margin: 1px 0 0 0; padding: 5px 15px 0 0; }
+  #gco li#gco-wm { float: right; padding-left: 15px; border-left: 1px solid #333; }
+  #gco li#gco-wm a { display: block; margin-top: 4px; }
+  #gco li#gco-lang { margin-left: 15px; }
+  #gco li#gco-lang a { line-height: 2.1em; }
+  #gco li#gco-help { float: right; margin-right: 15px; padding-left: 15px; border-left: 1px solid #333; }
+  #gco li#gco-help a { line-height: 2.1em; }
+  #gco li#gco-search { float: right; margin-right: 15px; }
+  #gco form { display: inline; }
+  #gco input { font-size: 1em; width: 10em; }
+  #gco label { margin-right: 8px; color: #fff; font-weight: bold; line-height: 2.1em; }
+  </style>
+  <!--[if IE 6]>
+  <style type="text/css">
+  #gco { height: 1px; }
+  #gco input { margin-top: 5px; }
+  </style>
+  <![endif]-->
+</head>
+<body>
+  <div id="gco">
+    <ul>
+      <li id="gco-sig"><a href="http://www.tbs-sct.gc.ca/"><img src="{{"img2"|env}}/articles/clf3/tbssig-sctsig-eng.png" width="386" height="20" alt="Treasury Board of Canada Secretariat"></a></li>
+      <li id="gco-lang"><a href="#">Français</a></li>
+      <li id="gco-wm"><a href="http://canada.gc.ca"><img src="{{"img2"|env}}/articles/clf3/wmms.png" width="83" height="20" alt="Symbol of Canada"></a></li>
+      <li id="gco-help"><a href="#">Help</a></li>
+      <li id="gco-search">
+        <form method="get">
+          <label for="q">Search</label>
+          <input type="search" id="q" name="q">
+        </form>
+      </li>
+    </ul>
+  </div>
+  <div role="main">
+    {% include demo-logo.html %}
+    {{content}}
+  </div>
+</body>
+</html>

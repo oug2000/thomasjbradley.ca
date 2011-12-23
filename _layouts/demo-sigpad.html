@@ -10,7 +10,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 <body>
-  <div class="site-title"><a href="/" title="Designed &amp; Developed by Thomas J Bradley"><span>Designed &amp; Developed by Thomas J Bradley</span><i class="logo"><i></i><i></i></i></a></div>
-  {{content}}
+  <div role="main">
+    {% include demo-logo.html %}
+    {{content}}
+  </div>
 </body>
 </html>

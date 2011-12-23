@@ -2,7 +2,7 @@
 layout: article
 title: "Mercurial or Git?"
 desc: "Recently I made the decision. When SVN started to go wonky after my update to Snow Leopard, I knew I had to switch to a DVCS, but I didn’t know which to use."
-updated: 2011-12-22
+updated: 2011-12-23
 ---
 
 Through my researching travels on the internet I quickly noticed that *all* the reviews other people wrote were old, usually a couple years old. The reviews also had one common theme through them all:
@@ -74,4 +74,4 @@ After using if for almost a week I am, so far, happy with my decision. But I adm
 
 ## Updates
 
-Two years after this post I now switch back and forth between both Git and Mercurial. I even use both GitHub and BitBucket.
+Two years after this post, I now switch back and forth between Git and Mercurial. I use both GitHub and BitBucket (BitBucket now supports Git). I’ve even got more proficient with the command line, but I still find Mercurial more user friendly.

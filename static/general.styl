@@ -141,6 +141,11 @@ del
   color text-medium
   text-decoration line-through
 
+ins
+  background-color transparent
+
+  color #111
+
 hr
   clear both
   height 0
@@ -176,14 +181,31 @@ blockquote
   padding 0 0 0 1em
   position relative
   width 90%
-  
+
   border-left 4px solid site-bg-dark
-  
+
   color text-medium-dark
   font italic normal 1em/1.5 Georgia,serif
 
 mark
   background-color #e1a037
+
+figure
+  margin 1.375em 0
+  padding 0
+
+  & img
+    display block
+    width 100%
+
+    border 1px solid text-light
+    box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
+
+figcaption
+  margin 1.5em 0 0
+
+  color text-medium-medium
+  font-size 0.875em
 
 .btn-group
   margin-top 3em
@@ -220,3 +242,15 @@ mark
   font-family: Baskerville,Palatino,"Book Antiqua",serif;
   font-style italic
   font-weight normal
+
+@media all and (min-width: 700px)
+
+  figure
+    margin-left -17.4%
+    width 136%
+
+@media all and (min-width: 1150px)
+
+  figure
+    margin-left -26.4%
+    width 180.5%
