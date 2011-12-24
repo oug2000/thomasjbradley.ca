@@ -31,8 +31,8 @@ sitemap:
 exclude:
   - deploy.sh
   - update-sigpad-assets.sh
-  - root-exclude.txt
-  - base-exclude.txt
+  - exclude-root.txt
+  - exclude-base.txt
   - pingomatic.xml
   - footer.styl
   - general.styl
