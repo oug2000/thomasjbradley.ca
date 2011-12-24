@@ -25,7 +25,7 @@ desc: "A supplemental script for Signature Pad that generates an image of the si
 Signature to Image is a simple PHP script that will take the JSON output of [Signature Pad](/lab/signature-pad/) and generate an image file server-side to be saved for later. Uses the GD Image Library for image generation and PHP’s built in `json_decode()` if a string is passed.
 
 Get the source code on GitHub:
-<http://github.com/thomasjbradley/signature-to-image/>
+<https://github.com/thomasjbradley/signature-to-image/>
 
 ## How-to
 

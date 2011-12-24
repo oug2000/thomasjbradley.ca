@@ -7,7 +7,7 @@ updated: 2010-12-20
 
 I started by downloading a bunch of emulators including Android, WebOS, BlackBerry and Windows Phone 7. But quickly found limitations to this approach.
 
-The main limitation of the emulators is that they can’t be open at the same time as my virtual versions of IE. Another issue I quickly found was the lack of Nokia emulators and since Nokia is the most popular handset maker in the world, this is a major issue. I did find the [Nokia Remote Device Access](http://www.forum.nokia.com/Devices/Remote_device_access/), but the idea of scheduling a time and waiting wasn’t something I was excited about.
+The main limitation of the emulators is that they can’t be open at the same time as my virtual versions of IE. Another issue I quickly found was the lack of Nokia emulators and since Nokia is the most popular handset maker in the world, this is a major issue. I did find the [Nokia Remote Device Access](http://www.developer.nokia.com/Devices/Remote_device_access/), but the idea of scheduling a time and waiting wasn’t something I was excited about.
 
 And we all know that emulators are far from perfect, so actual devices are what I needed.
 

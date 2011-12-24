@@ -22,7 +22,7 @@ It is **Saturday, April 24th, 2010** and [tickets to the event are free, go rese
 
 For my contribution to the Open Data Ottawa Hackfest I am creating an application (more on that in a second) but first I needed a data set.
 
-The city’s web site has a [list of all the parks](http://ottawa.ca/residents/parks_recreation/parks/locations/all_locations_en.html) in Ottawa and their addresses. It also has a list of all the [parks that allow/disallow dogs](http://ottawa.ca/residents/animal_care/cats_dogs/dogs/parks/index_en.html) split over five pages.
+The city’s web site has a [list of all the parks](http://ottawa.ca/rec_culture/park_facility/parks/locations/index_en.html) in Ottawa and their addresses. It also has a list of all the [parks that allow/disallow dogs](http://ottawa.ca/rec_culture/park_facility/parks/dogs/index_en.html) split over five pages.
 
 For my application I wanted to use that information, but there was no easily available place to get that information except through the city’s HTML tables on their web site (hence the need for open data).
 
@@ -34,7 +34,7 @@ Originally I had wanted to do an automated screen scrape of the data, but after 
 
 So, I resorted to a slightly less elegant and slightly more manual method:
 
-1. I started with this list of dog parks: [http://ottawa.ca/residents/animal_care/cats_dogs/dogs/parks/index_en.html](http://ottawa.ca/residents/animal_care/cats_dogs/dogs/parks/index_en.html).
+1. I started with this list of dog parks: <http://ottawa.ca/rec_culture/park_facility/parks/dogs/index_en.html>).
 
 2. I opened each of the HTML tables in its print view and saved them to my desktop.
 
@@ -42,7 +42,7 @@ So, I resorted to a slightly less elegant and slightly more manual method:
 
 4. Some of the tables had the addresses in the neighbouring cell and some had it in the cell below. So, I corrected all the addresses and put them in the neighbouring cell.
 
-5. I then had a list of some of the city parks, but not all. So I browsed, printed and saved the master list: [http://ottawa.ca/residents/parks_recreation/parks/locations/all_locations_en.html](http://ottawa.ca/residents/parks_recreation/parks/locations/all_locations_en.html) (Thankfully the master list had the addresses in the proper orientation.)
+5. I then had a list of some of the city parks, but not all. So I browsed, printed and saved the master list: <http://ottawa.ca/rec_culture/park_facility/parks/locations/index_en.html> (Thankfully the master list had the addresses in the proper orientation.)
 
 6. I then merged the two lists together in my Excel sheet and removed duplicates.
 
@@ -60,7 +60,7 @@ So, I resorted to a slightly less elegant and slightly more manual method:
 
 	I originally decided I wanted it in a SQLite database, so I exported from Excel to CSV, which I could then import to SQLite. That may have sounded easy, but was far from it. Excel’s CSV output is far from optimal, so it took a bunch of validating and re-importing until the data was ready to go.
 
-12. I am now about six—seven hours in and feeling pretty excited, so I packaged it up into a little repo with a couple Python scripts for extracting the SQLite data into other formats (CSV, XML and JSON) and released the data set into [GitHub](http://github.com/thomasjbradley/ottawaparks), tweeted it and went to bed.
+12. I am now about six—seven hours in and feeling pretty excited, so I packaged it up into a little repo with a couple Python scripts for extracting the SQLite data into other formats (CSV, XML and JSON) and released the data set into [GitHub](https://github.com/thomasjbradley/ottawaparks), tweeted it and went to bed.
 
 13. The next morning I got an e-mail that my data was being used in an Open Data Ottawa app (great!) but at the same time there was an issue opened on GitHub with my data. Apparently a whack load of the latitudes/longitudes all pointed to the same location (what I realised later was city hall).
 
@@ -68,7 +68,7 @@ So, I resorted to a slightly less elegant and slightly more manual method:
 
 14. Upload to GitHub. Done. (Well done isn’t really final because I found an issue tonight with random extra quotes, but anyways.)
 
-So that, in a (very large) nut shell, is my adventure in producing the [Ottawa Parks data set](http://github.com/thomasjbradley/ottawaparks), now onto what I am going to use if for.
+So that, in a (very large) nut shell, is my adventure in producing the [Ottawa Parks data set](https://github.com/thomasjbradley/ottawaparks), now onto what I am going to use if for.
 
 ## Ottawa Dog Park Finder
 

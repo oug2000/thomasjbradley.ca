@@ -14,13 +14,13 @@ The graphic presented on the right is a static version of the what the calendar 
 
 Especially when describing something that only I can only—and ever will—see. So I have created a very basic mock-up of the year loop in a three-dimensional Flash movie.
 
-<figure>
-	<img src="{{"img2"|env}}/articles/year-loop/year-loop.png" alt="Static representation of the year loop">
-</figure>
+![]({{"img2"|env}}/articles/year-loop/year-loop.png)
 
-<figure style="text-align:center; background-color:#000;">
-	<embed src="{{"img2"|env}}/articles/year-loop/year-loop.swf" type="application/x-shockwave-flash" allowscriptaccess="always" width="700" height="400"></embed>
-</figure>
+<div>
+	<figure style="text-align:center; background-color:#000;">
+		<embed src="{{"img2"|env}}/articles/year-loop/year-loop.swf" type="application/x-shockwave-flash" allowscriptaccess="always" width="700" height="400">
+	</figure>
+</div>
 
 The representation is very basic and only really presents one context: looking ahead in month view. The year loop in my mind is much more dynamic and flexible. Instead of feeling like a solid plastic mass (like in Flash) it is more of a flexible fabric object. The months bend, stretch and adjust based on time and view. Also, in my mental visualisation all the days of each month are represented on the loop, not just the weeks.
 
@@ -48,4 +48,4 @@ Well, I can’t really say. I am sure it says something about my personality, ab
 
 It is interesting to me to think about how my mind thinks about things and equally as interesting to see how other people think about things. Or even if they think about how they think about things. Also, it would be interesting to see the similarities and differences between everybody’s mental visualisations. Meta thinking, think about it. (Don’t you love that cheesy final sentence!)
 
-**Tomorrow, this post will be followed up with another post in the series: [Colour Association](~/blog/mental-visualisations-colour-association).**
+**Tomorrow, this post will be followed up with another post in the series: [Colour Association](/articles/mental-visualisations-colour-association/).**

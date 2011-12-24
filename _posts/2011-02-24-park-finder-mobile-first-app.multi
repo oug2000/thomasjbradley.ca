@@ -18,7 +18,7 @@ Though, we shouldn’t stop at design with Mobile First; when creating web sites
 
 ## The supported devices
 
-My goal from the start was to make the app browser agnostic (the goal of any *real* web developer). So, [using my mobile testing suite](~/blog/mobile-testing-suite), I set out to make Park Finder work on all those devices.
+My goal from the start was to make the app browser agnostic (the goal of any *real* web developer). So, [using my mobile testing suite](/articles/mobile-testing-suite/), I set out to make Park Finder work on all those devices.
 
 The project was a success, I was able to support all the browsers listed in my mobile testing suite (forget BB OS 4, it sucks!) and all the major desktop browsers.
 
@@ -40,7 +40,7 @@ I had originally planned to put Google Maps onto the mobile phones that supporte
 
 ## Technical set up
 
-The general idea was to send the basic version of the site to all browsers to minimise download time (and because I am not the biggest fan of browser sniffing). Then using [Modernizr](http://modernizr.com/) and a few other techniques, dynamically load the other resources as required.
+The general idea was to send the basic version of the site to all browsers to minimise download time (and because I am not the biggest fan of browser sniffing). Then using [Modernizr](http://www.modernizr.com/) and a few other techniques, dynamically load the other resources as required.
 
 ### The loading process
 

@@ -4,7 +4,7 @@ title: "Save View Source"
 desc: "View source is an extremely important part of the web and one of the most important tools in my belt. But its existence is being threatened. Save View Source!"
 ---
 
-There are a few recent rumblings [on](http://alex.dojotoolkit.org/2010/01/view-source-is-good-discuss/) [the](http://ajaxian.com/archives/the-end-of-days-for-view-source) [web](http://ajaxian.com/archives/view-source-how-important-was-it-is-it-and-will-it-be) that are starting to indicate that view source is on it’s way to extinction due to changes in the web including minification and the [need for sp<ins>(ee)</ins>d](ttp://www.chromium.org/spdy). We as web developers can’t let that happen!
+There are a few recent rumblings [on](http://alex.dojotoolkit.org/2010/01/view-source-is-good-discuss/) [the](http://ajaxian.com/archives/the-end-of-days-for-view-source) [web](http://ajaxian.com/archives/view-source-how-important-was-it-is-it-and-will-it-be) that are starting to indicate that view source is on it’s way to extinction due to changes in the web including minification and the [need for sp<ins>(ee)</ins>d](http://www.chromium.org/spdy). We as web developers can’t let that happen!
 
 ## View Source and Web History
 

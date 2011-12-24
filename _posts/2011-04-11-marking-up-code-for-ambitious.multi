@@ -24,7 +24,7 @@ Looking at the HTML specification we have a bunch of elements that make sense wi
 - <code class="language-html">&lt;<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-samp-element" rel="external"><b>samp</b></a>&gt;</code>: computer output
 - <code class="language-html">&lt;<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-kbd-element" rel="external"><b>kbd</b></a>&gt;</code>: user input
 
-And we still use the <code class="language-html">&lt;<a href="" rel="external"><b>span</b></a>&gt;</code>, but only for things that have no meaning in the context, like a regular old string.
+And we still use the <code class="language-html">&lt;<a href="http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-span-element" rel="external"><b>span</b></a>&gt;</code>, but only for things that have no meaning in the context, like a regular old string.
 
 ## Some Examples
 
@@ -52,10 +52,10 @@ Lets walk through some samples to see how to use these elements in our code samp
 
 So, from a semantics point of view, I believe the above code is more appropriate. The notable additions are:
 
-- <code class="language-html">&lt;<b>b</b>&gt;</code> for wrapping around the HTML elements; semantically the elements are keywords, in their context.</li>
-- <code class="language-html">&lt;<b>i</b>&gt;</code> for wrapping attributes on the HTML elements; I suppose that attributes are a taxonomies or designations.</li>
-- <code class="language-html">&lt;<b>span</b>&gt;</code> for wrapping around strings in code, since the string really doesn’t have any meaning.</li>
-- <code class="language-html">&lt;<b>small</b>&gt;</code> for wrapping around comments.</li>
+- <code class="language-html">&lt;<b>b</b>&gt;</code> for wrapping around the HTML elements; semantically the elements are keywords, in their context.
+- <code class="language-html">&lt;<b>i</b>&gt;</code> for wrapping attributes on the HTML elements; I suppose that attributes are a taxonomies or designations.
+- <code class="language-html">&lt;<b>span</b>&gt;</code> for wrapping around strings in code, since the string really doesn’t have any meaning.
+- <code class="language-html">&lt;<b>small</b>&gt;</code> for wrapping around comments.
 
 ## CSS
 
@@ -134,9 +134,7 @@ What about going even further by integrating documentation with our code samples
 
 <div class="highlight">
 <pre><code class="code-block language-html">&lt;<b>small</b>&gt;<i>&amp;lt;</i>?php&lt;<b>small</b>&gt;
-</div>
 
-<div class="highlight">
 &lt;<b>var</b>&gt;$db&lt;/<b>var</b>&gt; = &lt;<b>b</b>&gt;new&lt;/<b>b</b>&gt; &lt;<b>a</b> <i>href</i>=<span>"http://php.net/pdo"</span>&gt;&lt;<b>b</b>&gt;PDO&lt;/<b>b</b>&gt;&lt;/<b>a</b>&gt;(&lt;<b>span</b>&gt;'mysql:dbname=mydb;host=localhost'&lt;/<b>span</b>&gt;, &lt;<b>span</b>&gt;'root'&lt;/<b>span</b>&gt;, &lt;<b>span</b>&gt;''&lt;/<b>span</b>&gt;);
 &lt;<b>var</b>&gt;$db&lt;/<b>var</b>&gt;-<i>&amp;gt;</i>&lt;<b>a</b> <i>href</i>=<span>"http://php.net/pdo.exec"</span>&gt;&lt;<b>i</b>&gt;exec&lt;/<b>i</b>&gt;&lt;/<b>a</b>&gt;(&lt;<b>span</b>&gt;'DELETE FROM mytable'&lt;/<b>span</b>&gt;);</code></pre>
 </div>
