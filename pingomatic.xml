@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<methodCall>
+  <methodName>weblogUpdates.ping</methodName>
+  <params>
+    <param>
+      <value>Thomas J Bradley</value>
+    </param>
+    <param>
+      <value>http://thomasjbradley.ca/articles/</value>
+    </param>
+    <param>
+      <value>http://thomasjbradley.ca/articles.xml</value>
+    </param>
+  </params>
+</methodCall>

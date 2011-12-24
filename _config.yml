@@ -33,6 +33,7 @@ exclude:
   - update-sigpad-assets.sh
   - root-exclude.txt
   - base-exclude.txt
+  - pingomatic.xml
   - footer.styl
   - general.styl
   - grid.styl
