@@ -1,0 +1,5 @@
+._*
+.DS_Store
+img
+img2
+static

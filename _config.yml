@@ -26,10 +26,13 @@ sitemap:
     - htaccess
     - theme.styl
     - demo.styl
+    - articles.xml
 
 exclude:
   - deploy.sh
   - update-sigpad-assets.sh
+  - root-exclude.txt
+  - base-exclude.txt
   - footer.styl
   - general.styl
   - grid.styl
