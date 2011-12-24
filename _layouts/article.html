@@ -5,16 +5,16 @@ layout: default
 <div class="lt45 hentry">
   <header class="module-wrapper">
     <div class="mod-group-head mod-main-head mod-article-head">
-      <h1 class="entry-title">{{page.title}}</h1>
+      <h1 class="entry-title instapaper_title">{{page.title}}</h1>
       <p class="mod-why mod-group-title entry-summary">{{page.desc}}</p>
     </div>
   </header>
 
   <div class="module module-article clearfix">
-    <div class="unit article entry-content">
+    <div class="unit article entry-content instapaper_body">
       {{content}}
 
-      <footer class="publish-details">
+      <footer class="publish-details instapaper_ignore">
         <p>
           Published <time datetime="{{page.date|date:"%Y-%m-%d"}}" pubdate class="published">{{page.date|date:"%A, %B %d, %Y"}}</time>
           {% if page.updated %}
