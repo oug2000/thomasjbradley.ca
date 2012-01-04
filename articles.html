@@ -20,7 +20,7 @@ changefreq: monthly
       {% for post in site.posts %}
       <li class="hentry">
         <article>
-          <strong class="entry-title"><a href="{{post.url}}" class="bookmark">{{post.title}}</a></strong>
+          <h2 class="entry-title"><a href="{{post.url}}" class="bookmark">{{post.title}}</a></h2>
           <p>{{post.desc}}</p>
           <footer>
             <time class="updated hidden" datetime="{{post.date|date:"%Y-%m-%d"}}" pubdate>{{post.date|date:"%Y-%m-%d"}}</time>
