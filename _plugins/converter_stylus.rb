@@ -32,7 +32,13 @@ module Jekyll
     end
 
     def output_ext(ext)
-      '.css'
+      new_ext = '.css'
+
+      if @config['buildtime']
+        return '.' + @config['buildtime'] + new_ext
+      else
+        return new_ext
+      end
     end
 
     def convert(content)
