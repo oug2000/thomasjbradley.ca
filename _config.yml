@@ -30,7 +30,7 @@ sitemap:
 
 exclude:
   - deploy.sh
-  - update-sigpad-assets.sh
+  - update-github-assets.sh
   - exclude-root.txt
   - exclude-base.txt
   - pingomatic.xml
