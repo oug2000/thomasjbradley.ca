@@ -10,7 +10,9 @@
 
 <header role="banner" class="module module-wide clearfix" id="top">
   <div class="box intro masthead">
-    <h1 class="site-title"><a href="/">Thomas J Bradley<i class="logo"><i></i><i></i></i></a></h1>
+    {% assign logotag = "strong" %}
+    {% if page.url == "/index.html" %}{% assign logotag = "h1" %}{% endif %}
+    <{{logotag}} class="site-title"><a href="/">Thomas J Bradley<i class="logo"><i></i><i></i></i></a></{{logotag}}>
     <nav role="navigation">
       <ul>
         <li>
