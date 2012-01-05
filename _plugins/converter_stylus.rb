@@ -14,6 +14,8 @@ module Jekyll
   class StylusConverter < Converter
     safe true
 
+    priority :low
+
     def setup
       return if @setup
       require 'stylus'
@@ -33,6 +35,10 @@ module Jekyll
 
     def output_ext(ext)
       new_ext = '.css'
+
+      if @config['stylus']['compress']
+        new_ext = '.min' + new_ext
+      end
 
       if @config['buildtime']
         return '.' + @config['buildtime'] + new_ext
