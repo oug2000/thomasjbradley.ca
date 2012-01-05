@@ -11,6 +11,7 @@ env:
     img: /img
     img2: /img2
     static: /static
+    compress_js: false
 
 stylus:
   path: ./static

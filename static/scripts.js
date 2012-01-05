@@ -1,3 +1,6 @@
+---
+---
+
 function navScroller (e) {
   var hash = this.getAttribute('href').replace(/\/#/, '')
 
