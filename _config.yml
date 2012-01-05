@@ -31,6 +31,7 @@ sitemap:
 
 exclude:
   - deploy.sh
+  - hash-assets.sh
   - update-github-assets.sh
   - exclude-root.txt
   - exclude-base.txt
