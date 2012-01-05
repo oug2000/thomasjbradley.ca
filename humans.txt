@@ -6,4 +6,4 @@
   Location: Ottawa, Canada
 
 /* SITE */
-  Software: MacVim, Git, Jekyll, MultiMarkdown, Stylus, Uglify, HTMLCompressor
+  Software: MacVim (and a little TextMate 2), Git, Jekyll, MultiMarkdown (and IA Writer), Stylus, Uglify, HTMLCompressor

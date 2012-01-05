@@ -2,7 +2,7 @@
 <html lang="en-ca" class="no-js">
 <head>
   <meta charset="utf-8">
-  <title>{% if page.title %}{{page.title}} · {% endif %}Thomas J Bradley{% if page.title-after %} · {{page.title-after}}{% endif %}</title>
+  <title>{% if page.title %}{{page.title|escape}} · {% endif %}Thomas J Bradley{% if page.title-after %} · {{page.title-after|escape}}{% endif %}</title>
   <link href="{{"static"|env}}/theme.{{site.buildtime}}.min.css" rel="stylesheet">
   {% include common-head.html %}
 </head>

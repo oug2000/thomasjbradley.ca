@@ -6,4 +6,4 @@
 <link rel="alternate" href="http://thomasjbradley.ca/articles.xml" type="application/rss+xml" title="Articles &amp; Essays">
 <meta name="author" content="Thomas J Bradley">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-{% if page.desc %}<meta name="description" content="{{page.desc}}">{% endif %}
+{% if page.desc %}<meta name="description" content="{{page.desc|escape}}">{% endif %}
