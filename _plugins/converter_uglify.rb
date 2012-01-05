@@ -1,5 +1,5 @@
 module Jekyll
-  class JavascriptUglifierConverter < Converter
+  class UglifyConverter < Converter
     safe true
 
     priority :low
