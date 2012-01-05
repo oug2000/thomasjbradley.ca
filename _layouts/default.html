@@ -6,7 +6,7 @@
   <link href="{{"static"|env}}/theme.{{site.buildtime}}.min.css" rel="stylesheet">
   {% include common-head.html %}
 </head>
-<body>
+<body{% if page.body_class %} class="{{page.body_class}}"{% endif %}>
 
 <header role="banner" class="module module-wide clearfix" id="top">
   <div class="box intro masthead">
