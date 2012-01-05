@@ -76,7 +76,7 @@ Modernizr.addTest('xhr', function () {
 
 #### Modernizr.mediaqueries
 
-A Modernizr test to check for very basic media query support. **This code isn’t needed anymore, as of Modernizr version 2, it’s now included.**
+A Modernizr test to check for very basic media query support. **As of Modernizr version 2, similar code is already included.**
 
 {% highlight js %}
 Modernizr.addTest('mediaqueries', function () {
