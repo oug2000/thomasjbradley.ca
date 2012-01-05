@@ -7,7 +7,6 @@ module Jekyll
     def setup
       return if @setup
       require 'uglifier'
-      #Stylus.compress = @config['stylus']['compress'] if @config['stylus']['compress']
       @setup = true
     rescue LoadError
       STDERR.puts 'You are missing a library required for Uglify. Please run:'
