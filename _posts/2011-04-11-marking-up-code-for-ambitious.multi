@@ -155,6 +155,6 @@ There is a [great question on Stack Overflow](http://stackoverflow.com/questions
 
 ## Why Bother?
 
-Well, I recognise many developers are lazy. And I recognise that the automated solutions have extra benefits such as copy-friendly versions and line numbers, etc. But code seems to be one of those places in online content and documentation where markup can be improved. It seems that web developers spend time choosing appropriate elements for general content, then just dump the code onto the page. True craftsmen would sweat all the details.
+Well, I recognize many developers are lazy. And I recognize that the automated solutions have extra benefits such as copy-friendly versions and line numbers, etc. But code seems to be one of those places in online content and documentation where markup can be improved. It seems that web developers spend time choosing appropriate elements for general content, then just dump the code onto the page. True craftsmen would sweat all the details.
 
 Am I over-the-top semantic crazy? Likely. But semantics and code are what we do, lets spend a little more time on our documentation samples.

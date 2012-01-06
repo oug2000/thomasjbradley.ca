@@ -20,7 +20,7 @@ desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based si
 	- [Javascript](#accept-js)
 	- [HTML Template](#accept-html)
 		- [Further HTML Explanation](#accept-html-exp)
-	- [Form Submission](#accept-form)
+	- [Form Submission & Validation](#accept-form)
 - [Require a Drawn Signature](#require-drawn)
 - [Regenerating Signatures](#regenerate)
 	- [Javascript](#regenerate-js)
@@ -134,17 +134,17 @@ The `.typed` div will have the value typed into the input field inserted into it
 
 {% highlight html %}{% include sigpad/accept-exp-7.html %}{% endhighlight %}
 
-Obviously the canvas element for allowing the user to draw their signature.
+Obviously, the canvas element for allowing the user to draw their signature.
 
 {% highlight html %}{% include sigpad/accept-exp-8.html %}{% endhighlight %}
 
 The `.output` hidden input field is where the JSON representation of the signature is stored for submission to a server.
 
-#### Form Submission[accept-form]
+#### Form Submission & Validation[accept-form]
 
 Signature Pad automatically validates the name input field on form submission by checking to see if it is empty. If the field is empty the form isn’t submitted and Signature Pad prepends an error message to the top of the form. Signature Pad assigns an error class to the input and the label and also sets the focus on the name field.
 
-Both the error message and error class are [options](#options) that can be changed.
+Both the error message and error class are [options](#options) that can be changed. *There are also options for changing the functionality of the validation.*
 
 ### Require a Drawn Signature[require-drawn]
 
@@ -176,9 +176,9 @@ Regenerating signatures from a JSON representation is quite simple. Signature Pa
 
 `sig` is a variable that contains the JSON representation of the signature. In the above example you can see what the JSON looks like—though it has been trimmed for brevity’s sake.
 
-Also notice that an options variable is passed into the `signaturePad()` method. The `displayOnly` property tells Signature Pad not to initialise any of the standard HTML elements, mouse events or click events. [Signature Pad Options Reference](#options-reference)
+Also notice that an options variable is passed into the `signaturePad()` method. The `displayOnly` property tells Signature Pad not to initialize any of the standard HTML elements, mouse events or click events. [Signature Pad Options Reference](#options-reference)
 
-After initialising the canvas, call the `regnerate()` method and pass it our JSON signature. This method simply redraws the signature onto the canvas element.
+After initializing the canvas, call the `regnerate()` method and pass it our JSON signature. This method simply redraws the signature onto the canvas element.
 
 ##### Alternative Javascript[regenerate-js-alt]
 
@@ -190,7 +190,7 @@ Both snippets do exactly the same thing. The only difference is that in this exa
 
 {% highlight html %}{% include sigpad/regenerate.html %}{% endhighlight %}
 
-The HTML for displaying a signature is much simpler. The primary component is of course the canvas element. The typed `<div>` is still there, for progressive enhancement, and will show the automatically generated signature using HTML and CSS if Javascript and canvas are not available.
+The HTML for displaying a signature is much simpler. The primary component is, of course, the canvas element. The typed `<div>` is still there, for progressive enhancement, and will show the automatically generated signature using HTML and CSS if Javascript and canvas are not available.
 
 ---
 
@@ -251,7 +251,7 @@ The API is returned from the instantiation of the Signature Pad and can be store
 
 ### API Limitations[api-limits]
 
-Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element. If you would like to store the API for multiple elements they must be initialised with separate jQuery calls.
+Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element. If you would like to store the API for multiple elements they must be initialized with separate jQuery calls.
 
 ---
 

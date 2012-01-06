@@ -40,7 +40,7 @@ I had originally planned to put Google Maps onto the mobile phones that supporte
 
 ## Technical set up
 
-The general idea was to send the basic version of the site to all browsers to minimise download time (and because I am not the biggest fan of browser sniffing). Then using [Modernizr](http://www.modernizr.com/) and a few other techniques, dynamically load the other resources as required.
+The general idea was to send the basic version of the site to all browsers to minimize download time (and because I am not the biggest fan of browser sniffing). Then using [Modernizr](http://www.modernizr.com/) and a few other techniques, dynamically load the other resources as required.
 
 ### The loading process
 
