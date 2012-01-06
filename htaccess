@@ -7,6 +7,16 @@ Redirect 301 /lab/signature-pad-accept /lab/signature-pad/accept/
 Redirect 301 /lab/signature-pad-require-drawn /lab/signature-pad/require-drawn/
 Redirect 301 /lab/signature-pad-regenerate /lab/signature-pad/regenerate/
 
+# Old, deleted pages
+Redirect 301 /about /
+Redirect 301 /work /
+Redirect 301 /contact/hire-me /
+Redirect 301 /contact /
+
+# Old sitemaps
+Redirect 301 /site-map.xml /sitemap.xml
+Redirect 301 /site-map.xml.gz /sitemap.xml
+
 # Articles
 Redirect 301 /blog.rss /articles.xml
 

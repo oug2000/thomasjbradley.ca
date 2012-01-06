@@ -19,7 +19,7 @@ stylus:
   use: :nib
 
 sitemap:
-  url: http://thomasjbradley.com
+  url: http://thomasjbradley.ca
   hasposts:
     - index.html
     - articles.html
