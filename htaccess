@@ -16,6 +16,7 @@ Redirect 301 /contact /
 # Old sitemaps
 Redirect 301 /site-map.xml /sitemap.xml
 Redirect 301 /site-map.xml.gz /sitemap.xml
+Redirect 301 /sitemap.xml.gz /sitemap.xml
 
 # Articles
 Redirect 301 /blog.rss /articles.xml
