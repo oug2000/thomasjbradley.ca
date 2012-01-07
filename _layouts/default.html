@@ -5,11 +5,8 @@
   <title>{% if page.title %}{{page.title|escape}} · {% endif %}Thomas J Bradley{% if page.title-after %} · {{page.title-after|escape}}{% endif %}</title>
   <link href="{{"static"|env}}/theme.{{site.buildtime}}.min.css" rel="stylesheet">
   {% include common-head.html %}
-  <!--[if IE 8]>
-  <script src="{{"static"|env}}/respond.min.js"></script>
-  <link href="{{"static"|env}}/respond-proxy.html" id="respond-proxy" rel="respond-proxy">
-  <link href="{{"static"|env}}/respond.proxy.gif" id="respond-redirect" rel="respond-redirect">
-  <script src="{{"static"|env}}/respond.proxy.js"></script>
+  <!--[if (lt IE 9) & !(IEMobile)]>
+  <style> body { max-width: 780px; margin: 0 auto; border: 2px solid #d7cec7; border-top: 0; border-bottom: 0; } </style>
   <![endif]-->
 </head>
 <body{% if page.body_class %} class="{{page.body_class}}"{% endif %}>
