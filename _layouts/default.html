@@ -5,6 +5,9 @@
   <title>{% if page.title %}{{page.title|escape}} · {% endif %}Thomas J Bradley{% if page.title-after %} · {{page.title-after|escape}}{% endif %}</title>
   <link href="{{"static"|env}}/theme.{{site.buildtime}}.min.css" rel="stylesheet">
   {% include common-head.html %}
+  <!--[if IE 8]>
+  <script src="{{"static"|env}}/respond.min.js"></script>
+  <![endif]-->
 </head>
 <body{% if page.body_class %} class="{{page.body_class}}"{% endif %}>
 

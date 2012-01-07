@@ -151,117 +151,119 @@ var animatedScrollTo = (function () {
   return scrollBrowser
 }())
 
-;(function () {
-  var testimonialGroups = document.getElementsByClassName('testimonials')
-    , totalTestimonialGroups = testimonialGroups.length
-    , i = 0
-    , controls = document.getElementById('testimonial-controls-template').innerHTML
-    , rocket = document.getElementsByClassName('rocketeer')[0]
-    , scrollUpTimer
-    , navProf = document.getElementsByClassName('nav-prof')[0]
-    , navDev = document.getElementsByClassName('nav-dev')[0]
-    , navWrite = document.getElementsByClassName('nav-write')[0]
+if (document.getElementsByClassName) {
+  ;(function () {
+    var testimonialGroups = document.getElementsByClassName('testimonials')
+      , totalTestimonialGroups = testimonialGroups.length
+      , i = 0
+      , controls = document.getElementById('testimonial-controls-template').innerHTML
+      , rocket = document.getElementsByClassName('rocketeer')[0]
+      , scrollUpTimer
+      , navProf = document.getElementsByClassName('nav-prof')[0]
+      , navDev = document.getElementsByClassName('nav-dev')[0]
+      , navWrite = document.getElementsByClassName('nav-write')[0]
 
-  document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
-    var self = this
-      , rocketClass = 'rocketeer-go'
+    document.getElementsByClassName('top')[0].addEventListener('click', function (e) {
+      var self = this
+        , rocketClass = 'rocketeer-go'
 
-    function animEndHandler () {
-      clearTimeout(scrollUpTimer)
-      removeClass(rocket, rocketClass)
-      window.location.hash = self.getAttribute('href')
-    }
-
-    e.preventDefault()
-    rocket.style.left = getOffset(this).left + 'px'
-    addClass(rocket, rocketClass)
-    scrollUpTimer = setTimeout(animEndHandler, 500)
-    animatedScrollTo(document.getElementById('top'), 500)
-  }, false)
-
-  if (document.getElementById(navProf.getAttribute('href').replace(/\/#/, '')))
-    navProf.addEventListener('click', navScroller, false)
-
-  if (document.getElementById(navDev.getAttribute('href').replace(/\/#/, '')))
-    navDev.addEventListener('click', navScroller, false)
-
-  if (document.getElementById(navWrite.getAttribute('href').replace(/\/#/, '')))
-    navWrite.addEventListener('click', navScroller, false)
-
-  for (i = 0; i < totalTestimonialGroups; i++) {
-    ;(function () {
-      var testimonials = testimonialGroups[i].getElementsByClassName('testimonial')
-        , totalTestimonials = testimonials.length
-        , tallestClone = {offsetHeight: 0}
-        , tempClone
-        , j = 0
-        , current = 0
-        , currentClass = 'testimonial-current'
-
-      if (totalTestimonials <= 1) return
-
-      function nextTestimonial () {
-        var next = (current + 1 > totalTestimonials - 1) ? 0 : current + 1
-
-        addClass(testimonials[next], currentClass)
-        testimonials[next].setAttribute('aria-hidden', false)
-        removeClass(testimonials[current], currentClass)
-        testimonials[current].setAttribute('aria-hidden', true)
-        current = next
+      function animEndHandler () {
+        clearTimeout(scrollUpTimer)
+        removeClass(rocket, rocketClass)
+        window.location.hash = self.getAttribute('href')
       }
 
-      function prevTestimonial () {
-        var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
+      e.preventDefault()
+      rocket.style.left = getOffset(this).left + 'px'
+      addClass(rocket, rocketClass)
+      scrollUpTimer = setTimeout(animEndHandler, 500)
+      animatedScrollTo(document.getElementById('top'), 500)
+    }, false)
 
-        addClass(testimonials[prev], currentClass)
-        testimonials[prev].setAttribute('aria-hidden', false)
-        removeClass(testimonials[current], currentClass)
-        testimonials[current].setAttribute('aria-hidden', true)
-        current = prev
-      }
+    if (document.getElementById(navProf.getAttribute('href').replace(/\/#/, '')))
+      navProf.addEventListener('click', navScroller, false)
 
-      for (j = 0; j < totalTestimonials; j++) {
-        tempClone = testimonials[j].cloneNode(true)
-        tempClone.style.position = 'absolute'
-        tempClone.style.display = 'block'
-        tempClone.style.width = testimonials[0].offsetWidth + 'px'
-        tempClone.style.top = '999em'
-        document.body.appendChild(tempClone)
+    if (document.getElementById(navDev.getAttribute('href').replace(/\/#/, '')))
+      navDev.addEventListener('click', navScroller, false)
 
-        if (tempClone.offsetHeight > tallestClone.offsetHeight) {
-          tallestClone = tempClone
+    if (document.getElementById(navWrite.getAttribute('href').replace(/\/#/, '')))
+      navWrite.addEventListener('click', navScroller, false)
+
+    for (i = 0; i < totalTestimonialGroups; i++) {
+      ;(function () {
+        var testimonials = testimonialGroups[i].getElementsByClassName('testimonial')
+          , totalTestimonials = testimonials.length
+          , tallestClone = {offsetHeight: 0}
+          , tempClone
+          , j = 0
+          , current = 0
+          , currentClass = 'testimonial-current'
+
+        if (totalTestimonials <= 1) return
+
+        function nextTestimonial () {
+          var next = (current + 1 > totalTestimonials - 1) ? 0 : current + 1
+
+          addClass(testimonials[next], currentClass)
+          testimonials[next].setAttribute('aria-hidden', false)
+          removeClass(testimonials[current], currentClass)
+          testimonials[current].setAttribute('aria-hidden', true)
+          current = next
         }
 
-        testimonials[j].style.display = 'block'
-        document.body.removeChild(tempClone)
+        function prevTestimonial () {
+          var prev = (current - 1 < 0) ? totalTestimonials - 1 : current - 1
 
-        if (j > 0) {
-          testimonials[j].style.opacity = ''
-          testimonials[j].setAttribute('aria-hidden', true)
+          addClass(testimonials[prev], currentClass)
+          testimonials[prev].setAttribute('aria-hidden', false)
+          removeClass(testimonials[current], currentClass)
+          testimonials[current].setAttribute('aria-hidden', true)
+          current = prev
         }
-      }
 
-      testimonialGroups[i].getElementsByClassName('testimonials-list')[0].appendChild(tallestClone)
-      addClass(testimonialGroups[i], 'testimonials-go')
-      tallestClone.style.position = 'relative'
-      tallestClone.style.width = 'auto'
-      tallestClone.style.top = 'auto'
-      tallestClone.setAttribute('aria-hidden', true)
-      addClass(tallestClone, 'testimonial-spacer')
-      testimonialGroups[i].innerHTML += controls
+        for (j = 0; j < totalTestimonials; j++) {
+          tempClone = testimonials[j].cloneNode(true)
+          tempClone.style.position = 'absolute'
+          tempClone.style.display = 'block'
+          tempClone.style.width = testimonials[0].offsetWidth + 'px'
+          tempClone.style.top = '999em'
+          document.body.appendChild(tempClone)
 
-      testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', nextTestimonial, false)
-      testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
-
-      if (Modernizr.touch) {
-        Swiper.swipe(testimonialGroups[i], function (e) {
-          if (e.direction == Swiper.directions.left) {
-            nextTestimonial()
-          } else {
-            prevTestimonial()
+          if (tempClone.offsetHeight > tallestClone.offsetHeight) {
+            tallestClone = tempClone
           }
-        })
-      }
-    }())
-  }
-}())
+
+          testimonials[j].style.display = 'block'
+          document.body.removeChild(tempClone)
+
+          if (j > 0) {
+            testimonials[j].style.opacity = ''
+            testimonials[j].setAttribute('aria-hidden', true)
+          }
+        }
+
+        testimonialGroups[i].getElementsByClassName('testimonials-list')[0].appendChild(tallestClone)
+        addClass(testimonialGroups[i], 'testimonials-go')
+        tallestClone.style.position = 'relative'
+        tallestClone.style.width = 'auto'
+        tallestClone.style.top = 'auto'
+        tallestClone.setAttribute('aria-hidden', true)
+        addClass(tallestClone, 'testimonial-spacer')
+        testimonialGroups[i].innerHTML += controls
+
+        testimonialGroups[i].getElementsByClassName('next')[0].addEventListener('click', nextTestimonial, false)
+        testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
+
+        if (Modernizr.touch) {
+          Swiper.swipe(testimonialGroups[i], function (e) {
+            if (e.direction == Swiper.directions.left) {
+              nextTestimonial()
+            } else {
+              prevTestimonial()
+            }
+          })
+        }
+      }())
+    }
+  }())
+}
