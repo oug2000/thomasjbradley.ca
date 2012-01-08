@@ -207,7 +207,7 @@ The API includes a method called `signatureToImage()` which will return a Base64
 PHP to JPEG, PNG or GIF
 : [Signature to Image](/lab/signature-to-image/) is a simple PHP script that will take the JSON output and convert it to an image server-side. [Read more about Signature to Image](/lab/signature-to-image/).
 
-{% include sigimg/other-solutions.multi %}
+{% include sigimg/other-solutions.mkd %}
 
 ---
 

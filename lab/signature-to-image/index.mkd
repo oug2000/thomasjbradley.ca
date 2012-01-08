@@ -91,4 +91,4 @@ Signature to Image is licensed under the <a href="https://github.com/thomasjbrad
 
 ## Other Solutions
 
-{% include sigimg/other-solutions.multi %}
+{% include sigimg/other-solutions.mkd %}

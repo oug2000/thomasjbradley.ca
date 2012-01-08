@@ -22,7 +22,7 @@ module Jekyll
     end
 
     def matches(ext)
-      ext =~ /multi/i
+      ext =~ /mkd/i
     end
 
     def output_ext(ext)
