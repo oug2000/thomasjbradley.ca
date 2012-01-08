@@ -2,13 +2,13 @@
 permalink: .htaccess
 ---
 
-# Signature Pad Demos
+# Signature Pad demos
 Redirect 301 /lab/signature-pad-accept /lab/signature-pad/accept/
 Redirect 301 /lab/signature-pad-require-drawn /lab/signature-pad/require-drawn/
 Redirect 301 /lab/signature-pad-regenerate /lab/signature-pad/regenerate/
 
 # Canadian spelling changes
-# Yeah, I changed my mind; read this: http://en-ca.org/
+# Yeah, I changed my mind. Read this: http://en-ca.org/
 Redirect 301 /articles/mental-visualisations-colour-association /articles/mental-visualizations-colour-association/
 Redirect 301 /articles/mental-visualisations-the-year-loop /articles/mental-visualizations-the-year-loop/
 
@@ -18,12 +18,12 @@ Redirect 301 /work /
 Redirect 301 /contact/hire-me /
 Redirect 301 /contact /
 
-# Old sitemaps
+# Old and busted sitemaps
 Redirect 301 /site-map.xml /sitemap.xml
 Redirect 301 /site-map.xml.gz /sitemap.xml
 Redirect 301 /sitemap.xml.gz /sitemap.xml
 
-# Articles
+# Articles RSS
 Redirect 301 /blog.rss /articles.xml
 
 <IfModule mod_rewrite.c>

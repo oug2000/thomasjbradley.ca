@@ -1,9 +1,9 @@
 #! /bin/bash
 
 ## OPTIONS
-# -p --no-ping    Don't ping Google, Bing and Pingomatic
-# -g --no-github  Don't redownload assets, versios, and resources from GitHub
-# -r --only-root  Only upload the root domain, thomasjbradley.ca
+# -p, --no-ping    Don't ping Google, Bing and Pingomatic
+# -g, --no-github  Don't redownload assets, versions, and resources from GitHub
+# -r, --only-root  Only upload the root domain, thomasjbradley.ca
 
 PING=1
 GITHUB=1
