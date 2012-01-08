@@ -32,6 +32,8 @@ sitemap:
 
 exclude:
   - deploy.sh
+  - Gemfile
+  - README.md
   - footer.styl
   - general.styl
   - grid.styl
