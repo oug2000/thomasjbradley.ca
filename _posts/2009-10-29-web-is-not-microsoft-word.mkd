@@ -14,11 +14,11 @@ Well, nothing, if they are used in the right situation. And that situation is wh
 
 ### Too Much Concentration on Look and Not Semantics
 
-When editing web content there are many variables that need to be taken into account, including: the limited tag set, search engine optimisation, code simplification and of course the idea that we aren’t creating a *look* we are creating a  *meaning*.
+When editing web content there are many variables that need to be taken into account, including: the limited tag set, search engine optimization, code simplification and of course the idea that we aren’t creating a *look* we are creating a *meaning*.
 
 Most of the tools in current rich text editors prompt the user to create a specific look for their content with buttons like bold, italic, underline, strikethrough, alignment, font, colour, background colour, etc. But the look should not be controlled by the content editor. The look is controlled by the web site’s theme and the designer who created the theme. How many designers want content editors to change the colour, font or alignment of text? Oh, and why does underline even exist? Isn’t that only for links?
 
-### Too Many Features and Over Generalisation
+### Too Many Features and Over Generalization
 
 Maybe this is just another Windows (generalized) vs. Unix (specialized) idea but most rich text editors offer too many options and are completely over generalized. All those options dilute what the actual goal is: to create and edit text based content. Not to insert shapes or tables or videos. It even seems like many rich text editors are trying to provide a substitute for Dreamweaver or FrontPage.
 
@@ -53,7 +53,7 @@ Each of the above toolbar buttons directly correspond to an HTML element. Paragr
 
 A couple other buttons could be included for `<code>` (computer code), `<var>` (a variable, either computer or math), `<samp>` (sample output from a computer program) and `<kbd>` (sample input for a computer program). But those would be for specialized applications, not for the general public.
 
-You may have noticed that none of the buttons are recognisable from their Word counterparts. No more bold, or italic and definitely no more colour changing. Instead the goal is to teach users that they need to think about the meaning of the text, not the visual representation of the text.
+You may have noticed that none of the buttons are recognizable from their Word counterparts. No more bold, or italic and definitely no more colour changing. Instead the goal is to teach users that they need to think about the meaning of the text, not the visual representation of the text.
 
 ### Remove the Extra Cruft
 
@@ -61,7 +61,7 @@ The semantic text editor would have one specialized task: editing body content. 
 
 ### What About Headings and Block Quotes?
 
-Specialisation. Headings could easily be integrated into the semantic text editor, but instead think of the semantic text editor as a single piece in a greater content building system (a body builder?). There could be specialized tools for headings, text content (semantic text editor), block quotes, tables, images and other page elements. The tools could be added to the body builder and rearranged more easily than Word would ever allow. Since the tools are specialized they would show only the options needed.
+Specialization. Headings could easily be integrated into the semantic text editor, but instead think of the semantic text editor as a single piece in a greater content building system (a body builder?). There could be specialized tools for headings, text content (semantic text editor), block quotes, tables, images and other page elements. The tools could be added to the body builder and rearranged more easily than Word would ever allow. Since the tools are specialized they would show only the options needed.
 
 Instead of the users thinking of how the content looks in this kind of system, they should be more concerned about ordering and marking up their content properly—the look is taken care of by the designer.
 

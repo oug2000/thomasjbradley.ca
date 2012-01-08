@@ -7,6 +7,11 @@ Redirect 301 /lab/signature-pad-accept /lab/signature-pad/accept/
 Redirect 301 /lab/signature-pad-require-drawn /lab/signature-pad/require-drawn/
 Redirect 301 /lab/signature-pad-regenerate /lab/signature-pad/regenerate/
 
+# Canadian spelling changes
+# Yeah, I changed my mind; read this: http://en-ca.org/
+Redirect 301 /articles/mental-visualisations-colour-association /articles/mental-visualizations-colour-association/
+Redirect 301 /articles/mental-visualisations-the-year-loop /articles/mental-visualizations-the-year-loop/
+
 # Old, deleted pages
 Redirect 301 /about /
 Redirect 301 /work /

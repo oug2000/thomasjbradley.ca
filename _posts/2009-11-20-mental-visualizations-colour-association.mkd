@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Mental Visualisations: Colour Association"
+title: "Mental Visualizations: Colour Association"
 desc: "One common trick to remember things is association. To continue my series in mental visualization I am going to discuss my mind’s automatic, subconscious association of colours and numbers."
 updated: 2011-11-26
 ---
@@ -31,7 +31,7 @@ This is in no way a perfect representation of the colours. It is really difficul
 
 The only number that isn’t easily described in a static graphic is zero. Zero is actually transparent, like glass. This, I am sure, has some association to the fact that zero represents nothing, therefore my colour *is* nothing. I should also mention that one is pure white.
 
-Also, like my [Year Loop](/articles/mental-visualisations-the-year-loop/), the numbers in my mind are always in a vast black void.
+Also, like my [Year Loop](/articles/mental-visualizations-the-year-loop/), the numbers in my mind are always in a vast black void.
 
 ## So, How Does it Work?
 
@@ -62,7 +62,7 @@ It would be great is someone could explain this working of my mind to me, but un
 
 ## Related Posts
 
-- [Mental Visualisations: The Year Loop](/articles/mental-visualisations-the-year-loop/)
+- [Mental Visualizations: The Year Loop](/articles/mental-visualizations-the-year-loop/)
 
 ---
 

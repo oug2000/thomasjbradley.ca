@@ -23,7 +23,7 @@ I compiled a list of the browsers and operating systems that I wanted to support
 
 I didn’t want to spend too much money, so I was always conscious of the prices. Continued cost was also very important and I didn’t want to have to support multiple mobile data plans. All of the phones I have in my test suite, therefore, are WiFi equipped.
 
-## List of Browsers, OSes, Phones
+## List of Browsers, OSs, Phones
 
 So, without further adieu, here is the final list of phones I have purchased and where I got them from and how much they cost:
 

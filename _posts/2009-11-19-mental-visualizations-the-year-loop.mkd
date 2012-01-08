@@ -1,6 +1,6 @@
 ---
 layout: article
-title: "Mental Visualisations: The Year Loop"
+title: "Mental Visualizations: The Year Loop"
 desc: "Do you ever think about how you think about the calendar year? Meta-thinking? We all have our little quirks about how we see and visualize things in our mind. The following is how the year passes in my mind."
 ---
 
@@ -22,7 +22,7 @@ Especially when describing something that only I can only—and ever will—see.
 	</figure>
 </div>
 
-The representation is very basic and only really presents one context: looking ahead in month view. The year loop in my mind is much more dynamic and flexible. Instead of feeling like a solid plastic mass (like in Flash) it is more of a flexible fabric object. The months bend, stretch and adjust based on time and view. Also, in my mental visualisation all the days of each month are represented on the loop, not just the weeks.
+The representation is very basic and only really presents one context: looking ahead in month view. The year loop in my mind is much more dynamic and flexible. Instead of feeling like a solid plastic mass (like in Flash) it is more of a flexible fabric object. The months bend, stretch and adjust based on time and view. Also, in my mental visualization all the days of each month are represented on the loop, not just the weeks.
 
 ## Context is Important
 
@@ -44,8 +44,8 @@ One interesting quirk is that months always end on the far right of their box, r
 
 ## What Does it All Mean, (Basil)?
 
-Well, I can’t really say. I am sure it says something about my personality, abilities and learned behaviours from a psychological perspective—but what, I don’t know. When talking to [Liz](http://lizkerrison.ca) about this post, she reminded me of her mental visualisation of the calendar year. It is similar than mine, but also different. Her’s travels clockwise and is more circular from January to August. Then in September it is a straight line up to December where it reconnects with January.
+Well, I can’t really say. I am sure it says something about my personality, abilities and learned behaviours from a psychological perspective—but what, I don’t know. When talking to [Liz](http://lizkerrison.ca) about this post, she reminded me of her mental visualization of the calendar year. It is similar than mine, but also different. Her’s travels clockwise and is more circular from January to August. Then in September it is a straight line up to December where it reconnects with January.
 
-It is interesting to me to think about how my mind thinks about things and equally as interesting to see how other people think about things. Or even if they think about how they think about things. Also, it would be interesting to see the similarities and differences between everybody’s mental visualisations. Meta thinking, think about it. (Don’t you love that cheesy final sentence!)
+It is interesting to me to think about how my mind thinks about things and equally as interesting to see how other people think about things. Or even if they think about how they think about things. Also, it would be interesting to see the similarities and differences between everybody’s mental visualizations. Meta thinking, think about it. (Don’t you love that cheesy final sentence!)
 
-**Tomorrow, this post will be followed up with another post in the series: [Colour Association](/articles/mental-visualisations-colour-association/).**
+**Tomorrow, this post will be followed up with another post in the series: [Colour Association](/articles/mental-visualizations-colour-association/).**

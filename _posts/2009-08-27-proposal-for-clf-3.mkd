@@ -37,7 +37,7 @@ Service Canada is a refreshing example of creativity in the CLF world. It looks 
 
 The [Natural Sciences and Engineering](http://www.nserc-crsng.gc.ca/Index_eng.asp) web site breaks the mould a little bit. Web 2.0 gradients are prominent all over the web site—maybe even a little too much—but it is nice to see something that looks different. All the page elements fit the template but have had a slight makeover.
 
-The major difference from the downloadable templates is the masthead. The default CLF template has a common menu bar that is black with bold, white, left-aligned links; Natural Sciences menu bar is grey with regular weight, black, center-aligned links. I don’t know if this change is ‘legal’ within CLF but it provides a simple variation from the template and helps lighten the masthead which would look too heavy in black.
+The major difference from the downloadable templates is the masthead. The default CLF template has a common menu bar that is black with bold, white, left-aligned links; Natural Sciences menu bar is grey with regular weight, black, centre-aligned links. I don’t know if this change is ‘legal’ within CLF but it provides a simple variation from the template and helps lighten the masthead which would look too heavy in black.
 
 Along with the colour difference the common menu has also been bumped down by the small colourful boxes. I suppose Natural Sciences did this to add some interest instead of using graphics in the banner.
 
@@ -49,7 +49,7 @@ The Natural Science web site pushes the envelope enough that is isn’t lost in 
 
 ![Designed by my colleague, [Chrys Moll](http://www.linkedin.com/pub/chrys-moll/3/704/38b).]({{"img2"|env}}/articles/clf3/aircraft.jpg)
 
-Finally an example that takes the customisation of the content area to the extreme is the [aircraft micro-site](http://www.airforce.forces.gc.ca/v2/equip/ch148/index-eng.asp). You will find that the elements of the site still fit into the grid of CLF but look nothing like CLF. The left navigation is completely CLF but the content area has no indication of CLF.
+Finally an example that takes the customization of the content area to the extreme is the [aircraft micro-site](http://www.airforce.forces.gc.ca/v2/equip/ch148/index-eng.asp). You will find that the elements of the site still fit into the grid of CLF but look nothing like CLF. The left navigation is completely CLF but the content area has no indication of CLF.
 
 The content area is styled like a paper folder with tabs. Since the site is information about all the aircraft in the air force’s fleet the metaphor is fitting. The surrounding CLF template detracts some of the impact of the paper folder style but the designer has done an excellent job combining the elements of CLF into a coherent presentation. The common menu, as an example, fits well into the design without looking too heavy.
 
