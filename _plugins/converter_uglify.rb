@@ -1,3 +1,8 @@
+# JAVASCRIPT UGLIFIER
+# Runs any Javascript file that has YAML front matter through UglifyJS
+# Supports environments with filter_env.rb to enable/disable
+# Appends buildtime with generator_buildtime.rb to filenames
+
 module Jekyll
   class UglifyConverter < Converter
     safe true

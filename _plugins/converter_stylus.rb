@@ -1,4 +1,5 @@
 # A Jekyll plugin to convert .styl to .css
+# https://gist.github.com/988201
 # This plugin requires the stylus gem, do:
 # $ [sudo] gem install stylus
 
@@ -9,6 +10,8 @@
 #    See all.styl above.
 # 2. You can not @import .styl files intended to be converted.
 #    See all.styl and individual.styl above.
+
+# Modified to support Nib, Liquid, and my buildtime renaming
 
 module Jekyll
   class StylusConverter < Converter

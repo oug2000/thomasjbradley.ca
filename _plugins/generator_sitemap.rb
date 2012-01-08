@@ -1,5 +1,6 @@
 # Sitemap.xml Generator is a Jekyll plugin that generates a sitemap.xml file by
 # traversing all of the available posts and pages.
+# http://www.kinnetica.com/projects/jekyll-sitemap-generator/
 #
 # How To Use:
 #   1.) Copy source file into your _plugins folder within your Jekyll project.
@@ -33,6 +34,9 @@
 # Site: http://www.kinnetica.com
 # Distributed Under A Creative Commons License
 #   - http://creativecommons.org/licenses/by/3.0/
+
+# Updated to have config in _config.yml
+# Made paths consistently have a trailing slash
 
 require 'rexml/document'
 

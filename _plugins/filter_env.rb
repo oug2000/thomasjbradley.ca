@@ -1,3 +1,12 @@
+# ENVIRONMENT HELPER
+# Primarily to allow different domains and static domains for local and remote sites
+# When Jekyll builds, you can use the Liquid filter to output the correct paths
+
+# 1. Create a file named `_env` and put in it the name of your environment
+# 2. Configure your paths in _config.yml
+# 3. Use the Liquid filter in your templates
+#    <link href="{{"static"|env}}/theme.css" rel="stylesheet">
+
 module Jekyll
 
   module EnvFilter

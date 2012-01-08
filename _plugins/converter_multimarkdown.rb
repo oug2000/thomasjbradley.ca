@@ -1,5 +1,8 @@
+# MULTIMARKDOWN support
 # https://github.com/mojombo/jekyll/issues/289#issuecomment-1324256
 # https://github.com/djungelvral/jekyll/blob/master/lib/jekyll/converters/multimarkdown.rb
+
+# Will convert files with the extension .mkd with MultiMarkdown
 
 module Jekyll
 
