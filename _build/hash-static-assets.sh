@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Finds all the static assets that include a build number
 # and replaces the build number with an MD5 hash

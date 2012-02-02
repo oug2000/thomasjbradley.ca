@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 # Update the assets used in the online examples
 wget -O static/jquery.signaturepad.min.js https://raw.github.com/thomasjbradley/signature-pad/master/build/jquery.signaturepad.min.js

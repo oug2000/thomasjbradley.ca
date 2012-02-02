@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 ## OPTIONS
 # -p, --no-ping    Don't ping Google, Bing and Pingomatic
