@@ -29,6 +29,7 @@ desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based si
 - [Converting to an Image](#images)
 	- [Client Side](#images-clientside)
 	- [Server Side](#images-serverside)
+- [Saving to a Database](#database)
 - [Options](#options)
 	- [Changing Default Options](#options-change)
 	- [Options Reference](#options-ref)
@@ -208,6 +209,20 @@ PHP to JPEG, PNG or GIF
 : [Signature to Image](/lab/signature-to-image/) is a simple PHP script that will take the JSON output and convert it to an image server-side. [Read more about Signature to Image](/lab/signature-to-image/).
 
 {% include sigimg/other-solutions.mkd %}
+
+---
+
+## Saving to a Database[database]
+
+Signature Pad outputs the signature to a hidden field named `output`, which can be captured like any other form post field.
+
+{% highlight html %}{% include sigpad/accept-exp-8.html %}{% endhighlight %}
+
+In PHP, as an example, you can get the signature using:
+
+{% highlight php %}{% include sigpad/database.php %}{% endhighlight %}
+
+[Check out the sample app and tutorial on saving the signature in PHP and MySQL](/articles/saving-signatures-php-mysql/).
 
 ---
 

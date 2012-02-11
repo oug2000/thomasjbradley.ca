@@ -1,0 +1,97 @@
+---
+layout: article
+title: "Saving Signatures with PHP & MySQL"
+desc: "A small PHP tutorial on how to capture the signature from Signature Pad and store it in a MySQL database, for later retrieval."
+---
+
+<div class="main-download">
+  <ul class="files">
+    <li class="zip"><a href="https://github.com/thomasjbradley/saving-signatures-sample/zipball/master" rel="enclosure"><i></i>Sample App <span>ZIP—GitHub</span></a></li>
+  </ul>
+</div>
+
+**This tutorial depends on Signature Pad. If you don’t know what that is go [check out Signature Pad, for capturing electronic signatures](/lab/signature-pad/).**
+
+*This tutorial is just a small overview of the important pieces of information from the downloadable sample application. [Check out the sample app itself](https://github.com/thomasjbradley/saving-signatures-sample/), there are lots of comments in the code to help you out.*
+
+## Sample Application Files
+
+{% include save-sigs/files.html %}
+
+- `index.php` contains the basic HTML template and a few `if-statements` to hide/show different pieces of HTML and Javascript.
+- `lib/save-signature.php` is the meat and potatoes, it’s the controller: gets content from the form, valids, and save to the database.
+- `views/accept.php` is the basic Signature Pad HTML template for [accepting a signature](/lab/signature-pad/#accept), with the addition of some serverside validation code.
+- `views/regenerate.php` is the basic Signature Pad HTML template for [regenerating a signature](/lab/signature-pad/#regenerate), with the addition of a little PHP to output the signator and date.
+- `signature-pad` is just a clone of the complete Signature Pad Git repository. The sample application only uses files from the `build` sub-folder.
+ 
+## Getting the Signature
+
+Signature Pad submits the signature, along with the rest of form submission, inside a hidden input field.
+
+*From `views/accept.php`:*
+
+{% highlight html %}{% include save-sigs/accept.html %}{% endhighlight %}
+
+From this hidden field we can capture the signature and store it in the database.
+
+The easiest way to get the signature using PHP is with the `$_POST` super global.
+
+{% highlight php %}{% include save-sigs/post.php %}{% endhighlight %}
+
+Using the `$_POST` array isn’t secure (and creates a few other problems when there are validation errors and we try to keep information in the form). In PHP, the best way to get information from a form is using [PHP’s filter functions](http://php.net/filter). They provide a more secure way to grab user input and strip out unwanted information. We also won’t get any PHP error messages if we try to access the user input and the form hasn’t been submittted.
+
+*From `lib/save-signature.php`:*
+
+{% highlight php %}{% include save-sigs/filter.php %}{% endhighlight %}
+
+We can use `FILTER_UNSAFE_RAW` for the signature itself, because we don’t actually want to strip any information from the signature. If you want to be even more specific try using `FILTER_VALIDATE_REGEX`.
+
+## Validating the Signature
+
+Probably the best way to validate the signature would be to run it through `json_decode()` and see if it can be decoded. 
+
+*From `lib/save-signature.php`:*
+
+{% highlight php %}{% include save-sigs/sig-valid.php %}{% endhighlight %}
+
+**Don’t forget, you should also validate the name to make sure one was entered.**
+
+## Setting Up the Database
+
+The database to store the signature only needs to hold a few pieces of information: the signator’s name and the signature. For legal reasons, it is best to store more information about the signature: at least a hash of the signature, the signator’s IP address, and the time the signature was written.
+
+For more information about electronic signature legallity, check out your country’s regulations. [Wikipedia has a good list of electronic signature regulations](http://en.wikipedia.org/wiki/Electronic_signature).
+
+### Sample Table Setup
+
+{% include save-sigs/sample-table.html %}
+
+## Saving to the Database
+
+After everything is validated, we can save the signature to the database. It’s easiest to just store the JSON representation of the signature in the database. If you want to create a graphic file, [check out how to convert the signature to an image](/lab/signature-pad/#images).
+
+It’s best to use PHP’s [PDO](http://php.net/pdo) for connecting to databases. By using `PDO::prepare()`, we can help protect against SQL injection attacks.
+
+*From `lib/save-signature.php`:*
+
+{% highlight php %}{% include save-sigs/insert.php %}{% endhighlight %}
+
+## Regenerating the Signature
+
+One of the easiest way’s to regenerate the signature is to use PHP to write out some Javascript onto one of your pages. When the page loads it will have a native Javascript varible containing all the signature information and can use Signature Pad to regenerate the display.
+
+{% highlight html+php %}{% include save-sigs/regenerate.php %}{% endhighlight %}
+
+## What Else Do We Need?
+
+Well, this application is far from complete—even though it’s fully functional. It’s a simple tutorial on how to capture the signature. Some of the missing things are:
+
+1. User authentication, sign-in/sign-out, or unique passkeys.
+2. HTTPS—critical for capturing signatures online.
+3. It might be nice to encrypt the signatures in the database.
+
+And likely more.
+
+## Download the App
+
+[Download the sample app on GiHub](https://github.com/thomasjbradley/saving-signatures-sample)

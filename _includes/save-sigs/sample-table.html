@@ -1,0 +1,48 @@
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Data-Type</th>
+      <th scope="col">Length</th>
+      <th scope="col">What’s it For?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id</td>
+      <td>int</td>
+      <td>11</td>
+      <td>Primary key, auto increment</td>
+    </tr>
+    <tr>
+      <td>signator</td>
+      <td>varchar</td>
+      <td>255</td>
+      <td>Holds the user input for the `name` field</td>
+    </tr>
+    <tr>
+      <td>signature</td>
+      <td>text</td>
+      <td></td>
+      <td>Holds the signature in its JSON form</td>
+    </tr>
+    <tr>
+      <td>sig_hash</td>
+      <td>varchar</td>
+      <td>128</td>
+      <td>Holds a SHA1 hash of the JSON signature</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td>varchar</td>
+      <td>46</td>
+      <td>Holds the signator’s IP address</td>
+    </tr>
+    <tr>
+      <td>created</td>
+      <td>int</td>
+      <td>11</td>
+      <td>The UNIX timestamp of when the signature was saved</td>
+    </tr>
+  </tbody>
+</table>
