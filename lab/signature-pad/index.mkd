@@ -30,6 +30,7 @@ desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based si
 	- [Client Side](#images-clientside)
 	- [Server Side](#images-serverside)
 - [Saving to a Database](#database)
+    - [PHP & MySQL Tutorial](#db-tutorial)
 - [Options](#options)
 	- [Changing Default Options](#options-change)
 	- [Options Reference](#options-ref)
@@ -221,6 +222,8 @@ Signature Pad outputs the signature to a hidden field named `output`, which can 
 In PHP, as an example, you can get the signature using:
 
 {% highlight php %}{% include sigpad/database.php %}{% endhighlight %}
+
+### PHP & MySQL Tutorial[db-tutorial]
 
 [Check out the sample app and tutorial on saving the signature in PHP and MySQL](/articles/saving-signatures-php-mysql/).
 
