@@ -19,14 +19,14 @@ desc: "A small PHP tutorial on how to capture the signature from Signature Pad a
 {% include save-sigs/files.html %}
 
 - `index.php` contains the basic HTML template and a few `if-statements` to hide/show different pieces of HTML and Javascript.
-- `lib/save-signature.php` is the meat and potatoes, it’s the controller: gets content from the form, valids, and save to the database.
+- `lib/save-signature.php` is the meat and potatoes, the controller: it gets the content from the form, validates it, and saves it to the database.
 - `views/accept.php` is the basic Signature Pad HTML template for [accepting a signature](/lab/signature-pad/#accept), with the addition of some serverside validation code.
 - `views/regenerate.php` is the basic Signature Pad HTML template for [regenerating a signature](/lab/signature-pad/#regenerate), with the addition of a little PHP to output the signator and date.
 - `signature-pad` is just a clone of the complete Signature Pad Git repository. The sample application only uses files from the `build` sub-folder.
  
 ## Getting the Signature
 
-Signature Pad submits the signature, along with the rest of form submission, inside a hidden input field.
+Signature Pad submits the signature, along with the rest of the form submission, inside a hidden input field.
 
 *From `views/accept.php`:*
 
@@ -78,7 +78,7 @@ It’s best to use PHP’s [PDO](http://php.net/pdo) for connecting to databases
 
 ## Regenerating the Signature
 
-One of the easiest way’s to regenerate the signature is to use PHP to write out some Javascript onto one of your pages. When the page loads it will have a native Javascript varible containing all the signature information and can use Signature Pad to regenerate the display.
+One of the easiest ways to regenerate the signature is to use PHP to write out some Javascript onto one of your pages. When the page loads it will have a native Javascript varible containing all the signature information and can use Signature Pad to regenerate the display.
 
 {% highlight html+php %}{% include save-sigs/regenerate.php %}{% endhighlight %}
 
