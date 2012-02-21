@@ -32,12 +32,10 @@ function removeClass (elem, newClass) {
   elem.className = elem.className.replace(newClass, '').replace(/\s+/, ' ').replace(/\s+$/, '').replace(/^\s+/, '')
 }
 
-var Swiper = (function () {
+var Swiper = function (elem, callback) {
   var threshold = {x : 10, y : 50}
     , directions = {left : 'left', right : 'right'}
     , returnObject = {target : elem, direction : directions.left}
-    , callback
-    , elem
     , originalCoord = {x : 0, y : 0}
     , finalCoord = {x : 0, y : 0}
     , changeX = 0
@@ -77,7 +75,7 @@ var Swiper = (function () {
     if (goingVertical === false) {
       if (Math.abs(changeX) > Math.abs(threshold.x)) {
         // Timeout stops the callback being fired if the tablet catches a scroll first
-        // Stops weird paused transitions, they will then be triggered after scroll
+        // Stops weird DOM freezing of iOS, they will then be triggered after scroll
         returnObject.direction = directions.left
         callbackTimeout = setTimeout(function () { callback(returnObject) }, 10)
       } else {
@@ -89,32 +87,26 @@ var Swiper = (function () {
     goingVertical = 0
   }
 
-  function addSwipeListener(el, cb) {
-    callback = cb
-    elem = el
-
+  function addSwipeListener() {
     elem.addEventListener('touchstart', touchStartHandler, false)
     elem.addEventListener('touchmove', touchMoveHandler, false)
     elem.addEventListener('touchend', touchEndHandler, false)
   }
 
-  function removeSwipeListener(el) {
-    callback = null
-    elem = null
-
-    el.removeEventListener('touchstart', touchStartHandler)
-    el.removeEventListener('touchmove', touchMoveHandler)
-    el.removeEventListener('touchend', touchEndHandler)
+  function removeSwipeListener() {
+    elem.removeEventListener('touchstart', touchStartHandler)
+    elem.removeEventListener('touchmove', touchMoveHandler)
+    elem.removeEventListener('touchend', touchEndHandler)
   }
 
+  addSwipeListener()
+
   return {
-    on : addSwipeListener
-    , swipe : addSwipeListener
-    , off : removeSwipeListener
+    off : removeSwipeListener
     , noSwiping : removeSwipeListener
     , directions : directions
   }
-}())
+}
 
 var animatedScrollTo = (function () {
   var scrollAnim
@@ -198,6 +190,7 @@ if (document.getElementsByClassName) {
           , j = 0
           , current = 0
           , currentClass = 'testimonial-current'
+          , swiper
 
         if (totalTestimonials <= 1) return
 
@@ -255,8 +248,8 @@ if (document.getElementsByClassName) {
         testimonialGroups[i].getElementsByClassName('prev')[0].addEventListener('click', prevTestimonial, false)
 
         if (Modernizr.touch) {
-          Swiper.swipe(testimonialGroups[i], function (e) {
-            if (e.direction == Swiper.directions.left) {
+          swiper = new Swiper(testimonialGroups[i], function (e) {
+            if (e.direction == swiper.directions.left) {
               nextTestimonial()
             } else {
               prevTestimonial()
