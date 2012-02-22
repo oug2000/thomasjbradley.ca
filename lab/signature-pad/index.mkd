@@ -46,7 +46,7 @@ The Signature Pad jQuery plugin will transform an HTML form into a signature pad
 
 The drawn signature is written out to a hidden input field as a JSON array using `JSON.strinify()`. Since the signature is saved as JSON it can be submitted as part of the form and kept on file. Using the JSON array, the signature can then be regenerated into the canvas element for display.
 
-*Obviously, Signature Pad has a couple extra dependencies: [Douglas Crockford’s JSON 2](http://www.json.org/js.html) and [FlashCanvas 1.5](http://flashcanvas.net/). (Both scripts are included in the downloadable package.)*
+*Obviously, Signature Pad has a couple extra dependencies: [Douglas Crockford’s json2.js](http://www.json.org/js.html) and [FlashCanvas 1.5](http://flashcanvas.net/). (Both scripts are included in the downloadable package.)*
 
 Signature Pad tries to maintain a certain level of progressive enhancement, while still giving developers enough control. There is very little generated HTML. The HTML in the examples has some elements that should be hidden by default (including canvas). Signature Pad will trigger the display of certain items if the browser supports Javascript and canvas.
 
@@ -283,4 +283,4 @@ Check out the [changelog on GitHub](https://github.com/thomasjbradley/signature-
 
 Signature Pad is licensed under the <a href="https://github.com/thomasjbradley/signature-pad/blob/master/NEW-BSD-LICENSE.txt" rel="license">New BSD license</a>, which is included in the downloadable package.
 
-All dependencies: [jQuery](http://jquery.com/), [JSON 2](http://www.json.org/js.html), and [FlashCanvas](http://flashcanvas.net/) retain their own licenses.
+All dependencies: [jQuery](http://jquery.com/), [json2.js](http://www.json.org/js.html), and [FlashCanvas](http://flashcanvas.net/) retain their own licenses.
