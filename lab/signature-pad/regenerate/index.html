@@ -18,11 +18,11 @@ desc: "A demo, using Signature Pad, showcasing regeneration of a signature from 
   <p>Sir John A. Macdonald<br>July 1, 1867</p>
 </div>
 
-<script src="{{"static"|env}}/jquery.signaturepad.min.js"></script>
-<script src="{{"static"|env}}/sample-signature-output.js"></script>
+<script src="{{"static"|env}}/signature-pad/jquery.signaturepad.min.js"></script>
+<script src="{{"static"|env}}/signature-pad/sample-signature-output.js"></script>
 <script>
   $(document).ready(function () {
     $('.sigPad').signaturePad({displayOnly:true}).regenerate(sig);
   });
 </script>
-<script src="{{"static"|env}}/json2.min.js"></script>
+<script src="{{"static"|env}}/signature-pad/json2.min.js"></script>
