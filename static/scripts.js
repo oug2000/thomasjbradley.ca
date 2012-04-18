@@ -1,6 +1,38 @@
 ---
 ---
 
+/**
+ * Shuffles the order of elements on the page
+ * http://james.padolsey.com/javascript/shuffling-the-dom/
+ */
+function shuffle (elems) {
+  allElems = (function () {
+    var ret = [], l = elems.length
+    while (l--) { ret[ret.length] = elems[l] }
+    return ret
+  })()
+
+  var shuffled = (function () {
+      var l = allElems.length, ret = []
+
+      while (l--) {
+        var random = Math.floor(Math.random() * allElems.length)
+          , randEl = allElems[random].cloneNode(true)
+
+        allElems.splice(random, 1)
+        ret[ret.length] = randEl
+      }
+
+      return ret
+    })()
+    , l = elems.length
+
+  while (l--) {
+    elems[l].parentNode.insertBefore(shuffled[l], elems[l].nextSibling)
+    elems[l].parentNode.removeChild(elems[l])
+  }
+}
+
 function navScroller (e) {
   var hash = this.getAttribute('href').replace(/\/#/, '')
 
@@ -215,6 +247,10 @@ if (document.getElementsByClassName) {
           current = prev
         }
 
+        removeClass(testimonials[0], currentClass)
+        shuffle(testimonials)
+        addClass(testimonials[0], currentClass)
+
         for (j = 0; j < totalTestimonials; j++) {
           tempClone = testimonials[j].cloneNode(true)
           tempClone.style.position = 'absolute'
@@ -222,7 +258,6 @@ if (document.getElementsByClassName) {
           tempClone.style.width = testimonials[0].offsetWidth + 'px'
           tempClone.style.top = '999em'
           document.body.appendChild(tempClone)
-
 
           if (tempClone.offsetHeight > tallestHeight) {
             tallestHeight = tempClone.offsetHeight
