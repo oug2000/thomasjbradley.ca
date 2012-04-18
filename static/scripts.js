@@ -185,7 +185,8 @@ if (document.getElementsByClassName) {
       ;(function () {
         var testimonials = testimonialGroups[i].getElementsByClassName('testimonial')
           , totalTestimonials = testimonials.length
-          , tallestClone = {offsetHeight: 0}
+          , tallestHeight = 0
+          , tallestClone
           , tempClone
           , j = 0
           , current = 0
@@ -222,7 +223,9 @@ if (document.getElementsByClassName) {
           tempClone.style.top = '999em'
           document.body.appendChild(tempClone)
 
-          if (tempClone.offsetHeight > tallestClone.offsetHeight) {
+
+          if (tempClone.offsetHeight > tallestHeight) {
+            tallestHeight = tempClone.offsetHeight
             tallestClone = tempClone
           }
 
