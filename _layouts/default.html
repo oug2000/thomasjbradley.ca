@@ -17,7 +17,8 @@
     {% if page.url == "/index.html" %}{% assign logotag = "h1" %}{% endif %}
     <{{logotag}} class="site-title"><a href="/">Thomas J Bradley<i class="logo"><i></i><i></i></i></a></{{logotag}}>
     <nav role="navigation">
-      <ul>
+      <button class="nav-expander">Navigation</button>
+      <ul class="nav-list">
         <li>
           <a href="/#professor" class="nav-prof" data-scrollspeed="150">Professor</a>
           <ul><li><a href="http://students.thomasjbradley.ca">Students</a></li></ul>

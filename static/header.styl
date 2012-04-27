@@ -11,10 +11,11 @@
 
 .masthead
   margin 0 auto
+
   text-align center
 
 [role="navigation"]
-  margin 2.3em 0 0
+  margin 1.3em 0 0
   padding 0
   position relative
 
@@ -105,21 +106,84 @@
 
     color inherit
 
+.nav-expander
+  display none
+  margin 0 auto
+  padding 0.5em 0
+  position relative
+  width 100%
+  visibility hidden
+
+  background-color transparent
+  border 0
+  border-radius 0
+
+  color site-bg
+  font-size 1.125em
+  font-weight 600
+  text-align center
+
+.nav-expander:after
+  content ""
+  margin-top -0.2em
+  position absolute
+  right 0.8em
+  top 50%
+  z-index 1
+
+  border 0.4em solid transparent
+  border-top-color site-bg
+
+.is-nav-expanded
+  background-color link-muted-dark
+
+.is-nav-expanded:after
+  margin-top -0.6em
+
+  border-top-color transparent
+  border-bottom-color site-bg
+
+.touch .nav-expander
+  display block
+  visibility visible
+
+.touch .home .nav-expander
+  display none
+  visibility hidden
+
+.touch .nav-list
+  display none
+  visiblity hidden
+
+.touch .home .nav-list
+  display block
+  visiblity visible
+
+.touch .is-nav-list-expanded
+  display block
+  visibility visible
+
 .intro
   padding-bottom 0
-  padding-top 2.3em
+  padding-top 1.3em
 
   line-height 1.6
 
 .my-why
+  display none
   margin-left auto
   margin-right auto
+  max-width 25em
   padding-left 2.5%
   padding-right 2.5%
-  max-width 25em
+  visibility hidden
 
   font-size 1.25em
   text-align center
+
+.home .my-why
+  display block
+  visibility visible
 
 @media all and (min-width: 500px)
 
@@ -129,6 +193,7 @@
 
   [role="navigation"]
     margin-left 2em
+    margin-top 2.3em
     padding 0
     position relative
 
@@ -163,7 +228,24 @@
     border-top-color transparent
     border-bottom-color link-muted
 
+  .nav-expander
+  .touch .nav-expander
+  .touch .home .nav-expander
+    display none
+    visibility hidden
+
+  .touch .nav-list
+    display block
+    visibility visible
+
+  .intro
+    padding-top 2.3em
+
   .my-why
+  .home .my-why
+    display block
+    visibility visible
+
     font-size 1.875em
 
 @media all and (min-width: 1150px)
