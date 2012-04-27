@@ -315,6 +315,6 @@ if (document.getElementsByClassName) {
           navOpen = true
         }
       })
-    })
+    }())
   }
 }
