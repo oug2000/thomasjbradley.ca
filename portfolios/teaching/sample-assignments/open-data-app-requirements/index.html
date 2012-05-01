@@ -1,0 +1,289 @@
+---
+layout: demo-appendix
+title: "Open Data App, Interactive Multimedia · Sample Assignments"
+desc: "Assignment requirements for the Open Data App project from MTM 1531 Database and Server-Side and MTM 1526 Rich Media Services."
+---
+
+<h1>Open Data App Requirements</h1>
+<p>Assignment requirements for the Open Data App project from MTM 1531 Database and Server-Side and MTM 1526 Rich Media Services.</p>
+<p><a href="/portfolios/teaching/#assignments">See more sample assignments…</a></p>
+<hr>
+
+<h2>Overview: Open Data App</h2>
+<p>Create a small open data map application using <a href="http://ottawa.ca/opendata" rel="external">Ottawa’s open data sets</a>. You will be continuously developing this app throughout the rest of the term.</p>
+<p><strong>Your app’s repository must be hosted on <a href="https://github.com" rel="external">GitHub</a> and your functional app hosted on <a href="https://www.phpfog.com" rel="external">PHPFog</a>.</strong></p>
+<p>Your app will have two public screens:</p>
+<ol>
+  <li>a map screen that shows all the places from your dataset,</li>
+  <li>and a single screen that shows information about each place.</li>
+</ol>
+<p>Behind the public facing app, you will also create a password protected admin section where you can add, edit, and delete places.</p>
+
+<p>Choose one of the following <a href="http://ottawa.ca/online_services/opendata/info/index_en.html" rel="external">data sets available on Ottawa’s website</a>:</p>
+<ul>
+  <li>Ball Diamonds 2009</li>
+  <li>Basket Ball Courts 2009</li>
+  <li>Community Gardens</li>
+  <li>Lawn Bowling</li>
+  <li>Museums 2010</li>
+  <li>Outdoor Rinks 2009</li>
+  <li>Skateboard Parks 2009</li>
+  <li>Sledding Hills 2010</li>
+  <li>Splash Pads 2009</li>
+  <li>Sports Fields 2009</li>
+  <li>Tennis Courts 2009</li>
+  <li>Volleyball Courts 2009</li>
+  <li>Wading Pools 2009</li>
+</ul>
+
+<p><strong>The project is split between MTM 1526 and MTM 1531 and composed of many smaller deliverables due throughout the term.</strong></p>
+
+<hr>
+
+<h2>Part 1: Project brief</h2>
+<p>Create a project brief for your Open Data app—for your chosen data set. It must include the following information:</p>
+<ol>
+  <li>Description &amp; feature list (in your own words—not copied and pasted from above)</li>
+  <li>Link to your Github repository</li>
+  <li>Link to your PHPFog project</li>
+  <li>Link to your chosen data set</li>
+  <li>1 user persona</li>
+  <li>Sitemap</li>
+  <li>Wireframe</li>
+  <li>Design mockup</li>
+</ol>
+
+<p><strong>Your GitHub repository should be named ‘open-data-app’.</strong></p>
+<p>Sign up for a <a href="https://www.phpfog.com" rel="external">PHPFog</a> account. On the second screen choose <i>Custom App</i> under <i>Frameworks</i>. Create a password for MySQL on PHPFog <strong>and don’t forget it!</strong>. Name your app whatever you’d like.</p>
+
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>5</strong>—design mockup</li>
+  <li><strong>4</strong>—sitemap</li>
+  <li><strong>4</strong>—wireframe</li>
+  <li><strong>3</strong>—description, features &amp; links</li>
+  <li><strong>3</strong>—user persona</li>
+  <li><strong>2</strong>—HTML, CSS</li>
+  <li><strong>2</strong>—appropriate validation, source code formatting &amp; proper indentation</li>
+</ul>
+
+<p><strong>23 points total</strong></p>
+
+<h3>Handing in</h3>
+<p>Your project brief must be a single, nicely designed HTML page <strong>uploaded to Edumedia.</strong></p>
+<div class="highlight"><pre><code>http://imm.edumedia.ca/aaaa0000/open-data-app/</code></pre></div>
+
+<hr>
+
+<h2>Part 2: Prototype</h2>
+<p>Using PHP and MySQL, create a basic prototype for your open data application. Your prototype should have the following features:</p>
+<ul>
+  <li>Fake data in your MySQL database.</li>
+  <li>A page that lists all the places.</li>
+  <li>A single page with more details for individual places.</li>
+  <li>An admin section where you can add, edit, and delete places. (Your admin section will be publicly accessible right now.)</li>
+  <li>Admin section should contain all the appropriate validation.</li>
+</ul>
+<p><strong>CSS and Javascript are not required for the prototype.</strong></p>
+
+<div class="highlight">
+<pre><code><b>open-data-app</b>/
+ <small>|-</small> <i>index.php</i>
+ <small>|-</small> <i>single.php</i>
+ <small>|-</small> <b>admin</b>/
+ <small>|   |-</small> <i>index.php</i>
+ <small>|   |-</small> <i>add.php</i>
+ <small>|   |-</small> <i>edit.php</i>
+ <small>|   |-</small> <i>delete.php</i>
+ <small>|-</small> <b>css</b>/
+ <small>|   |-</small> <i>public.css</i>
+ <small>|   |-</small> <i>admin.css</i>
+ <small>|-</small> <b>images</b>/
+ <small>|-</small> <b>js</b>/
+ <small>|   |-</small> <i>modernizr.min.js</i>
+ <small>|   |-</small> <i>open-data-app.js</i></code></pre>
+</div>
+
+<h3>Database</h3>
+<p>Your database should hold the following information about each place:</p>
+<ul>
+  <li>Name,</li>
+  <li>Longitude,</li>
+  <li>Latitude,</li>
+  <li>and Street Address.</li>
+</ul>
+
+<h3>Git &amp; Git commits</h3>
+<p>Make sure to use Git appropriately. Commit regularly—whenever a single feature has been added or whenever a single bug has been fixed.</p>
+<p><strong>Your commit messages must describe exactly what you did. Messages like ‘commit’ or ‘bug fix’ or ‘asdf’ are not acceptable.</strong> Some examples of appropriate commit messages:</p>
+<ul>
+  <li>Bug fix: one of the places was not showing properly.</li>
+  <li>New feature: added the edit functionality for places.</li>
+</ul>
+
+<h3>Optional bonus challenges</h3>
+<ul>
+  <li>Remove as much duplication as possible by reusing pieces of code with includes—<code>add.php</code> and <code>edit.php</code> have a lot of duplication that can be simplified.</li>
+</ul>
+
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>7</strong>—git commits &amp; messages</li>
+  <li><strong>7</strong>—admin</li>
+  <li><strong>5</strong>—public index.php &amp; single.php</li>
+  <li><strong>4</strong>—database</li>
+  <li><strong>2</strong>—appropriate validation, source code formatting &amp; proper indentation</li>
+</ul>
+<p><strong>25 points total</strong></p>
+
+<h3>Handing in</h3>
+<p>The prototype should be available on GitHub and fully functional on PHPFog.</p>
+
+<hr>
+
+<h2>Part 3: Importing data</h2>
+<p>Import your Open Data dataset into your application, using the script written in class.</p>
+
+<hr>
+
+<h2>Part 4: Google Maps</h2>
+<p>Add Google Maps, as demonstrated in class, to your Open Data App. Integration must include:</p>
+<ul>
+  <li>Custom icons</li>
+  <li>Info windows</li>
+</ul>
+
+<hr>
+
+<h2>Part 5: Rating locations</h2>
+<p>Add a rating system, like the one created in class, to your Open Data application.</p>
+
+<hr>
+
+<h2>Part 6: User authentication</h2>
+<p>Following the process discussed in class, protect your admin section with user authentication and create a username and password just for you.</p>
+
+<hr>
+
+<h2>Part 7: Documentation</h2>
+<p>Document your open data application by doing the following:</p>
+<ul>
+  <li>Add <a href="http://www.phpdoc.org/docs/latest/for-users/anatomy-of-a-docblock.html" rel="external">DocBlocks</a> to the top of all PHP and Javascript files you wrote. Each DocBlock should include: short description, author, copyright, link, package, and version.</li>
+  <li>Create a proper <code>README.md</code> file on GitHub. The Readme should include: description, author info, link to PHPFog, link to the GitHub Pages project brief, and installation instructions.</li>
+  <li>Add a GitHub Pages branch and move your project brief to the branch.</li>
+</ul>
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>10</strong>—DocBlocks</li>
+  <li><strong>10</strong>—README.md</li>
+  <li><strong>10</strong>—GitHub Pages</li>
+</ul>
+<p><strong>30 points total</strong></p>
+<h3>Optional bonus challenges</h3>
+<ul>
+  <li>Add a <code>CHANGELOG.md</code> file to your repository.</li>
+  <li>Choose an appropriate license and add that to your repository.</li>
+  <li>Learn how to document functions with DocBlocks and document all the functions in your Javascript and PHP files.</li>
+</ul>
+
+<hr>
+
+<h2>Part 8: Finalized open data app</h2>
+<p>Finish up the Open Data application and make it work really well.</p>
+<p><strong>Some things to do:</strong></p>
+<ul>
+  <li>testing: make sure every feature works as expected;</li>
+  <li>usability improvements;</li>
+  <li>adding the CSS design;</li>
+  <li>browser testing;</li>
+  <li>splitting repetitive HTML into includes;</li>
+  <li>checking indentation and code cleanliness;</li>
+  <li>more testing.</li>
+</ul>
+
+<h3>Optional bonus challenges</h3>
+<ul>
+  <li>Make the application responsive and mobile first.</li>
+</ul>
+
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>7</strong>—working &amp; tested code</li>
+  <li><strong>6</strong>—design</li>
+  <li><strong>5</strong>—browser testing</li>
+  <li><strong>4</strong>—includes</li>
+  <li><strong>4</strong>—cleanliness &amp; indentation</li>
+  <li><strong>4</strong>—spit &amp; polish</li>
+</ul>
+<p><strong>30 points total</strong></p>
+
+<hr>
+
+<h2>Bonus 1: Geolocation</h2>
+<p>As covered in class, include a search field on your Open Data app where users can search their address and get a list of the closest locations. Also use the GeoLocation API to automatically find the closest locations.<p>
+
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>3</strong>—address search</li>
+  <li><strong>2</strong>—geo-location</li>
+</ul>
+<p><strong>5 points total</strong></p>
+
+<hr>
+
+<h2>Bonus 2: Disqus</h2>
+<p>Research and include the <a href="http://disqus.com/" rel="external">Disqus</a> comment system on your single pages.</p>
+
+<hr>
+
+<h2>Bonus 3: Filtering locations</h2>
+<p>Add the functionality to allow your users to filter the locations. Some sort examples: alphabetical, highest-to-lowest rated, etc.</p>
+
+<hr>
+
+<h2>Bonus 4: Server optimization</h2>
+<p>Speed up your application by following what Google Page Speed recommends, including:</p>
+<ul>
+  <li>minifying your CSS,</li>
+  <li>minifying your JS,</li>
+  <li>enabling Gzip,</li>
+  <li>using CSS sprites,</li>
+  <li>etc.</li>
+</ul>
+<p>Also, make your URLs prettier by enabling mod_rewrite in your application.</p>
+
+<h3>Mark break down</h3>
+<ul>
+  <li><strong>3</strong>—minification &amp; spriting</li>
+  <li><strong>2</strong>—.htaccess</li>
+</ul>
+<p><strong>5 points total</strong></p>
+
+<hr>
+
+<h2>Bonus 5: Organization and security</h2>
+<p>Fix some security holes in the application and organize the repository in a more secure manner.</p>
+<p>As an example, the <code>import-data.php</code> page is currently wide open, and would allow anybody to re-import all the data into our database.</p>
+
+<p>Update your repository and move some files so they are not accessible on the live application. <strong>After you have rearranged your repository, go to PHPFog control panel and set the ‘Base Directory’ to <code>www</code>.</strong></p>
+<div class="highlight">
+<pre><code><b>open-data-app</b>/
+ <small>|-</small> <b>www</b>/
+ <small>|   |-</small> <i>index.php</i>
+ <small>|   |-</small> ⋮
+ <small>|   |-</small> <b>admin</b>/
+ <small>|   |   |-</small> <i>add.php</i>
+ <small>|   |   |-</small> ⋮
+ <small>|   |-</small> <b>images</b>/
+ <small>|   |   |-</small> ⋮
+ <small>|   |-</small> <b>css</b>/
+ <small>|   |   |-</small> ⋮
+ <small>|   |-</small> <b>js</b>/
+ <small>|   |   |-</small> ⋮
+ <small>|-</small> <b>data</b>/
+ <small>|   |-</small> ⋮
+ <small>|-</small> <b>schema</b>/
+ <small>|   |-</small> ⋮
+ <small>|-</small> <i>README.md</i>
+</code></pre>
+</div>
