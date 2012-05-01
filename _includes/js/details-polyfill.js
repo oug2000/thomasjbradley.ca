@@ -1,14 +1,14 @@
-if (!Modernizr.details && 'querySelector' in document) {
+if ('querySelector' in document) {
   ;(function () {
     var detailElems = document.getElementsByTagName('details')
       , totalDetails = detailElems.length
-      , i = 0
+      , summaryElems = document.getElementsByTagName('summary')
+      , totalSummary = summaryElems.length
       , tempInsides
       , detailInsides = []
       , totalInsides = 0
+      , i = 0
       , j = 0
-      , summaryElems = document.getElementsByTagName('summary')
-      , totalSummary = summaryElems.length
       , k = 0
 
     function toggleDetails (index) {
@@ -23,34 +23,56 @@ if (!Modernizr.details && 'querySelector' in document) {
       }
     }
 
-    if (totalDetails > 0) {
-      for (i = 0; i < totalDetails; i++) {
-        tempInsides = detailElems[i].getElementsByTagName('div')
-        totalInsides = tempInsides.length
+    if (!Modernizr.details) {
+      if (totalDetails > 0) {
+        for (i = 0; i < totalDetails; i++) {
+          tempInsides = detailElems[i].getElementsByTagName('div')
+          totalInsides = tempInsides.length
 
-        for (j = 0; j < totalInsides; j++) {
-          if (hasClass(tempInsides[j], 'details-inside')) {
-            detailInsides[i] = tempInsides[j]
-            detailInsides[i].setAttribute('hidden', true)
+          for (j = 0; j < totalInsides; j++) {
+            if (hasClass(tempInsides[j], 'details-inside')) {
+              detailInsides[i] = tempInsides[j]
+              detailInsides[i].setAttribute('hidden', true)
+            }
           }
         }
-      }
 
+        for (k = 0; k < totalSummary; k++) {
+          ;(function () {
+            var index = k
+
+            bind('click', summaryElems[k], function (ev) {
+              toggleDetails(index)
+              this.blur()
+            })
+
+            bind('keydown', summaryElems[k], function (ev) {
+              if (ev.keyCode == 32 || ev.keyCode == 13) {
+                ev.preventDefault && ev.preventDefault()
+                toggleDetails(index)
+
+                return false
+              }
+            })
+          }())
+        }
+      }
+    } else {
       for (k = 0; k < totalSummary; k++) {
         ;(function () {
-          var index = k
-
           bind('click', summaryElems[k], function (ev) {
-            toggleDetails(index)
             this.blur()
           })
 
           bind('keydown', summaryElems[k], function (ev) {
             if (ev.keyCode == 32 || ev.keyCode == 13) {
-              if (ev.preventDefault)
-                ev.preventDefault()
+              ev.preventDefault && ev.preventDefault()
 
-              toggleDetails(index)
+              if (this.parentNode.open) {
+                this.parentNode.open = false
+              } else {
+                this.parentNode.open = true
+              }
 
               return false
             }
