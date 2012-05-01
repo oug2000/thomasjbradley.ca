@@ -1,0 +1,82 @@
+html
+  height 100%
+  margin 0
+  overflow-x hidden
+  padding 0
+
+  background site-bg-dark url("{{'img'|env}}/pattern-slant-dark-rt.png") repeat left top
+
+  color text-dark
+  font normal 100%/1.5 "Open Sans",sans-serif
+
+body
+  margin 0
+  padding 0
+
+  font 300 100%/1.5 "Open Sans",sans-serif
+
+[role="main"]
+  margin 50px auto
+  max-width 35em
+  padding 1.5em 2% 2em
+  position relative
+
+  background site-bg url("{{'img'|env}}/pattern-45-lt.png") repeat left top
+  box-shadow 0 35px 40px -40px rgba(0,0,0,0.4)
+
+p
+  margin 0 0 1.5em
+  padding 0
+
+a
+a:link
+a:visited
+  display inline
+  margin 0
+  padding 0
+
+  background-color transparent
+  border 0
+  border-bottom 0.1em solid rgba(link-normal,0.2)
+  transition all 150ms linear
+
+  color link-normal
+  font inherit
+  text-decoration none
+
+a:hover
+a:focus
+a:active
+  border-color link-bright
+
+  color link-bright
+
+h1
+  margin 0 45px 0.9em 0
+
+  font-size 2em
+  font-weight 600
+
+strong
+b
+  font-weight 400
+
+hr
+  clear both
+  height 0
+  margin 1.9em 0 1.8em
+  padding 0
+
+  border 0
+  border-top 4px solid site-bg-dark
+
+@import 'site-title'
+
+.site-title
+  right 1em
+  position absolute
+  top 1em
+
+  & span
+    position absolute
+    top -999em

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en-ca" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>{{page.title|escape}} · Thomas J Bradley</title>
+  <link href="{{"static"|env}}/demo-appendix.{{site.buildtime}}.min.css" rel="stylesheet">
+  {% include common-head.html %}
+</head>
+<body>
+  <div role="main">
+    {% include demo-logo.html %}
+    {{content}}
+  </div>
+  {% include ga.html %}
+</body>
+</html>
