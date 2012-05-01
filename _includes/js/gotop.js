@@ -2,7 +2,7 @@
   var rocket = document.getElementById('rocketeer')
     , scrollUpTimer
 
-  bind('click', document.getElementById('gotop'), function (e) {
+  bind('click', document.getElementById('gotop'), function (ev) {
     var self = this
       , rocketClass = 'rocketeer-go'
 

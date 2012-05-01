@@ -21,7 +21,7 @@
     ;(function () {
       var theLink = menuLinks[i]
 
-      bind('click', theLink, function (e) {
+      bind('click', theLink, function (ev) {
         ev.preventDefault && ev.preventDefault()
 
         for (j = 0; j < totalLis; j++) {
