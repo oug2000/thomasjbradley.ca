@@ -22,8 +22,7 @@
       var theLink = menuLinks[i]
 
       bind('click', theLink, function (e) {
-        if (e && e.preventDefault)
-          e.preventDefault()
+        ev.preventDefault && ev.preventDefault()
 
         for (j = 0; j < totalLis; j++) {
           removeClass(menuLis[j], 'current')

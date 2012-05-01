@@ -12,9 +12,7 @@
       window.location.hash = self.getAttribute('href')
     }
 
-    if (e.preventDefault)
-      e.preventDefault()
-
+    ev.preventDefault && ev.preventDefault()
     rocket.style.left = getOffset(this).left + 'px'
     addClass(rocket, rocketClass)
     scrollUpTimer = setTimeout(animEndHandler, 500)
