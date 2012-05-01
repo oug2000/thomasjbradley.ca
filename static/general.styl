@@ -64,6 +64,10 @@ a:active
 
   color link-bright
 
+a:focus
+.btn-link:focus
+  outline 2px solid #000
+
 h1
   margin 0 0 0.6em
 
@@ -233,10 +237,15 @@ summary
 summary:hover
 summary:focus
 summary:active
+  outline none
+
   color link-bright
 
   & span
     border-color link-bright
+
+summary:focus
+  outline 2px solid #000
 
 .no-details summary:before
   content "▶"

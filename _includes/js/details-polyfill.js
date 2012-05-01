@@ -11,6 +11,18 @@ if (!Modernizr.details && 'querySelector' in document) {
       , totalSummary = summaryElems.length
       , k = 0
 
+    function toggleDetails (index) {
+      var detailElem = summaryElems[index].parentNode
+
+      if (detailElem.hasAttribute('open')) {
+        detailElem.removeAttribute('open')
+        detailInsides[index].setAttribute('hidden', true)
+      } else {
+        detailElem.setAttribute('open', true)
+        detailInsides[index].removeAttribute('hidden')
+      }
+    }
+
     if (totalDetails > 0) {
       for (i = 0; i < totalDetails; i++) {
         tempInsides = detailElems[i].getElementsByTagName('div')
@@ -29,14 +41,18 @@ if (!Modernizr.details && 'querySelector' in document) {
           var index = k
 
           bind('click', summaryElems[k], function (ev) {
-            var detailElem = summaryElems[index].parentNode
+            toggleDetails(index)
+            this.blur()
+          })
 
-            if (detailElem.hasAttribute('open')) {
-              detailElem.removeAttribute('open')
-              detailInsides[index].setAttribute('hidden', true)
-            } else {
-              detailElem.setAttribute('open', true)
-              detailInsides[index].removeAttribute('hidden')
+          bind('keydown', summaryElems[k], function (ev) {
+            if (ev.keyCode == 32 || ev.keyCode == 13) {
+              if (ev.preventDefault)
+                ev.preventDefault()
+
+              toggleDetails(index)
+
+              return false
             }
           })
         }())
