@@ -20,21 +20,21 @@
       <button class="nav-expander">Navigation</button>
       <ul class="nav-list">
         <li>
-          <a href="/#professor" class="nav-prof" data-scrollspeed="150">Professor</a>
+          <a href="/#professor" id="nav-prof" data-scrollspeed="150">Professor</a>
           <ul>
             <li><a href="http://students.thomasjbradley.ca">Students</a></li>
             <li{{"current"|onpage:"teaching":page.url}}><a href="/portfolios/teaching/">{{'<span class="nav-extra-words">Teaching </span>Portfolio'|markonpage:"teaching":page.url}}</a></li>
           </ul>
         </li>
         <li>
-          <a href="/#developer" class="nav-dev" data-scrollspeed="250">Developer</a>
+          <a href="/#developer" id="nav-dev" data-scrollspeed="250">Developer</a>
           <ul>
             <li{{"current"|onpage:"lab":page.url}}><a href="/lab/">{{"Lab Projects"|markonpage:"lab":page.url}}</a></li>
             <li{{"current"|onpage:"web":page.url}}><a href="/portfolios/web/">{{'<span class="nav-extra-words">Web </span>Portfolio'|markonpage:"web":page.url}}</a></li>
           </ul>
         </li>
         <li>
-          <a href="/#writer" class="nav-write" data-scrollspeed="400">Writer</a>
+          <a href="/#writer" id="nav-write" data-scrollspeed="400">Writer</a>
           <ul>
             <li{{"current"|onpage:"article":page.url}}><a href="/articles/">{{"Articles"|markonpage:"article":page.url}}</a></li>
             <li{{"current"|onpage:"book":page.url}}><a href="/books/">{{"Books"|markonpage:"book":page.url}}</a></li>
@@ -58,8 +58,8 @@
     <li><a href="http://twitter.com/thomasjbradley">@thomasjbradley</a></li>
     <li><a href="https://github.com/thomasjbradley">github:thomasjbradley</a></li>
   </ul>
-  <p class="copyright">© <span class="fn">Thomas J Bradley</span>. <span class="adr"><span class="locality">Ottawa</span>, <span class="country-name">Canada</span></span>. <a href="#top" class="top" title="Rocket to the top!">Rocket to the top!</a></p>
-  <span class="rocketeer"><b></b><i></i></span>
+  <p class="copyright">© <span class="fn">Thomas J Bradley</span>. <span class="adr"><span class="locality">Ottawa</span>, <span class="country-name">Canada</span></span>. <a href="#top" class="top" id="gotop" title="Rocket to the top!">Rocket to the top!</a></p>
+  <span class="rocketeer" id="rocketeer"><b></b><i></i></span>
 </footer>
 
 <!--
