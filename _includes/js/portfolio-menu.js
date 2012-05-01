@@ -39,7 +39,7 @@
 
   window.onscroll = function () {
     if (getScrollTop() >= originalTop) {
-      portMenu.setAttribute('data-state', 'is-menu-fixed')
+      portMenu.setAttribute('data-state', 'menu-fixed')
     } else {
       portMenu.removeAttribute('data-state')
     }
