@@ -198,6 +198,13 @@ blockquote
   color text-medium-dark
   font italic normal 1em/1.5 Georgia,serif
 
+cite
+  display block
+  margin 0
+
+  font-style normal
+  text-align right
+
 mark
   background-color #e1a037
 
@@ -218,6 +225,40 @@ figcaption
   color text-medium-medium
   font-size 0.875em
 
+summary
+  display block
+
+  background-color transparent
+  border 0
+  cursor pointer
+
+  color link-normal
+  font inherit
+  text-decoration none
+
+  & span
+    border-bottom 0.1em solid rgba(link-normal,0.2)
+    transition all 150ms linear
+
+summary:hover
+summary:focus
+summary:active
+  color link-bright
+
+  & span
+    border-color link-bright
+
+.no-details summary:before
+  content "▶"
+  display inline-block
+  width 1.5em
+
+  font-size 0.75em
+  vertical-align middle
+
+.no-details details[open] summary:before
+  content "▼"
+
 .btn-group
   margin-top 3em
 
@@ -227,6 +268,7 @@ figcaption
 .btn:link
 .btn:visited
   display inline-block
+  margin-top 0.25em
   padding 0.5em 1em 0.7em
   position relative
 

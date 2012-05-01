@@ -14,6 +14,9 @@
 
   box-shadow 0 35px 40px -40px rgba(0,0,0,0.06)
 
+.mod-group-head-joined
+  box-shadow none
+
 .mod-article-head
   box-shadow none
 
@@ -81,6 +84,9 @@
 .testimonials-list
   position relative
 
+.testimonials-surrounded
+  margin-bottom 1.5em
+
 .testimonial
   display none
   margin 0 0 1.5em
@@ -131,13 +137,6 @@
   right 0.1em
   top auto
   z-index -1
-
-.testimonial-author
-  display block
-  margin 0
-
-  font-style normal
-  text-align right
 
 .testimonial-controls
   margin 0
@@ -311,6 +310,21 @@ a.lab-img img
   & .zip i
     background-position -96px 0
 
+  & .pdf i
+    background-position -128px 0
+
+.files-inline
+  margin-bottom 0
+  overflow hidden
+
+  text-align center
+
+  & li
+    display inline-block
+    margin 0 1em 1.5em 0
+
+    text-align left
+
 .apps-list
   margin 0
   padding 4em 0
@@ -400,6 +414,37 @@ a.lab-img img
 .feed-icon-alt:focus
 .feed-icon-alt:active
   background-position -34px -18px
+
+.details-inner
+  margin-bottom 1.5em
+
+.details-inside
+  padding-top 1.5em
+
+  & :last-child
+    margin-bottom 0
+
+.details-multi
+  padding-bottom 1.5em
+
+.resp-head
+  margin-bottom 0
+
+  font-size 1em
+
+.resp-details
+  color text-medium-dark
+  font italic normal 1em/1.5 Georgia,serif
+
+.resp-courses
+  margin-top -1.5em
+
+.resp-courses:last-child
+  margin-bottom 0
+
+.portfolio-menu
+  position absolute
+  right -999em
 
 @media all and (min-width: 400px)
 
@@ -497,3 +542,27 @@ a.lab-img img
     margin-left 0
     position absolute
     top -0.3em
+
+  .portfolio-menu
+    padding 0.25em 0.5em
+    right 0
+    top 1em
+    z-index 2000
+
+    border-radius 4px 0 0 4px
+
+    & li
+      padding 0.25em 1em 0.25em 0.5em
+
+      border-bottom 1px solid link-muted-dark
+
+    & li:last-child
+      border-bottom 0
+
+    & .current a
+    & .current a:link
+    & .current a:visited
+      color #fff
+
+  [data-state="is-menu-fixed"]
+    position fixed

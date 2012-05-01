@@ -33,27 +33,33 @@ function shuffle (elems) {
   }
 }
 
-function navScroller (e) {
-  var hash = this.getAttribute('href').replace(/\/#/, '')
+function navScroller (e, elem) {
+  var hash = (elem ? elem : this).getAttribute('href').replace(/\/?#/, '')
+    , speed = (elem ? elem : this).getAttribute('data-scrollspeed') || 200
 
-  e.preventDefault()
+  if (e && e.preventDefault)
+    e.preventDefault()
 
-  animatedScrollTo(document.getElementById(hash), this.getAttribute('data-scrollspeed'), function () {
+  animatedScrollTo(document.getElementById(hash), speed, function () {
     window.location.hash = '#' + hash
   })
+
+  return false
 }
 
 function getOffset (elem) {
   var offset = {left : elem.offsetLeft, top : elem.offsetTop}
-    , parent = elem.offsetParent
 
-  while (parent.tagName != 'BODY') {
-    offset.left += parent.offsetLeft
-    offset.top += parent.offsetTop
-    parent = parent.offsetParent
-  }
+  do {
+    offset.left += elem.offsetLeft
+    offset.top += elem.offsetTop
+  } while (elem = elem.offsetParent)
 
   return offset
+}
+
+function getScrollTop () {
+  return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
 }
 
 function addClass (elem, newClass) {
@@ -62,6 +68,26 @@ function addClass (elem, newClass) {
 
 function removeClass (elem, newClass) {
   elem.className = elem.className.replace(newClass, '').replace(/\s+/, ' ').replace(/\s+$/, '').replace(/^\s+/, '')
+}
+
+function hasClass (elem, compareClass) {
+  return elem.className.indexOf(compareClass) > -1
+}
+
+function bind (ev, elem, func) {
+  if (elem.addEventListener) {
+    elem.addEventListener(ev, func, false)
+  } else {
+    elem.attachEvent('on' + ev, func)
+  }
+}
+
+function unbind (ev, elem, func) {
+  if (elem.addEventListener) {
+    elem.removeEventListener(ev, func)
+  } else {
+    elem.detachEvent('on' + ev, func)
+  }
 }
 
 var Swiper = function (elem, callback) {
@@ -318,3 +344,104 @@ if (document.getElementsByClassName) {
     }())
   }
 }
+
+if (!Modernizr.details) {
+  ;(function () {
+    var detailElems = document.getElementsByTagName('details')
+      , totalDetails = detailElems.length
+      , i = 0
+      , tempInsides
+      , detailInsides = []
+      , totalInsides = 0
+      , j = 0
+      , summaryElems = document.getElementsByTagName('summary')
+      , totalSummary = summaryElems.length
+      , k = 0
+
+    if (totalDetails > 0) {
+      for (i = 0; i < totalDetails; i++) {
+        tempInsides = detailElems[i].getElementsByTagName('div')
+        totalInsides = tempInsides.length
+
+        for (j = 0; j < totalInsides; j++) {
+          if (hasClass(tempInsides[j], 'details-inside')) {
+            detailInsides[i] = tempInsides[j]
+            detailInsides[i].setAttribute('hidden', true)
+          }
+        }
+      }
+
+      for (k = 0; k < totalSummary; k++) {
+        ;(function () {
+          var index = k
+
+          bind('click', summaryElems[k], function (ev) {
+            var detailElem = summaryElems[index].parentNode
+
+            if (detailElem.hasAttribute('open')) {
+              detailElem.removeAttribute('open')
+              detailInsides[index].setAttribute('hidden', true)
+            } else {
+              detailElem.setAttribute('open', true)
+              detailInsides[index].removeAttribute('hidden')
+            }
+          })
+        }())
+      }
+    }
+  }())
+}
+
+;(function () {
+  var portMenu = document.getElementById('portfolio-menu')
+    , originalTop = getOffset(portMenu).top
+    , menuLinks = portMenu.getElementsByTagName('a')
+    , totalLinks = menuLinks.length
+    , menuLis = portMenu.getElementsByTagName('li')
+    , totalLis = menuLis.length
+    , i = 0
+    , j = 0
+
+  for (i = 0; i < totalLinks; i++) {
+    ;(function () {
+      var theLink = menuLinks[i]
+
+      bind('click', theLink, function (e) {
+        if (e && e.preventDefault)
+          e.preventDefault()
+
+        for (j = 0; j < totalLis; j++) {
+          removeClass(menuLis[j], 'current')
+        }
+
+        navScroller(false, theLink)
+        addClass(theLink.parentNode, 'current')
+
+        return false
+      })
+    }())
+  }
+
+  window.onscroll = function () {
+    if (getScrollTop() >= originalTop) {
+      portMenu.setAttribute('data-state', 'is-menu-fixed')
+    } else {
+      portMenu.removeAttribute('data-state')
+    }
+
+    for (i = 0; i < totalLinks; i++) {
+      ;(function () {
+        var theLink = menuLinks[i]
+          , elem = document.getElementById(theLink.getAttribute('href').replace(/#/, ''))
+
+        if (getScrollTop() >= getOffset(elem).top - 100) {
+          for (j = 0; j < totalLis; j++) {
+            removeClass(menuLis[j], 'current')
+          }
+
+          addClass(theLink.parentNode, 'current')
+        }
+      }())
+    }
+  }
+}())

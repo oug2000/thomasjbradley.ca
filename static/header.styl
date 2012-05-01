@@ -14,17 +14,35 @@
 
   text-align center
 
+nav
+  background-color link-muted
+  background-image linear-gradient(right, rgba(link-muted-dark, 0.9), link-muted 30%)
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.3)
+
+  & a
+  & a:link
+  & a:visited
+    display inline-block
+
+    border 0
+
+    color site-bg
+
+  & a:hover
+  & a:focus
+  & a:active
+    color #fff
+
 [role="navigation"]
   margin 1.3em 0 0
   padding 0
   position relative
 
-  background-color link-muted
-  background-image linear-gradient(right, rgba(link-muted-dark, 0.9), link-muted 30%)
-  box-shadow 0 15px 20px -20px rgba(0,0,0,0.3)
-
   vertical-align top
   text-align center
+
+  & a
+    font-weight 600
 
   & ul
     margin 0
@@ -51,21 +69,6 @@
 
   & li:before
     content ""
-
-  & a
-  & a:link
-  & a:visited
-    display inline-block
-
-    border 0
-
-    color site-bg
-    font-weight 600
-
-  & a:hover
-  & a:focus
-  & a:active
-    color #fff
 
   & li ul
     padding 0
@@ -241,12 +244,20 @@
   .intro
     padding-top 2.3em
 
+  .nav-extra-words
+    display none
+
   .my-why
   .home .my-why
     display block
     visibility visible
 
     font-size 1.875em
+
+@media all and (min-width: 30em)
+
+  .nav-extra-words
+    display inline
 
 @media all and (min-width: 1150px)
 
@@ -265,8 +276,16 @@
 
     text-align right
 
+  .nav-extra-words
+    display none
+
   .my-why
     margin-left 5%
     padding 0
 
     text-align left
+
+@media all and (min-width: 85em)
+
+  .nav-extra-words
+    display inline

@@ -21,17 +21,23 @@
       <ul class="nav-list">
         <li>
           <a href="/#professor" class="nav-prof" data-scrollspeed="150">Professor</a>
-          <ul><li><a href="http://students.thomasjbradley.ca">Students</a></li></ul>
+          <ul>
+            <li><a href="http://students.thomasjbradley.ca">Students</a></li>
+            <li{{"current"|onpage:"teaching":page.url}}><a href="/portfolios/teaching/">{{'<span class="nav-extra-words">Teaching </span>Portfolio'|markonpage:"teaching":page.url}}</a></li>
+          </ul>
         </li>
         <li>
           <a href="/#developer" class="nav-dev" data-scrollspeed="250">Developer</a>
-          <ul><li{{"current"|onpage:"lab":page.url}}><a href="/lab/">{{"Lab Projects"|markonpage:"lab":page.url}}</a></li></ul>
+          <ul>
+            <li{{"current"|onpage:"lab":page.url}}><a href="/lab/">{{"Lab Projects"|markonpage:"lab":page.url}}</a></li>
+            <li{{"current"|onpage:"web":page.url}}><a href="/portfolios/web/">{{'<span class="nav-extra-words">Web </span>Portfolio'|markonpage:"web":page.url}}</a></li>
+          </ul>
         </li>
         <li>
           <a href="/#writer" class="nav-write" data-scrollspeed="400">Writer</a>
           <ul>
             <li{{"current"|onpage:"article":page.url}}><a href="/articles/">{{"Articles"|markonpage:"article":page.url}}</a></li>
-            <!--<li{{"current"|onpage:"book":page.url}}><a href="/books/">{{"Books"|markonpage:"book":page.url}}</a></li>-->
+            <li{{"current"|onpage:"book":page.url}}><a href="/books/">{{"Books"|markonpage:"book":page.url}}</a></li>
           </ul>
         </li>
       </ul>
