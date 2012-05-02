@@ -7,6 +7,7 @@
     , totalLis = 0
     , i = 0
     , j = 0
+    , firstScrollEvent = true
 
   if (!portMenu)
     return
@@ -37,25 +38,47 @@
   }
 
   window.onscroll = function () {
-    if (getScrollTop() >= originalTop) {
+    var theLink = null
+      , elem = null
+      , hash = ''
+      , scrollTop = getScrollTop()
+
+    if (scrollTop >= originalTop) {
       portMenu.setAttribute('data-state', 'menu-fixed')
     } else {
       portMenu.removeAttribute('data-state')
     }
 
-    for (i = 0; i < totalLinks; i++) {
-      ;(function () {
-        var theLink = menuLinks[i]
-          , elem = document.getElementById(theLink.getAttribute('href').replace(/#/, ''))
+    if (firstScrollEvent) {
+      firstScrollEvent = false
+      hash = window.location.hash
 
-        if (getScrollTop() >= getOffset(elem).top - 100) {
-          for (j = 0; j < totalLis; j++) {
-            removeClass(menuLis[j], 'current')
-          }
+      if (hash) {
+        window.scrollTo(0, getOffset(document.getElementById(hash.replace(/[#_]/g, ''))).top)
+      }
+    }
 
-          addClass(theLink.parentNode, 'current')
+    for (i = totalLinks - 1; i >= 0; i--) {
+      theLink = menuLinks[i]
+      elem = document.getElementById(theLink.getAttribute('href').replace(/#/, ''))
+      hash = theLink.getAttribute('href')
+
+      if (getScrollTop() >= getOffset(elem).top - 100) {
+        for (j = 0; j < totalLis; j++) {
+          removeClass(menuLis[j], 'current')
         }
-      }())
+
+        addClass(theLink.parentNode, 'current')
+
+        if (!firstScrollEvent && window.location.hash.replace(/[#_]/g, '') != hash.replace(/[#_]/g, '')) {
+          // Add underscore to hashes to stop browser from scrolling
+          // Also makes animated scrollto smoother
+          window.location.hash = '_' + hash.replace(/#/, '')
+        }
+
+        return
+      }
     }
   }
 }())
+
