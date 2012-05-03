@@ -10,3 +10,4 @@
 {% include js/mobile-nav.js %}
 {% include js/details-polyfill.js %}
 {% include js/portfolio-menu.js %}
+{% include js/works.js %}

@@ -1,0 +1,110 @@
+.work
+  margin 0
+  padding 0
+  position relative
+
+.work-head
+  margin 0 0 0.5em
+  position relative
+
+.work-title
+  margin-bottom 0
+
+.work-subtitle
+  margin -0.5em 0 0
+  padding 0
+
+  color text-medium-dark
+  font italic normal 1em/1.5 Georgia,serif
+
+.work-samples
+  overflow hidden
+  position relative
+
+  border 1px solid text-light
+  box-shadow 0 15px 20px -20px rgba(0,0,0,0.5)
+
+  & img
+    display block
+    left 0
+    opacity 0
+    position absolute
+    top 0
+    width 100%
+
+    transition opacity 100ms linear
+
+  & img[data-state="active"]
+    opacity 1
+    position relative
+    z-index 100
+
+  & img[data-state="incoming"]
+    opacity 1
+    z-index 150
+
+.work-details
+  margin 0.7em 0 0.5em
+  width 100%
+
+  table-layout auto
+
+  & th
+    padding 0
+    padding-right 1em
+    padding-top 0.1em
+
+    border 0
+
+    color text-medium-dark
+    font italic normal 1em/1.5 Georgia,serif
+    text-align right
+
+  & td
+    padding 0
+
+    border 0
+
+    width 90%
+
+.work-controls
+  bottom 0
+  height 26px
+  position absolute
+  width 100%
+  z-index 1000
+
+  text-align center
+
+  & button
+    display inline-block
+    height 16px
+    margin 0 0.15em
+    overflow hidden
+    padding 0
+    width 16px
+
+    background-color #fff
+    border 3px solid link-normal
+    border-radius 8px
+    cursor pointer
+
+    text-indent 100%
+
+  & button[data-state="selected"]
+    background-color link-normal
+
+@media all and (min-width: 700px)
+
+  .work-link
+    bottom 0
+    position absolute
+    right 0
+
+  .work-samples
+    margin-left -17.4%
+
+@media all and (min-width: 1150px)
+
+  .work-samples
+    margin-left -26.4%
