@@ -37,10 +37,13 @@
     }())
   }
 
+  // Add underscore to hashes to stop browser from scrolling
+  // Also makes animated scrollto smoother
   window.onscroll = function () {
     var theLink = null
       , elem = null
       , hash = ''
+      , windowHash = window.location.hash.replace(/[#_]/g, '')
       , scrollTop = getScrollTop()
 
     if (scrollTop >= originalTop) {
@@ -51,29 +54,28 @@
 
     if (firstScrollEvent) {
       firstScrollEvent = false
-      hash = window.location.hash
 
-      if (hash) {
-        window.scrollTo(0, getOffset(document.getElementById(hash.replace(/[#_]/g, ''))).top)
+      if (windowHash) {
+        window.scrollTo(0, getOffset(document.getElementById(windowHash)).top)
       }
     }
 
     for (i = totalLinks - 1; i >= 0; i--) {
       theLink = menuLinks[i]
-      elem = document.getElementById(theLink.getAttribute('href').replace(/#/, ''))
-      hash = theLink.getAttribute('href')
+      hash = theLink.getAttribute('href').replace(/[#_]/g, '')
+      elem = document.getElementById(hash)
 
       if (getScrollTop() >= getOffset(elem).top - 100) {
-        for (j = 0; j < totalLis; j++) {
-          removeClass(menuLis[j], 'current')
-        }
+        if (hash != windowHash) {
+          for (j = 0; j < totalLis; j++) {
+            removeClass(menuLis[j], 'current')
+          }
 
-        addClass(theLink.parentNode, 'current')
+          addClass(theLink.parentNode, 'current')
 
-        if (!firstScrollEvent && window.location.hash.replace(/[#_]/g, '') != hash.replace(/[#_]/g, '')) {
-          // Add underscore to hashes to stop browser from scrolling
-          // Also makes animated scrollto smoother
-          window.location.hash = '_' + hash.replace(/#/, '')
+          if (!firstScrollEvent && windowHash != hash) {
+            window.location.hash = '_' + hash.replace(/#/, '')
+          }
         }
 
         return
