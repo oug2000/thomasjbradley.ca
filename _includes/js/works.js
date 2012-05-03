@@ -16,25 +16,25 @@ if (document.getElementsByClassName) {
           , j = 0
           , tmpCloneBtn = null
 
-        workGroups[i].innerHTML += controls
-        workGroups[i].setAttribute('data-visible-id', 0)
-        btn = workGroups[i].getElementsByTagName('button')[0]
-        btn.innerHTML = btnTitle + 1
-        btn.setAttribute('title', btnTitle + 1)
-        btn.setAttribute('data-id', 0)
-        clonedControls = workGroups[i].getElementsByClassName('work-controls')[0]
-
-        for (j = 1; j < imgsTotal; j++) {
-          tmpCloneBtn = btn.cloneNode(false)
-          tmpCloneBtn.innerHTML = btnTitle + (j + 1)
-          tmpCloneBtn.setAttribute('title', btnTitle + (j + 1))
-          tmpCloneBtn.setAttribute('data-id', j)
-          clonedControls.appendChild(tmpCloneBtn)
-        }
-
-        btn.setAttribute('data-state', 'selected')
-
         if (imgsTotal > 1) {
+          workGroups[i].innerHTML += controls
+          workGroups[i].setAttribute('data-visible-id', 0)
+          btn = workGroups[i].getElementsByTagName('button')[0]
+          btn.innerHTML = btnTitle + 1
+          btn.setAttribute('title', btnTitle + 1)
+          btn.setAttribute('data-id', 0)
+          clonedControls = workGroups[i].getElementsByClassName('work-controls')[0]
+
+          for (j = 1; j < imgsTotal; j++) {
+            tmpCloneBtn = btn.cloneNode(false)
+            tmpCloneBtn.innerHTML = btnTitle + (j + 1)
+            tmpCloneBtn.setAttribute('title', btnTitle + (j + 1))
+            tmpCloneBtn.setAttribute('data-id', j)
+            clonedControls.appendChild(tmpCloneBtn)
+          }
+
+          btn.setAttribute('data-state', 'selected')
+
           workGroups[i].addEventListener('click', function (ev) {
             var id = 0
               , btns = ev.target.parentNode.getElementsByTagName('button')
