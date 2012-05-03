@@ -34,48 +34,50 @@ if (document.getElementsByClassName) {
 
         btn.setAttribute('data-state', 'selected')
 
-        workGroups[i].addEventListener('click', function (ev) {
-          var id = 0
-            , btns = ev.target.parentNode.getElementsByTagName('button')
-            , btnsTotal = btns.length
-            , k = 0
-            , transitionTimeout = null
+        if (imgsTotal > 1) {
+          workGroups[i].addEventListener('click', function (ev) {
+            var id = 0
+              , btns = ev.target.parentNode.getElementsByTagName('button')
+              , btnsTotal = btns.length
+              , k = 0
+              , transitionTimeout = null
 
-          function switchImage (id, btnCurrent) {
-            imgs[id].setAttribute('data-state', 'incoming')
+            function switchImage (id, btnCurrent) {
+              imgs[id].setAttribute('data-state', 'incoming')
 
-            for (k = 0; k < btnsTotal; k++) {
-              btns[k].removeAttribute('data-state')
-            }
-
-            btnCurrent.setAttribute('data-state', 'selected')
-
-            transitionTimeout = setTimeout(function () {
-              clearTimeout(transitionTimeout)
-
-              for (k = 0; k < imgsTotal; k++) {
-                imgs[k].removeAttribute('data-state')
+              for (k = 0; k < btnsTotal; k++) {
+                btns[k].removeAttribute('data-state')
               }
 
-              imgs[id].setAttribute('data-state', 'active')
-              btnCurrent.parentNode.parentNode.setAttribute('data-visible-id', id)
-            }, 100)
-          }
+              btnCurrent.setAttribute('data-state', 'selected')
 
-          if (ev.target.tagName.toLowerCase() == 'button') {
-            id = parseInt(ev.target.getAttribute('data-id'), 10)
-            switchImage(id, ev.target)
-          }
+              transitionTimeout = setTimeout(function () {
+                clearTimeout(transitionTimeout)
 
-          if (ev.target.tagName.toLowerCase() == 'img') {
-            id = parseInt(ev.target.parentNode.getAttribute('data-visible-id'), 10) + 1
+                for (k = 0; k < imgsTotal; k++) {
+                  imgs[k].removeAttribute('data-state')
+                }
 
-            if (id > imgsTotal - 1)
-              id = 0
+                imgs[id].setAttribute('data-state', 'active')
+                btnCurrent.parentNode.parentNode.setAttribute('data-visible-id', id)
+              }, 100)
+            }
 
-            switchImage(id, btns[id])
-          }
-        }, false)
+            if (ev.target.tagName.toLowerCase() == 'button') {
+              id = parseInt(ev.target.getAttribute('data-id'), 10)
+              switchImage(id, ev.target)
+            }
+
+            if (ev.target.tagName.toLowerCase() == 'img') {
+              id = parseInt(ev.target.parentNode.getAttribute('data-visible-id'), 10) + 1
+
+              if (id > imgsTotal - 1)
+                id = 0
+
+              switchImage(id, btns[id])
+            }
+          }, false)
+        }
       }())
     }
   }(window, document))
