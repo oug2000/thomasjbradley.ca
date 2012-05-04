@@ -15,6 +15,10 @@ if (document.getElementsByClassName) {
           , clonedControls = null
           , j = 0
           , tmpCloneBtn = null
+          , btns = null
+          , btnsTotal = 0
+          , transitionTimeout = null
+          , swiper = null
 
         if (imgsTotal > 1) {
           workGroups[i].innerHTML += controls
@@ -34,38 +38,39 @@ if (document.getElementsByClassName) {
           }
 
           btn.setAttribute('data-state', 'selected')
+          btns = workGroups[i].getElementsByTagName('button')
+          btnsTotal = btns.length
+
+          function switchImage (id) {
+            var k = 0
+              , btnCurrent = btns[id]
+
+            imgs[id].setAttribute('data-state', 'incoming')
+
+            for (k = 0; k < btnsTotal; k++) {
+              btns[k].removeAttribute('data-state')
+            }
+
+            btnCurrent.setAttribute('data-state', 'selected')
+
+            transitionTimeout = setTimeout(function () {
+              clearTimeout(transitionTimeout)
+
+              for (k = 0; k < imgsTotal; k++) {
+                imgs[k].removeAttribute('data-state')
+              }
+
+              imgs[id].setAttribute('data-state', 'active')
+              btnCurrent.parentNode.parentNode.setAttribute('data-visible-id', id)
+            }, 100)
+          }
 
           workGroups[i].addEventListener('click', function (ev) {
             var id = 0
-              , btns = ev.target.parentNode.getElementsByTagName('button')
-              , btnsTotal = btns.length
-              , k = 0
-              , transitionTimeout = null
-
-            function switchImage (id, btnCurrent) {
-              imgs[id].setAttribute('data-state', 'incoming')
-
-              for (k = 0; k < btnsTotal; k++) {
-                btns[k].removeAttribute('data-state')
-              }
-
-              btnCurrent.setAttribute('data-state', 'selected')
-
-              transitionTimeout = setTimeout(function () {
-                clearTimeout(transitionTimeout)
-
-                for (k = 0; k < imgsTotal; k++) {
-                  imgs[k].removeAttribute('data-state')
-                }
-
-                imgs[id].setAttribute('data-state', 'active')
-                btnCurrent.parentNode.parentNode.setAttribute('data-visible-id', id)
-              }, 100)
-            }
 
             if (ev.target.tagName.toLowerCase() == 'button') {
               id = parseInt(ev.target.getAttribute('data-id'), 10)
-              switchImage(id, ev.target)
+              switchImage(id)
             }
 
             if (ev.target.tagName.toLowerCase() == 'img') {
@@ -74,9 +79,31 @@ if (document.getElementsByClassName) {
               if (id > imgsTotal - 1)
                 id = 0
 
-              switchImage(id, btns[id])
+              switchImage(id)
             }
           }, false)
+
+          if (Modernizr.touch) {
+            swiper = new Swiper(workGroups[i], function (ev) {
+              var id = 0
+
+              if (ev.direction == swiper.directions.left) {
+                id = parseInt(ev.target.getAttribute('data-visible-id'), 10) - 1
+
+                if (id < 0)
+                  id = imgsTotal - 1
+
+                switchImage(id, btns[id])
+              } else {
+                id = parseInt(ev.target.getAttribute('data-visible-id'), 10) + 1
+
+                if (id > imgsTotal - 1)
+                  id = 0
+
+                switchImage(id)
+              }
+            })
+          }
         }
       }())
     }
