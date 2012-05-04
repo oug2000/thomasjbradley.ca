@@ -1,6 +1,5 @@
 var Swiper = function (elem, callback) {
-  var threshold = {x : 10, y : 50}
-    , directions = {left : 'left', right : 'right'}
+  var directions = {left : 'left', right : 'right'}
     , returnObject = {target : elem, direction : directions.left}
     , originalCoord = {x : 0, y : 0}
     , finalCoord = {x : 0, y : 0}
@@ -39,7 +38,7 @@ var Swiper = function (elem, callback) {
     clearTimeout(callbackTimeout)
 
     if (goingVertical === false) {
-      if (Math.abs(changeX) > Math.abs(threshold.x)) {
+      if (changeX > 0) {
         // Timeout stops the callback being fired if the tablet catches a scroll first
         // Stops weird DOM freezing of iOS, they will then be triggered after scroll
         returnObject.direction = directions.left
