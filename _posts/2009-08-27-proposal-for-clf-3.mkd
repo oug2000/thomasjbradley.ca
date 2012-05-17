@@ -128,4 +128,4 @@ CLF 3 has been released, it’s been split into two sections:
 
 and
 
-- [Web Experience Toolkit](http://www.tbs-sct.gc.ca/clf2-nsi2/tb-bo/td-dt/wet-boew-eng.asp).
+- [Web Experience Toolkit](http://ircan-rican.gc.ca/projects/gcwwwtemplates).
