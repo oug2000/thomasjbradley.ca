@@ -278,6 +278,8 @@ It’s is less performant to do it this way, and much better to store the API in
 
 Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element.
 
+For multiple instances it’s best to initialize each individually and store the API in a variable. But you can get the API later by re-executing the `signaturePad()` method on the element.
+
 ---
 
 ## Version History[changelog]
