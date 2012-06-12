@@ -16,16 +16,17 @@ desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based si
 	- [Demo of requiring a drawn signature](/lab/signature-pad/require-drawn/)
 	- [Demo of regenerating a signature](/lab/signature-pad/regenerate/)
 - [How to Use the Plugin](#howto)
-- [Accepting Signatures](#accept)
-	- [Javascript](#accept-js)
-	- [HTML Template](#accept-html)
-		- [Further HTML Explanation](#accept-html-exp)
-	- [Form Submission & Validation](#accept-form)
-- [Require a Drawn Signature](#require-drawn)
-- [Regenerating Signatures](#regenerate)
-	- [Javascript](#regenerate-js)
-		- [Alternate Javascript](#regenerate-js-alt)
-	- [HTML Template](#regenerate-html)
+	- [Accepting Signatures](#accept)
+		- [Javascript](#accept-js)
+		- [HTML Template](#accept-html)
+			- [Further HTML Explanation](#accept-html-exp)
+		- [Form Submission & Validation](#accept-form)
+	- [Require a Drawn Signature](#require-drawn)
+	- [Regenerating Signatures](#regenerate)
+		- [Javascript](#regenerate-js)
+			- [Alternate Javascript](#regenerate-js-alt)
+		- [HTML Template](#regenerate-html)
+	- [Resizing the Signature Pad](#resize)
 - [Converting to an Image](#images)
 	- [Client Side](#images-clientside)
 	- [Server Side](#images-serverside)
@@ -193,6 +194,18 @@ Both snippets do exactly the same thing. The only difference is that in this exa
 {% highlight html %}{% include sigpad/regenerate.html %}{% endhighlight %}
 
 The HTML for displaying a signature is much simpler. The primary component is, of course, the canvas element. The typed `<div>` is still there, for progressive enhancement, and will show the automatically generated signature using HTML and CSS if Javascript and canvas are not available.
+
+### Resizing the Signature Pad[resize]
+
+There are a couple different places you have to update to change the size: the HTML and the CSS.
+
+Change the dimensions of the `<canvas>` tag in the HTML.
+
+{% highlight html %}{% include sigpad/resize-1.html %}{% endhighlight %}
+
+If you are using the sample CSS, there are a couple places to change widths and heights.
+
+{% highlight css %}{% include sigpad/resize-2.css %}{% endhighlight %}
 
 ---
 
