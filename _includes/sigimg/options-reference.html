@@ -20,9 +20,17 @@
     </tr>
     <tr>
       <td class="name"><code><span class="s">bgColour</span></code></td>
-      <td class="type"><code><b>array</b></code><p>hex red, hex green, hex blue</p>
-      <td class="value"><code><b>array</b>(<span class="o">0xff</span>, <span class="o">0xff</span>, <span class="o">0xff</span>)</code>
-      <td><p>The colour fill for the background of the image</p>
+      <td class="type">
+        <code><b>array</b></code>
+        <p>hex red, hex green, hex blue</p>
+        <code><b>string</b></code>
+        <p>transparent</p>
+      </td>
+      <td class="value"><code><b>array</b>(<span class="o">0xff</span>, <span class="o">0xff</span>, <span class="o">0xff</span>)</code></td>
+      <td>
+        <p>The colour fill for the background of the image</p>
+        <p>Transparency:<br><code><b>array</b>(<span class="s">'bgColour'</span> =&gt; <span class="s">'transparent'</span>)</code></p>
+      </td>
     </tr>
     <tr>
       <td class="name"><code><span class="s">penWidth</span></code></td>
@@ -35,6 +43,12 @@
       <td class="type"><code><b>array</b></code><p>hex red, hex green, hex blue</td>
       <td class="value"><code><b>array</b>(<span class="o">0x14</span>, <span class="o">0x53</span>, <span class="o">0x94</span>)</code></td>
       <td><p>Colour of the drawing ink</p></td>
+    </tr>
+    <tr>
+      <td class="name"><code><span class="s">drawMultiplier</span></code></td>
+      <td class="type"><code><i>int</i></code></td>
+      <td class="value"><code><span class="o">12</span></code></td>
+      <td><p>The signature is enlarged by this factor before being redrawn to maintain a smooth finish. <em>Reduce this only if you are having memory issues.</em></p></td>
     </tr>
   </tbody>
 </table>
