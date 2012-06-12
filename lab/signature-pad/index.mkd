@@ -263,13 +263,20 @@ The API is returned from the instantiation of the Signature Pad and can be store
 
 *Storage of the API in a variable.*
 
+You can also get the API at a later time by recalling the `signaturePad()` method.
+It’s is less performant to do it this way, and much better to store the API in the initial call so you don’t have to touch the DOM again.
+
+{% highlight js %}{% include sigpad/api-3.js %}{% endhighlight %}
+
+*Later retrieval of the Signature Pad API.*
+
 ### API Reference[api-ref]
 
 {% include sigpad/api-reference.html %}
 
 ### API Limitations[api-limits]
 
-Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element. If you would like to store the API for multiple elements they must be initialized with separate jQuery calls.
+Signature Pad is able to create multiple instances on a single page by selecting multiple items with jQuery. The limitation lies in the API return; Signature Pad will only return the API for the last selected element.
 
 ---
 
