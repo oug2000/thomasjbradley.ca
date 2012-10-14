@@ -23,7 +23,7 @@ desc: "A small PHP tutorial on how to capture the signature from Signature Pad a
 - `views/accept.php` is the basic Signature Pad HTML template for [accepting a signature](/lab/signature-pad/#accept), with the addition of some serverside validation code.
 - `views/regenerate.php` is the basic Signature Pad HTML template for [regenerating a signature](/lab/signature-pad/#regenerate), with the addition of a little PHP to output the signator and date.
 - `signature-pad` is just a clone of the complete Signature Pad Git repository. The sample application only uses files from the `build` sub-folder.
- 
+
 ## Getting the Signature
 
 Signature Pad submits the signature, along with the rest of the form submission, inside a hidden input field.
@@ -48,7 +48,7 @@ We can use `FILTER_UNSAFE_RAW` for the signature itself, because we don’t actu
 
 ## Validating the Signature
 
-Probably the best way to validate the signature would be to run it through `json_decode()` and see if it can be decoded. 
+Probably the best way to validate the signature would be to run it through `json_decode()` and see if it can be decoded.
 
 *From `lib/save-signature.php`:*
 
@@ -94,4 +94,4 @@ And likely more.
 
 ## Download the App
 
-[Download the sample app on GiHub](https://github.com/thomasjbradley/saving-signatures-sample)
+[Download the sample app on GitHub](https://github.com/thomasjbradley/saving-signatures-sample)
