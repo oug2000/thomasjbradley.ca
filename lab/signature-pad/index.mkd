@@ -214,7 +214,7 @@ If you are using the sample CSS, there are a couple places to change widths and 
 
 ### Client Side[images-clientside]
 
-The API includes a method called `signatureToImage()` which will return a Base64 encoded PNG to Javascript.
+The API includes a method called `getSignatureImage()` which will return a Base64 encoded PNG to Javascript.
 
 *Unfortunately, the function doesn’t work in all browsers, only because the underlying `toDataURL()` method of `<canvas>` isn’t implemented well. The primary culprit of poor implementation is Android OS < 3. The function does work in IE thanks to FlashCanvas.*
 
