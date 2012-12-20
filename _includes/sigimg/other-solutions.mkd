@@ -4,6 +4,9 @@ PHP to SVG
 Python
 : [python-signpad2image](https://github.com/videntity/python-signpad2image) by [Alan Viars](http://videntity.com) is a script for converting the signature JSON to PNG using Python. Check out the fantastico [python-signpad2image on GitHub](https://github.com/videntity/python-signpad2image).
 
+Ruby on Rails
+: [ruby-signaturepad-to-image.rb](https://gist.github.com/4258871) by [Phil Hofmann](https://github.com/branch14) is a chunk of code for converting signature JSON to PNG within a Ruby on Rails app. Check out the wam-bham [ruby-signaturepad-to-image.rb on Github](https://gist.github.com/4258871).
+
 C#
 : [SignatureToDotNet](https://github.com/parrots/SignatureToImageDotNet) by [Curtis Herbert](http://www.consumedbycode.com) is a script for converting the signature JSON to an image using C#. Check out the awesome [SignatureToDotNet project on GitHub](https://github.com/parrots/SignatureToImageDotNet).
 
