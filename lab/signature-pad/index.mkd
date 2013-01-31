@@ -46,7 +46,7 @@ desc: "A jQuery plugin for assisting in the creation of an HTML5 canvas based si
 
 The Signature Pad jQuery plugin will transform an HTML form into a signature pad. The Signature Pad has two modes: TypeIt and DrawIt. In TypeIt mode the user’s signature is automatically generated as HTML text, styled with `@font-face`, from the input field where they type their name. In DrawIt mode the user is able to draw their signature on the canvas element.
 
-The drawn signature is written out to a hidden input field as a JSON array using `JSON.strinify()`. Since the signature is saved as JSON it can be submitted as part of the form and kept on file. Using the JSON array, the signature can then be regenerated into the canvas element for display.
+The drawn signature is written out to a hidden input field as a JSON array using `JSON.stringify()`. Since the signature is saved as JSON it can be submitted as part of the form and kept on file. Using the JSON array, the signature can then be regenerated into the canvas element for display.
 
 *Obviously, Signature Pad has a couple extra dependencies: [Douglas Crockford’s json2.js](http://www.json.org/js.html) and [FlashCanvas 1.5](http://flashcanvas.net/). (Both scripts are included in the downloadable package.)*
 
