@@ -86,7 +86,7 @@ After including all the external resources, simply call the jQuery plugin method
 
 {% highlight js %}{% include sigpad/howto-3.js %}{% endhighlight %}
 
-The method accepts an options object for the Signature Pad instance. [Signature Pad Options Reference](#options-reference)
+The method accepts an options object for the Signature Pad instance. [Signature Pad Options Reference](#options-ref)
 
 Calling the `signaturePad()` method also returns an API for the Signature Pad instance. [Signature Pad API Reference](#api-reference)
 
@@ -180,7 +180,7 @@ Regenerating signatures from a JSON representation is quite simple. Signature Pa
 
 `sig` is a variable that contains the JSON representation of the signature. In the above example you can see what the JSON looks like—though it has been trimmed for brevity’s sake.
 
-Also notice that an options variable is passed into the `signaturePad()` method. The `displayOnly` property tells Signature Pad not to initialize any of the standard HTML elements, mouse events or click events. [Signature Pad Options Reference](#options-reference)
+Also notice that an options variable is passed into the `signaturePad()` method. The `displayOnly` property tells Signature Pad not to initialize any of the standard HTML elements, mouse events or click events. [Signature Pad Options Reference](#options-ref)
 
 After initializing the canvas, call the `regnerate()` method and pass it our JSON signature. This method simply redraws the signature onto the canvas element.
 
